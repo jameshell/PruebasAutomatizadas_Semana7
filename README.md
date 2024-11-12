@@ -1,4 +1,4 @@
-# Semana 5 - Entrega Pruebas-automatizadas-de-software
+Semana 6 - Pruebas Automatizadas
 
 Nombre | Correo
 -- | --
