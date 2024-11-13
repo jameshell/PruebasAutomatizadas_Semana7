@@ -14,10 +14,14 @@ async function generateRandomText(length) {
     return result;
 }
 
-When("I edit the tag name {string}", async function (name) {
+When("edit the tag name {string}", async function (name) {
     await TagPage.fillTagsToEdit(this, name);
 })
 
-When("I edit the tag description {string}", async function (name) {
+When("edit the tag description {string}", async function (name) {
     await TagPage.fillDescriptionTagEdit(this, name);
+})
+
+When("click in tag to edit", async function () {
+    await TagPage.navigateToTagDelete(this);
 })

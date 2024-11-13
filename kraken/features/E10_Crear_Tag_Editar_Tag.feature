@@ -1,31 +1,19 @@
-Feature: Crear tag
+Feature: Editar tag
 
 @user1 @web
-Scenario: Crear tag con datos validos
+Scenario: Editar tag con datos validos
   Given the user navigates to Ghost at "<GHOST>"
   And the user logs in using the credentials "<USERNAME>" and "<PASSWORD>"
   And the user navigates to the tags page
-  And I wait for 2 seconds
-  
-  When the user cliks on the new tag
-  And I wait for 1 seconds
-  And I enter name tag to delete "ToDelete"
+  And the user cliks on the new tag
+  And enter name tag to delete "ToDelete"
+  And enter description tag "<TAGDESCRIPTION>"
+  And click in save tag
 
-  And I enter description tag "<TAGDESCRIPTION>"
-  Then I click in save tag
-  And I wait for 1 seconds
-
-  Then I click again tags
-  And I wait for 2 seconds
-  And I click in tag to delete
-  And I wait for 2 seconds
-  And I edit the tag name 'EditTag'
-  And I wait for 1 seconds
-  And I edit the tag description 'descriptioneditok'
-  And I wait for 1 seconds
+  When click again tags
+  And click in tag to edit
+  And edit the tag name 'EditTag'
+  And edit the tag description 'descriptioneditok'
   
-  Then I click in save tag
-  And I wait for 1 seconds
-  
-  Then I click again tags
-  And I wait for 2 seconds
+  Then click in save tag
+  And click again tags
