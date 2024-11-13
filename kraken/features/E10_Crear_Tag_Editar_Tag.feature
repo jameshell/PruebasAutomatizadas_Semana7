@@ -1,7 +1,7 @@
-Feature: Crear tag
+Feature: Editar tag
 
 @user1 @web
-Scenario: Crear tag con datos validos
+Scenario: Editar tag con datos validos
   Given the user navigates to Ghost at "<GHOST>"
   And the user logs in using the credentials "<USERNAME>" and "<PASSWORD>"
   And the user navigates to the tags page
