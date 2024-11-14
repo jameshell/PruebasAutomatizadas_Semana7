@@ -1,25 +1,27 @@
-Feature: Crear post
+Feature: E3_Create post without title
 
 @user1 @web
 Scenario: E3_Create post without title
   Given the user navigates to Ghost at "<GHOST>"
+  And I set the browser window post to 1024x768
   And the user logs in using the credentials "<USERNAME>" and "<PASSWORD>"
-  And I wait for 2 seconds
   And the user navigates to the post page
-  And I wait for 2 seconds
-  When the user cliks on the new post
-  And I wait for 2 seconds
-  When the user cliks on the new post content
-  And I wait for 2 seconds
-  When the user enters a content for the post
-  And I wait for 2 seconds
-  When The user clicks on the publish post button
-  And I wait for 2 seconds
-  When The user clicks on the button continue publishing
-  And I wait for 2 seconds
+  And I save device snapshot in sequential file1 "<DIR-E3>"
+  And the user cliks on the new post
+  And I save device snapshot in sequential file1 "<DIR-E3>"
+  And the user cliks on the new post content
+  And I save device snapshot in sequential file1 "<DIR-E3>"
+  And the user enters a content for the post
+  And I save device snapshot in sequential file1 "<DIR-E3>"
+  And The user clicks on the publish post button
+  And I save device snapshot in sequential file1 "<DIR-E3>"
+  And The user clicks on the button continue publishing
+  And I save device snapshot in sequential file1 "<DIR-E3>"
+
   When User clicks on the publish now button
-  And I wait for 2 seconds
+  
+  And I save device snapshot in sequential file1 "<DIR-E3>"
   Then Successful publication confirmation appears
-  And I wait for 2 seconds
+  And I save device snapshot in sequential file1 "<DIR-E3>"
   Then the confirmation message untitled
   And I wait for 2 seconds
