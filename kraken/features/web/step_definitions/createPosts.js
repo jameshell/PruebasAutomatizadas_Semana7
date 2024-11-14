@@ -2,50 +2,83 @@ const { Given, When, Then } = require('@cucumber/cucumber');
 const DashboardPage = require('../../pages/dashboardPage');
 const postPage = require('../../pages/postPage');
 const assert = require('assert');
+const path = require('path');
+const fs = require('fs');
 
 // Given
+
+
+let counter = 1; // Inicializa el contador
+
+Given('I save device snapshot in sequential file1 {kraken-string}', async function (DIR) {
+    const folderPath = path.resolve('screenshots/'+String(DIR));
+
+    if (!fs.existsSync(folderPath)) {
+        fs.mkdirSync(folderPath, { recursive: true });
+    }
+    const filename = `${DIR}-${counter}.png`;
+    const filepath = path.join(folderPath, filename);
+    counter++;
+    await this.driver.saveScreenshot(filepath);
+    console.log(`Screenshot saved at: ${filepath}`);
+});
 
 Given('the user navigates to the post page', async function () {
     await DashboardPage.navigateToPosts(this);
 });
 
-// // When
+Given('I set the browser window post to 1024x768', async function () {
+    await this.driver.setWindowSize(1024, 768);
+});
 
-When("the user cliks on the new post", async function () {
+Given("the user cliks on the new post", async function () {
     await postPage.navigateNewPosts(this);
 });
 
-When("the user cliks on the new post title", async function () {
+Given("the user cliks on the new post title", async function () {
     await postPage.ClickPostsTitle(this);
 });
 
-When("The user enters a title for the post", async function () {
+Given("The user enters a title for the post", async function () {
     await postPage.fillPostTitle(this);
 });
 
-When("the user cliks on the new post content", async function () {
+Given("the user cliks on the new post content", async function () {
     await postPage.ClickPostsContent(this);
 });
 
-When("the user enters a content for the post", async function () {
+Given("the user enters a content for the post", async function () {
     await postPage.fillPostContent(this);
 });
 
-When("The user clicks on the publish post button", async function () {
+Given("The user clicks on the publish post button", async function () {
     await postPage.ClickPostsBtnPublish(this);
 });
 
-When("The user clicks on the button continue publishing", async function () {
+Given("The user clicks on the button continue publishing", async function () {
     await postPage.ClickPostsBtnContinuePublish(this);
 });
+
+Given('the user clicks on the first post', async function () {
+    await postPage.ClickSelectPost(this);
+});
+
+
+Given('the user clicks on the first image', async function () {
+    await postPage.ClickFirstImage(this);
+});
+
+
+
+// // -----------------------When
+
+
+
 
 When("User clicks on the publish now button", async function () {
     await postPage.ClickPostPublishRightNow(this);
 });
 
-When('the user clicks on the first post', async function () {
-    await postPage.ClickSelectPost(this);
-});
 
 When('the user updates the post', async function () {
     await postPage.ClickUpdatePost(this);
@@ -53,10 +86,6 @@ When('the user updates the post', async function () {
 
 When('the user clicks add image', async function () {
     await postPage.addImagePostButton(this);
-});
-
-When('the user clicks on the first image', async function () {
-    await postPage.ClickFirstImage(this);
 });
 
 

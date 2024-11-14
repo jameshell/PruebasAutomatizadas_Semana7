@@ -1,7 +1,7 @@
 {
     "GHOST": "http://localhost:3001/ghost/#/signin",
-    "USERNAME": "test@test.com",
-    "PASSWORD": "Semeolvido123",
+    "USERNAME": "camis.069@gmail.com",
+    "PASSWORD": "OSO*994290",
     "NAME": "Janelle Schinner",
     "NAME2": "Jhon Doe",
     "EMAIL": "Schinner23@hotmail.com",
@@ -15,5 +15,10 @@
     "TITLE": "uBJfTSbBWUuTbDFZClAixybQudqBv",
     "CONTENT": "uBJfTSbBWUuTbDFZClAixybQudqBv",
     "NEW_TITLE": "NEW_TITLE",
-    "NEW_CONTENT": "NEW_CONTENT"
+    "NEW_CONTENT": "NEW_CONTENT",
+    "DIR-E1":"E1_post",
+    "DIR-E2":"E2_post",
+    "DIR-E3":"E3_post",
+    "DIR-E4":"E4_post",
+    "DIR-E5":"E5_post"
 }
