@@ -1,6 +1,8 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const LoginPage = require('../../pages/loginPage');
 
+const path = require('path');
+const fs = require('fs');
 // Given
 Given('the user navigates to Ghost at {kraken-string}', async function (url) {
     await this.driver.url(url);
