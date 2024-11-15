@@ -17,6 +17,12 @@ Given('I save device snapshot in sequential file {string} {string}', async funct
     await this.driver.saveScreenshot(filepath);
     console.log(`Screenshot saved at: ${filepath}`);
 });
+Given('the user logs in using the credentials {kraken-string} and {kraken-string}', async function (username, password) {
+    await LoginPage.enterUserName(this, username);
+    await LoginPage.enterPassword(this, password);
+    await LoginPage.clickOnSubmit(this);
+});
+
 
 When('the user clicks on the {string} link', async function (link) {
     await this.driver.$(`span=${link}`).click();
