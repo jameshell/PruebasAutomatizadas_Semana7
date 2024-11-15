@@ -9,23 +9,14 @@ Given('the user navigates to the members page', async function () {
     await DashboardPage.navigateToMembers(this);
 });
 
-// When
-
-
-
-
-When('the user fill the name {kraken-string}', async function (name) {
+Given('the user fills the form with the data Name: {kraken-string}, Email: {kraken-string}, Note: {kraken-string}', async function (name, email, note) {
     await MembersPage.fillName(this,name);
-});
-
-When('the user fill the email {kraken-string}', async function (email) {
     await MembersPage.fillEmail(this,email);
-});
-
-When('the user fill the note {kraken-string}', async function (note) {
     await MembersPage.fillNote(this,note);
+
 });
 
+// When
 
 When('the user clicks on a member name {kraken-string}', async function (name) {
     await MembersPage.clickOnMemberName(this,name);

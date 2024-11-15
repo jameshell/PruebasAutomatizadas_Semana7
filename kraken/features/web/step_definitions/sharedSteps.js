@@ -6,10 +6,16 @@ Given('the user navigates to Ghost at {kraken-string}', async function (url) {
     await this.driver.url(url);
 });
 
-Given('the user logs in using the credentials {kraken-string} and {kraken-string}', async function (username, password) {
-    await LoginPage.enterUserName(this, username);
-    await LoginPage.enterPassword(this, password);
-    await LoginPage.clickOnSubmit(this);
+Given('I save device snapshot in sequential file {string} {string}', async function (DIR, counter) {
+    const folderPath = path.resolve('screenshots/'+String(DIR));
+
+    if (!fs.existsSync(folderPath)) {
+        fs.mkdirSync(folderPath, { recursive: true });
+    }
+    const filename = `${DIR}-${counter}.png`;
+    const filepath = path.join(folderPath, filename);
+    await this.driver.saveScreenshot(filepath);
+    console.log(`Screenshot saved at: ${filepath}`);
 });
 
 When('the user clicks on the {string} link', async function (link) {
