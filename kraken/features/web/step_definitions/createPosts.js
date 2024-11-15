@@ -2,27 +2,8 @@ const { Given, When, Then } = require('@cucumber/cucumber');
 const DashboardPage = require('../../pages/dashboardPage');
 const postPage = require('../../pages/postPage');
 const assert = require('assert');
-const path = require('path');
-const fs = require('fs');
 
 // Given
-
-
-let counter = 1; // Inicializa el contador
-
-Given('I save device snapshot in sequential file1 {kraken-string}', async function (DIR) {
-    const folderPath = path.resolve('screenshots/'+String(DIR));
-
-    if (!fs.existsSync(folderPath)) {
-        fs.mkdirSync(folderPath, { recursive: true });
-    }
-    const filename = `${DIR}-${counter}.png`;
-    const filepath = path.join(folderPath, filename);
-    counter++;
-    await this.driver.saveScreenshot(filepath);
-    console.log(`Screenshot saved at: ${filepath}`);
-});
-
 Given('the user navigates to the post page', async function () {
     await DashboardPage.navigateToPosts(this);
 });
