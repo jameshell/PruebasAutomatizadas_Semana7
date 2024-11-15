@@ -1,5 +1,5 @@
 {
-    "GHOST": "http://localhost:3001/ghost/#/signin",
+    "GHOST": "http://localhost:3002/ghost/#/signin",
     "USERNAME": "test@test.com",
     "PASSWORD": "Semeolvido123",
     "NAME": "Janelle Schinner",
