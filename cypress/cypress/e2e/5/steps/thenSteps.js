@@ -21,7 +21,8 @@ class ThenSteps {
         tagPage.seeTags();
     }
 
-    thenVerifyPost(){
+    thenVerifyPost(screenshotName){
+        cy.screenshot(`screenshots/posts/${screenshotName}`,{capture: 'viewport', overwrite: true });
         postPage.verifyPost();
      }
      

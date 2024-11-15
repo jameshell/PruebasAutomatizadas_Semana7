@@ -1,9 +1,9 @@
-import GivenSteps from "./steps/givenSteps";
+import GivenSteps from "../steps/givenSteps";
 import pagesPage from "./pages/pagesPage";
 import { faker } from "@faker-js/faker";
-import WhenSteps from "./steps/whenSteps";
-import thenSteps from "./steps/thenSteps";
-import ThenSteps from "./steps/thenSteps";
+import WhenSteps from "../steps/whenSteps";
+import thenSteps from "../steps/thenSteps";
+import ThenSteps from "../steps/thenSteps";
 
 describe("Pages - Create Empty Page", () => {
 

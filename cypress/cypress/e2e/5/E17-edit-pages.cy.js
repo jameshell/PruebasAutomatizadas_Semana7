@@ -2,7 +2,7 @@ import GivenSteps from "./steps/givenSteps";
 import pagesPage from "./pages/pagesPage";
 import { faker } from "@faker-js/faker";
 import WhenSteps from "./steps/whenSteps";
-import whenSteps from "./steps/whenSteps";
+
 
 describe("Pages - Edit page title and description", () => {
 

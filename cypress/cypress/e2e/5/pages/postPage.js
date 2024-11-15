@@ -77,14 +77,17 @@ class postPage {
         this.postContent.click();
     }
 
-    clickContinuePublish() {
-        cy.wait(1000);
+    clickContinuePublish(screenshotName) {
+        //cy.wait(1000);
+        cy.screenshot(`${screenshotName}_step04`);
         this.postContinuePublish.click();
+        cy.screenshot(`${screenshotName}_step04`);
     }
 
     clickPostPublishRightNow() {
-        cy.wait(1000);
+        cy.wait(2000);
         this.postPublishRightNow.click();
+        cy.wait(1000);
     }
 
     fillPostTitle() {
@@ -142,6 +145,9 @@ class postPage {
         this.FirstPic.click();
         cy.wait(1000);
     }
-        
+    
+    AndScreenshot(screenshotName){
+        cy.screenshot(`screenshots/posts/${screenshotName}`,{ overwrite: true });
+    }
 }
 export default new postPage();

@@ -3,9 +3,9 @@ import pagesPage from "./pages/pagesPage";
 import { faker } from "@faker-js/faker";
 import WhenSteps from "./steps/whenSteps";
 import ThenSteps from "./steps/thenSteps";
-import thenSteps from "./steps/thenSteps";
 
-describe("Pages - Create Page without img", () => {
+
+describe("Pages - Create Page With Only Description", () => {
 
     beforeEach(() => {
         // Given the User navigates to the login page
@@ -16,21 +16,16 @@ describe("Pages - Create Page without img", () => {
         GivenSteps.giveNavigateToPagesPage();
     });
 
-    it('E16 - Should create a new page successfully with a random title and description', () => {
+    it('E18 - Should create a new page successfully with a random description', () => {
         const randomPageDescription = faker.lorem.paragraph();
-        const randomPageTitle = faker.lorem.sentence({min: 3, max: 5});
 
         // When
         // Clicks on new page
         // pagesPage.newPageBtn_Click();
         WhenSteps.WhenNewPageBtn_Click();
 
-        // Fill in the page with a randon title
-        // pagesPage.fillPageHeader(randomPageTitle);
-        WhenSteps.WhenFillPageHeader(randomPageTitle);
-
         // Fill in the page with random description
-        // pagesPage.fillPageDescription(randomPageDescription);
+        // pagesPage.fillPageDescription(randomPageDescription)
         WhenSteps.WhenFillPageDescription(randomPageDescription);
 
         // Publish intent page
@@ -39,7 +34,7 @@ describe("Pages - Create Page without img", () => {
 
         // Continue Final Review
         // pagesPage.finalReviewButton_Click();
-        WhenSteps.WhenClickFinalReviewButton();
+        WhenSteps.WhenClickFinalReviewButton()
 
         // Publish page now
         // pagesPage.confirmPublishButton_Click();
@@ -51,11 +46,11 @@ describe("Pages - Create Page without img", () => {
         ThenSteps.thenIsPublishFlowComplete();
 
         // Verify the modal header text
-        // pagesPage.isModalHeaderCorrect(randomPageTitle);
-        ThenSteps.thenIsModalHeaderCorrect(randomPageTitle);
+        // pagesPage.isModalHeaderCorrect_Untitled();
+        ThenSteps.thenIsModalHeaderCorrect_Untitled()
 
         // Verify the post title and excerpt
         // pagesPage.isModalDescriptionCorrect(randomPageDescription);
-        ThenSteps.thenIsModalDescriptionCorrect(randomPageDescription)
+        ThenSteps.thenIsModalDescriptionCorrect(randomPageDescription);
     });
 });

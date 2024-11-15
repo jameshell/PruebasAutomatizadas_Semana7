@@ -10,6 +10,7 @@ class LoginPage{
     }
 
     enterUsername(username){
+        console.log(`Logging in with username: ${username}`);
         this.usernameInput.clear().type(username);
     }
 
@@ -22,15 +23,17 @@ class LoginPage{
     }
 
     login(){
-        const username = Cypress.env("username");
-        const password = Cypress.env("password");
-        this.enterUsername(username);
+        const username = Cypress.config("username");
+        const password = Cypress.config("password");
+        console.log(`Logging in with username: ${username}, password: ${password}`);
+        this.usernameInput.clear().type(username);
+        //this.enterUsername(username);
         this.enterPassword(password);
         this.clickLogin();
     }
     
     navigateToLogin(){
-        const url = Cypress.env("url"); 
+        const url = Cypress.config("url"); 
         cy.visit(url+'ghost/#/signin');
     }
 }
