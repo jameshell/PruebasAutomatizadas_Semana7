@@ -19,3 +19,4 @@ Scenario: E6 - Crear tag con datos validos
    
   Then click again tags
   And I save device snapshot in sequential file 'E6' '7'
+  And I wait for 5 seconds

@@ -29,3 +29,4 @@ Scenario: E10 - Editar tag con datos validos
   And I save device snapshot in sequential file 'E10' '11'
   And click again tags
   And I save device snapshot in sequential file 'E10' '12'
+  And I wait for 5 seconds

@@ -487,3 +487,8 @@ $RECYCLE.BIN/
 cypress/cypress.config.js
 */cypress.config.js
 cypress/cypress/screenshots/*
+kraken/screenshots/*
+kraken/reports/*
+
+kraken-ghost-base/screenshots/*
+kraken-ghost-base/reports/*

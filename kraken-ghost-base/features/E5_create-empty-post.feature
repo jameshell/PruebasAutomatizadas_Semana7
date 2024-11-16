@@ -10,4 +10,4 @@ Scenario: E5_create empty post
   And I save device snapshot in sequential file 'E5' '2'
   Then the button should not be visible
   And I save device snapshot in sequential file 'E5' '3'
-  And I wait for 2 seconds
+  And I wait for 5 seconds

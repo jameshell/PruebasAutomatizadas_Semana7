@@ -24,3 +24,4 @@ Scenario: E1_create publication with valid data
   Then Successful publication confirmation appears
   And I save device snapshot in sequential file 'E1' '7'
   Then the confirmation message should appear
+  And I wait for 5 seconds
