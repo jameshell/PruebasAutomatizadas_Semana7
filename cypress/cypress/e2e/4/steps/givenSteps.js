@@ -131,6 +131,10 @@ class GivenSteps {
     AndClickListPost(){
         postPage.clickListPost()
     }
+
+    AndUpateBtnPost(){
+        postPage.updatePost()
+    }
     //----------------------------------------------
  
 }

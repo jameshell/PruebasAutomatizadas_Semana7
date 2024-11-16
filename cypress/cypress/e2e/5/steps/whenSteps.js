@@ -96,8 +96,7 @@ class WhenSteps {
 //---------------------------post-----------------------------------------------------
 
     // When the user clicks "Publish Right Now" to confirm the publication
-    whenclickPostPublishRightNow(screenshotName){
-       cy.screenshot(`screenshots/posts/${screenshotName}`,{capture: 'viewport', overwrite: true });
+    whenclickPostPublishRightNow(){;
        postPage.clickPostPublishRightNow()
     }
 
@@ -105,6 +104,9 @@ class WhenSteps {
         postPage.updatePost()
     }
 
+    WhenClicksNewPost(){
+        postPage.clickNewPost()
+    }
 
     //---------------------------pages-----------------------------------------------------
 
