@@ -25,5 +25,6 @@ Scenario: E9 - Crear tag con datos validos y eliminarlo
   
   Then click confirm delete
   And I save device snapshot in sequential file 'E9' '10'
+  And I wait for 5 seconds
   
 

@@ -16,3 +16,4 @@ Scenario: E7 - Crear tag con datos invalidos
   
   Then click in save tag
   And I save device snapshot in sequential file 'E7' '6'
+  And I wait for 5 seconds

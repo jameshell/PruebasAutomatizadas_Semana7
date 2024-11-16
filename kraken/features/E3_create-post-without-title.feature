@@ -23,4 +23,4 @@ Scenario: E3_Create post without title
   Then Successful publication confirmation appears
   And I save device snapshot in sequential file 'E3' '8'
   Then the confirmation message untitled
-  And I wait for 2 seconds
+  And I wait for 5 seconds

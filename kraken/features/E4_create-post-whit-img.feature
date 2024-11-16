@@ -27,5 +27,5 @@ Scenario:E4_Create full post with image
   Then Successful publication confirmation appears
   And I save device snapshot in sequential file 'E4' '11'
   Then the confirmation message should appear
-  And I wait for 2 seconds
+  And I wait for 5 seconds
 

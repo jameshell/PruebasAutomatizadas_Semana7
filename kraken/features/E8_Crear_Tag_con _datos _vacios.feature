@@ -11,3 +11,4 @@ Scenario: E8 - Crear tag con datos vacios
   And I save device snapshot in sequential file 'E8' '3'
   Then click in save tag
   And I save device snapshot in sequential file 'E8' '4'
+  And I wait for 5 seconds
