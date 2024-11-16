@@ -13,6 +13,10 @@ describe("Create Post and edit post", () => {
     GivenSteps.givenNavigateToLoginPage();
     GivenSteps.givenLogin();
     GivenSteps.givenNavigateToPostsPage();
+    
+    Cypress.Screenshot.defaults({
+      disableTimersAndAnimations: false,
+    })
   });
 
   it("E1_create publication with valid data", () => {
