@@ -1,35 +1,33 @@
 import {faker} from "@faker-js/faker";
 
-const buttonPublish='[data-test-button="publish-flow"]'
+const buttonPublish='.gh-btn.gh-btn-black.gh-publishmenu-button.gh-btn-icon'
 
 class postPage {
    
     get newPostButton() {
-        return cy.get('[data-test-new-post-button]').first();
+        return cy.get('[class="ember-view gh-btn gh-btn-primary view-actions-top-row"]').first();
     }
 
 
     get postTitleInput() {
-        return cy.get('textarea.gh-editor-title');
+        return cy.get('.gh-editor-title');
     }
 
     get postContent() {
-        return cy.get('div.kg-prose p').first();
+        return cy.get('.koenig-editor__editor');
+        ;
     }
 
     get postPublish() {
-        return cy.get('[data-test-button="publish-flow"]').first();
+        return cy.get('.ember-basic-dropdown-trigger').first();
     }
-    get postContinuePublish() {
-        return cy.get('[data-test-button="continue"]').first();
-    }
-
+  
     get postPublishRightNow() {
-        return cy.get('[data-test-button="confirm-publish"]').first();
+        return cy.get('.gh-btn.gh-btn-black.gh-publishmenu-button.gh-btn-icon').first();
     }
 
     get postShould() {
-        return cy.get('[data-test-complete-title]').first();
+        return cy.get('span.gh-notification-actions').first();
     }
 
     get selectPost(){
@@ -37,11 +35,15 @@ class postPage {
     }
 
     get postUpdate() {
-        return cy.get('[data-test-task-button-state="idle"]').first();
+        return cy.get('div.ember-basic-dropdown-trigger.gh-btn.gh-btn-editor.green.gh-publishmenu-trigger').first();
+    }
+
+    get postUpdatedrop() {
+        return cy.get('.gh-btn.gh-btn-black.gh-publishmenu-button.gh-btn-icon').first();
     }
     
     get postUpdateShould(){
-        return cy.get('.gh-notifications').first();
+        return cy.get('div.gh-notification-content').first();
     }
     
     get addImagePostButton() {
@@ -77,14 +79,17 @@ class postPage {
         this.postContent.click();
     }
 
-    clickContinuePublish() {
-        cy.wait(1000);
+    clickContinuePublish(screenshotName) {
+        //cy.wait(1000);
+        cy.screenshot(`${screenshotName}_step04`);
         this.postContinuePublish.click();
+        cy.screenshot(`${screenshotName}_step04`);
     }
 
     clickPostPublishRightNow() {
-        cy.wait(1000);
+        cy.wait(2000);
         this.postPublishRightNow.click();
+        cy.wait(1000);
     }
 
     fillPostTitle() {
@@ -101,7 +106,7 @@ class postPage {
     }
 
     verifyPost(){
-      this.postShould.should('contain', "Boom! It's out there.");
+      this.postShould.should('contain', 'View Post');
     }
     
     clickListPost(){
@@ -123,8 +128,13 @@ class postPage {
         this.postUpdate.click(); 
     }
 
+    updatePostDrop(){
+        cy.wait(1000);
+        this.postUpdatedrop.click(); 
+    }
+
     ShouldUpdatePost(){
-        this.postUpdateShould.should('be.visible')
+        this.postUpdateShould.should('contain', 'Updated')
     }
     
     shouldNoExist(){
@@ -142,6 +152,9 @@ class postPage {
         this.FirstPic.click();
         cy.wait(1000);
     }
-        
+    
+    AndScreenshot(screenshotName){
+        cy.screenshot(`screenshots/posts/${screenshotName}`,{ overwrite: true });
+    }
 }
 export default new postPage();

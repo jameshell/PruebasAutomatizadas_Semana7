@@ -93,71 +93,19 @@ class WhenSteps {
     }
 //---------------------------post-----------------------------------------------------
 
-    whenClicksNewPost(){
-        postPage.clickNewPost()
-    }
-
-    // When the user clicks on the post title field to focus on it
-    whenClicksPostTitle(){
-        postPage.clickPostTitle()
-    }
-
-    // When the user inputs a title into the post title field
-    whenInputPostTitle(){
-        postPage.fillPostTitle()
-    }
-
-    // When the user clicks on the post content area to focus on it
-    whenClicksPostContent(){
-       postPage.clickPostContent()
-    }
-
-    // When the user inputs content into the post content field
-    whenInputPostContent(){
-        postPage.fillPostContent()
-    }
-
-    // When the user clicks the "Publish" button to initiate the publishing flow
-    whenClickPublishPost(){
-        postPage.clickPostPublish()
-    }
-
-    // When the user clicks "Continue" in the publishing flow
-    whenClickContinuePublish(){
-       postPage.clickContinuePublish()
-    }
-
     // When the user clicks "Publish Right Now" to confirm the publication
-    whenclickPostPublishRightNow(){
+    whenclickPostPublishRightNow(screenshotName){
        postPage.clickPostPublishRightNow()
-    }
-
-    whenClickListPost(){
-        postPage.clickListPost()
-    }
-    
-    whenEditPostTitle(){
-        postPage.editPostTitle()
-    }
-
-    whenEditPostContent(){
-        postPage.editPostContent()
     }
 
     whenUpdatePost(){
         postPage.updatePost()
     }
-    whenClickImagePostButton(){
-        postPage.clickAddImagePostButton()
-    }
-    
-    whenClickFirstImage(){
-        postPage.addImageClick()
+
+    whenupdatePostDrop(){
+        postPage.updatePostDrop()
     }
 
-    whenClickBg(){
-        postPage.clickBGModal()
-    }
 
     //---------------------------pages-----------------------------------------------------
 

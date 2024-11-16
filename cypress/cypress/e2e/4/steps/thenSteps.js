@@ -20,7 +20,7 @@ class ThenSteps {
     thenSeeTagPage(){
         tagPage.seeTags();
     }
-
+  //-------------------------------post--------------------------
     thenVerifyPost(){
         postPage.verifyPost();
      }

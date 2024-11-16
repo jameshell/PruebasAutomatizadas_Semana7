@@ -4,7 +4,6 @@ import memberPage from "./pages/memberPage";
 import dashboardPage from "./pages/dashboardPage";
 import GivenSteps from "./steps/givenSteps";
 import WhenSteps from "./steps/whenSteps";
-import thenSteps from "./steps/thenSteps";
 import ThenSteps from "./steps/thenSteps";
 
 describe('Edit Member', () => {
