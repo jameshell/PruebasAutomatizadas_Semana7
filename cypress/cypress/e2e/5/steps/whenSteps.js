@@ -81,6 +81,7 @@ class WhenSteps {
     whenDeleteTagButton(){
         tagPage.deleteTag()
     }
+    
     whenConfirmDelte(){
         tagPage.deleteConfirmClick()
     }
@@ -90,6 +91,10 @@ class WhenSteps {
     }
     whenEditTagDescription(){
         tagPage.fillEditDescriptionTag()
+    }
+
+    whenSeeTagPage(){
+        tagPage.seeTags();
     }
 //---------------------------post-----------------------------------------------------
 

@@ -7,13 +7,13 @@ module.exports = {
       const version = config.env.VERSION || 4;
       const params = {
         4:{
-          'username': 'camis.069@gmail.com', 
-          'password': 'OSO12345678',
+          'username': 'test@test.com', 
+          'password': 'Semeolvido123',
           'url': 'http://localhost:3002/', 
         },
         5:{
-          'username': 'camis.069@gmail.com', 
-          'password': 'OSO*994290',
+          'username': 'test@test.com', 
+          'password': 'Semeolvido123',
           'url': 'http://localhost:3001/', 
         },
       };

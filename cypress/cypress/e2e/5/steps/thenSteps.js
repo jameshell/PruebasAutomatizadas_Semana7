@@ -20,6 +20,12 @@ class ThenSteps {
     thenSeeTagPage(){
         tagPage.seeTags();
     }
+    thenConfirmDelte(){
+        tagPage.deleteConfirmClick()
+    }
+    thenSaveTag(){
+        tagPage.saveTag();
+    }
 
     thenVerifyPost(screenshotName){
         cy.screenshot(`screenshots/posts/${screenshotName}`,{capture: 'viewport', overwrite: true });

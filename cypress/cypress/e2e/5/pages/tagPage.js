@@ -108,7 +108,11 @@ class TagPage{
     fillEditDescriptionTag(){
         this.tagEditDescription.clear().type("Edited Description");
     }
-
+    
+    screenShot(folderName, screenshotName) {
+        const screenshotPath = `screenshots/${folderName}/${screenshotName}`;
+        cy.screenshot(screenshotPath, { overwrite: true });
+    }
 
 }
 
