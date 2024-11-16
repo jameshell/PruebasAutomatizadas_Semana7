@@ -36,9 +36,6 @@ Given("The user clicks on the publish post button", async function () {
     await postPage.ClickPostsBtnPublish(this);
 });
 
-Given("The user clicks on the button continue publishing", async function () {
-    await postPage.ClickPostsBtnContinuePublish(this);
-});
 
 Given('the user clicks on the first post', async function () {
     await postPage.ClickSelectPost(this);
@@ -47,6 +44,10 @@ Given('the user clicks on the first post', async function () {
 
 Given('the user clicks on the first image', async function () {
     await postPage.ClickFirstImage(this);
+});
+
+Given("the user clicks on the updtate post button", async function () {
+    await postPage.ClickPostsBtnUpdate(this);
 });
 
 
@@ -62,7 +63,7 @@ When("User clicks on the publish now button", async function () {
 
 
 When('the user updates the post', async function () {
-    await postPage.ClickUpdatePost(this);
+    await postPage.ClickUpdatePostMenu(this);
 });
 
 When('the user clicks add image', async function () {
