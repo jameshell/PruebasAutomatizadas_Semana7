@@ -3,7 +3,6 @@ Feature: E4_Create full post with image
 @user1 @web
 Scenario:E4_Create full post with image
   Given the user navigates to Ghost at "<GHOST>"
-  And I set the browser window post to 1024x768
   And the user logs in using the credentials "<USERNAME>" and "<PASSWORD>"
   And the user navigates to the post page
   And I save device snapshot in sequential file 'E4' '1'
