@@ -34,6 +34,40 @@ class GivenSteps {
     givenNavigateToPostsPage(){
         DashboardPage.clickPostsLink();
     }
+
+    givenClicksNewMember(){
+        MemberPage.clickNewMember();
+    }
+    givenFillMemberForm(){
+        MemberPage.fillNameInput();
+        MemberPage.fillEmailInput();
+        MemberPage.fillNoteTextArea();
+    }
+
+    givenFillMemberFormInvalid(){
+        MemberPage.fillNameInputInvalid();
+        MemberPage.fillEmailInputInvalid()
+        MemberPage.fillNoteTextAreaInvalid()
+    }
+
+    givenUpdateMemberForm(){
+        MemberPage.updateName();
+        MemberPage.updateEmail();
+        MemberPage.updateNote();
+    }
+
+    givenUpdateMemberFormInvalid(){
+        MemberPage.fillNameInputInvalid();
+        MemberPage.fillEmailInputInvalid()
+        MemberPage.fillNoteTextAreaInvalid()
+    }
+
+    givenClickMemberName(){
+        MemberPage.clickNameMember();
+    }
+
+
+
     //----------------------------------------Post Given----------------------------------
     AndClicksNewPost(){
         postPage.clickNewPost()

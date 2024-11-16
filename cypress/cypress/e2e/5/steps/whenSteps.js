@@ -6,9 +6,6 @@ import postPage from "../pages/postPage";
 import pagesPage from "../pages/pagesPage";
 
 class WhenSteps {
-    whenClicksNewMember(){
-        MemberPage.clickNewMember();
-    }
     
     whenFillNameMember(){
         MemberPage.fillNameInput()

@@ -5,48 +5,63 @@ import dashboardPage from "./pages/dashboardPage";
 import GivenSteps from "./steps/givenSteps";
 import WhenSteps from "./steps/whenSteps";
 import ThenSteps from "./steps/thenSteps";
+import givenSteps from "./steps/givenSteps";
 
 describe('Edit Member', () => {
 
     beforeEach(() => {
-        // Given the User navigates to the login page
-        GivenSteps.givenNavigateToLoginPage();
-        // and enters a valid username and password and click the login button
-        GivenSteps.givenLogin();
-        // and navigates to the Members
-        GivenSteps.givenNavigateToMembersPage();
-        // and a member is already created
-        GivenSteps.givenCreateNewMember()
         
     })
 
     it("E13 - Edit Member with valid values", () => {
+        // Given the User navigates to the login page
+        GivenSteps.givenNavigateToLoginPage();
+        memberPage.screenShot('E13-596','1')
+        // and enters a valid username and password and click the login button
+        GivenSteps.givenLogin();
+       memberPage.screenShot('E13-596','2')
+        // and navigates to the Members
+        GivenSteps.givenNavigateToMembersPage();
+        // and a member is already created
+        GivenSteps.givenCreateNewMember()
+        memberPage.screenShot('E13-596','3')
         // When the user clicks on the Name of the user
-        WhenSteps.whenClickMemberName();
+        givenSteps.givenClickMemberName();
+        memberPage.screenShot('E13-596','4')
         // and updates the name
-        WhenSteps.whenUpdateMemberName()
-        // and updates the email
-        WhenSteps.whenUpdateMemberEmail()
-        // and updates the note
-        WhenSteps.whenUpdateMemberNote()
+        GivenSteps.givenUpdateMemberForm()
+        memberPage.screenShot('E13-596','5')
         // and clicks save
         WhenSteps.whenClickSaveMember()
+        memberPage.screenShot('E13-596','6')
         // Then the user should see hte updated data
         ThenSteps.thenSeeUpdatedMember()
+        memberPage.screenShot('E13-596','7')
         
     })
 
     it("E14 - Edit Member with invalid values", () => {
-        WhenSteps.whenClickMemberName();
-        // and updates the name with an invalid name
-        WhenSteps.whenFillNameInvalidMemberForm()
-        // and updates the email with an invalid email
-        WhenSteps.whenFillEmailInvalidMemberForm()
-        // and updates the note with an invalid note
-        WhenSteps.whenFillNoteInvalid()
+        // Given the User navigates to the login page
+        GivenSteps.givenNavigateToLoginPage();
+        memberPage.screenShot('E14-596','1')
+        // and enters a valid username and password and click the login button
+        GivenSteps.givenLogin();
+       memberPage.screenShot('E14-596','2')
+        // and navigates to the Members
+        GivenSteps.givenNavigateToMembersPage();
+        // and a member is already created
+        GivenSteps.givenCreateNewMember()
+        memberPage.screenShot('E14-596','3')
+        // When the user clicks on the Name of the user
+        GivenSteps.givenClickMemberName();
+        memberPage.screenShot('E14-596','4')
+        // and updates the name, email and note values with invalid values
+        GivenSteps.givenUpdateMemberFormInvalid()
+        memberPage.screenShot('E14-596','6')
         // and clicks save
         WhenSteps.whenClickSaveMember()
         // Then the user should see hte updated data
         ThenSteps.thenSeeInvalidEmailNote()
+        memberPage.screenShot('E14-596','7')
     });
 })

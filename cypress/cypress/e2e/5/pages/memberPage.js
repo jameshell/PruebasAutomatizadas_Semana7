@@ -110,6 +110,11 @@ class MemberPage {
         cy.get('a').contains(this.emailValid2).should('exist')
         cy.get('textarea[name="note"]').should('exist').should('have.value', this.noteValid2);
     }
+
+    screenShot(folderName, screenshotName) {
+        const screenshotPath = `${folderName}/${screenshotName}`;
+        cy.screenshot(screenshotPath, { overwrite: true });
+    }
 }
 
 export default new MemberPage();

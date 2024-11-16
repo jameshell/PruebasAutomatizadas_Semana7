@@ -486,3 +486,4 @@ $RECYCLE.BIN/
 # Config file for Cypress
 cypress/cypress.config.js
 */cypress.config.js
+cypress/cypress/screenshots/*
