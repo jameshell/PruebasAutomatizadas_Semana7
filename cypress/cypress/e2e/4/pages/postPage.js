@@ -153,8 +153,12 @@ class postPage {
         cy.wait(1000);
     }
     
-    AndScreenshot(screenshotName){
-        cy.screenshot(`screenshots/posts/${screenshotName}`,{ overwrite: true });
+
+
+    AndScreenshot(folderName, screenshotName) {
+        cy.wait(1000);
+        const screenshotPath = `screenshots/${folderName}/${screenshotName}`;
+        cy.screenshot(screenshotPath, { overwrite: true });
     }
 }
 export default new postPage();
