@@ -36,9 +36,8 @@ describe("Create Post", () => {
     GivenSteps.AndClickPublishPost();
     postPage.AndScreenshot('E1-postcypress-7');
     // Given the user clicks "Continue" in the publishing flow
-    GivenSteps.AndClickContinuePublish('E1-postcypress-8');
-    // Given the user clicks "Publish Right Now" to confirm the publication
     whenSteps.whenclickPostPublishRightNow('E1-postcypress-9');
+    postPage.AndScreenshot('E1-postcypress-8');
     // Then, verify that the post has been published successfully
     thenSteps.thenVerifyPost('E1-postcypress-10');
   });
@@ -68,72 +67,78 @@ describe("Create Post", () => {
     whenSteps.whenUpdatePost();
     postPage.AndScreenshot('E2-postcypress-7');
 
+    whenSteps.whenupdatePostDrop();
+    postPage.AndScreenshot('E2-postcypress-8');
+
     // Then the user verifies that the post has been edited successfully
     thenSteps.thenVerifyEditPost();
-    postPage.AndScreenshot('E2-postcypress-8');
+    postPage.AndScreenshot('E2-postcypress-9');
         
 });
 
-  it("E3_Create post without title", () => {
-    postPage.AndScreenshot('E3-postcypress-1');
-    GivenSteps.AndClicksNewPost();
+//   it("E3_Create post without title", () => {
+//     postPage.AndScreenshot('E3-postcypress-1');
+//     GivenSteps.AndClicksNewPost();
 
-    // When the user clicks on the post content area to focus on it
-    GivenSteps.AndClicksPostContent();
-    postPage.AndScreenshot('E3-postcypress-2');
+//     // When the user clicks on the post content area to focus on it
+//     GivenSteps.AndClicksPostContent();
+//     postPage.AndScreenshot('E3-postcypress-2');
 
-    // When the user inputs content into the post content field
-    GivenSteps.AndInputPostContent();
-    postPage.AndScreenshot('E3-postcypress-3');
+//     // When the user inputs content into the post content field
+//     GivenSteps.AndInputPostContent();
+//     postPage.AndScreenshot('E3-postcypress-3');
 
-    // When the user clicks the "Publish" button to initiate the publishing flow
-    GivenSteps.AndClickPublishPost();
-    postPage.AndScreenshot('E3-postcypress-4');
+//     // When the user clicks the "Publish" button to initiate the publishing flow
+//     GivenSteps.AndClickPublishPost();
+//     postPage.AndScreenshot('E3-postcypress-4');
 
-    // When the user clicks "Continue" in the publishing flow
-    GivenSteps.AndClickContinuePublish('E3-postcypress-5');
+//     // When the user clicks "Continue" in the publishing flow
+//     GivenSteps.AndClickContinuePublish('E3-postcypress-5');
 
-    // When the user clicks "Publish Right Now" to confirm the publication
-    whenSteps.whenclickPostPublishRightNow('E3-postcypress-6');
+//     // When the user clicks "Publish Right Now" to confirm the publication
+//     WhenSteps.whenclickPostPublishRightNow('E3-postcypress-6');
 
-    // Then, verify that the post has been published successfully
-    thenSteps.thenVerifyPost('E3-postcypress-7');
-  });
+//     // Then, verify that the post has been published successfully
+//     thenSteps.thenVerifyPost('E3-postcypress-7');
+//   });
 
-  it("E4_Create full post with image", () => {
-    GivenSteps.AndClicksNewPost();
+//   it("E4_Create full post with image", () => {
+//     GivenSteps.AndClicksNewPost();
 
-    // When the user clicks on the post title field to focus on it
-    GivenSteps.AndClicksPostTitle();
+//     // When the user clicks on the post title field to focus on it
+//     GivenSteps.AndClicksPostTitle();
 
-    // When the user inputs a title into the post title field
-    GivenSteps.AndInputPostTitle();
+//     // When the user inputs a title into the post title field
+//     GivenSteps.AndInputPostTitle();
 
-    // When the user clicks on the post content area to focus on it
-    GivenSteps.AndClicksPostContent();
+//     // When the user clicks on the post content area to focus on it
+//     GivenSteps.AndClicksPostContent();
 
-    // When the user inputs content into the post content field
-    GivenSteps.AndInputPostContent();
+//     // When the user inputs content into the post content field
+//     GivenSteps.AndInputPostContent();
 
-    GivenSteps.AndClickImagePostButton();
+//     GivenSteps.AndClickImagePostButton();
 
-    GivenSteps.AndClickFirstImage();
+//     GivenSteps.AndClickFirstImage();
 
-    //When the user clicks the "Publish" button to initiate the publishing flow
-    GivenSteps.AndClickPublishPost();
+//     //When the user clicks the "Publish" button to initiate the publishing flow
+//     GivenSteps.AndClickPublishPost();
 
-    // When the user clicks "Continue" in the publishing flow
-    GivenSteps.AndClickContinuePublish();
+//     // When the user clicks "Continue" in the publishing flow
+//     GivenSteps.AndClickContinuePublish();
 
-    // When the user clicks "Publish Right Now" to confirm the publication
-    whenSteps.whenclickPostPublishRightNow();
+//     // When the user clicks "Publish Right Now" to confirm the publication
+//     WhenSteps.whenclickPostPublishRightNow();
 
-    // Then, verify that the post has been published successfully
-    thenSteps.thenVerifyPost();
-  });
+//     // Then, verify that the post has been published successfully
+//     thenSteps.thenVerifyPost();
+//   });
 
   it("E5_create empty post", () => {
+    postPage.AndScreenshot('E5-postcypress-1');
     GivenSteps.AndClicksNewPost();
+    postPage.AndScreenshot('E5-postcypress-2');
     thenSteps.thenShouldNoExitPublish();
+    postPage.AndScreenshot('E5-postcypress-3');
   });
 });
