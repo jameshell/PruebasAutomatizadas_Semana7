@@ -21,7 +21,7 @@ class TagPage{
     }
 
     get saveTagButtom(){
-        return cy.get('[data-test-button="save"]');
+        return cy.get('span:contains("Save")');
     }
 
     get returnTags(){
@@ -44,11 +44,11 @@ class TagPage{
     }
 
     get deleteTagButtom(){
-        return cy.get('[data-test-button="delete-tag"]');
+        return cy.get('span:contains("Delete tag")');
     }
 
     get confirmDelete(){
-        return cy.get('[data-test-button="confirm"]');
+        return cy.get('span:contains("Delete")');
     }
 
     get tagEditNameInput(){
@@ -66,11 +66,11 @@ class TagPage{
     }
 
     fillNameTag(){
-        this.tagNameInput.clear().type(this.nameTagValid);
+        this.tagNameInput.type(this.nameTagValid);
     }
 
     fillDescriptionTag(){
-        this.tagDescription.clear().type(this.descriptiionTag);
+        this.tagDescription.type(this.descriptiionTag);
     }
 
     saveTag(){
@@ -102,11 +102,17 @@ class TagPage{
         cy.wait(1000);
     }
     fillEditNameTag(){
-        this.tagEditNameInput.clear().type("Edited tag");
+        this.tagEditNameInput
+        .clear({ force: true })
+        .should('have.value', '')
+        .type("Edited tag", { force: true });
     }
 
     fillEditDescriptionTag(){
-        this.tagEditDescription.clear().type("Edited Description");
+        this.tagEditDescription
+        .clear({ force: true })
+        .should('have.value', '')
+        .type("Edited Description", { force: true });
     }
     
     screenShot(folderName, screenshotName) {

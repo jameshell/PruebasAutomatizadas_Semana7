@@ -21,31 +21,31 @@ describe("Create Tags", () => {
 it("E6 - Create tag with valid values ", () => {
     //enters a valid username and password and click the login button
     GivenSteps.givenLogin();
-    tagPage.screenShot('E6-596','1')
+    tagPage.screenShot('E6-45','1')
 
     //navigates to the Tags
     GivenSteps.givenNavigateToTagPage();
-    tagPage.screenShot("E6-596","2");
+    tagPage.screenShot("E6-45","2");
 
     //  When the user clicks on New tag
     WhenSteps.whenClickTagNewTag();
-    tagPage.screenShot("E6-596","3");
+    tagPage.screenShot("E6-45","3");
 
     // and fills the name tag input
     WhenSteps.whenFillNameTag();
-    tagPage.screenShot("E6-596","4");
+    tagPage.screenShot("E6-45","4");
 
     // and fill the description tag input
     WhenSteps.whenFillDescriptionTag();
-    tagPage.screenShot("E6-596","5");
+    tagPage.screenShot("E6-45","5");
 
     // and save the tag
     WhenSteps.whenSaveTag();
-    tagPage.screenShot("E6-596","6");
+    tagPage.screenShot("E6-45","6");
 
     // then see the page with created tag
     ThenSteps.thenSeeTagPage();
-    tagPage.screenShot("E6-596","7");
+    tagPage.screenShot("E6-45","7");
     
 });
 

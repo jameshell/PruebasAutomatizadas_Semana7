@@ -81,6 +81,7 @@ class WhenSteps {
     whenDeleteTagButton(){
         tagPage.deleteTag()
     }
+    
     whenConfirmDelte(){
         tagPage.deleteConfirmClick()
     }
@@ -91,19 +92,20 @@ class WhenSteps {
     whenEditTagDescription(){
         tagPage.fillEditDescriptionTag()
     }
+
+    whenSeeTagPage(){
+        tagPage.seeTags();
+    }
 //---------------------------post-----------------------------------------------------
 
     // When the user clicks "Publish Right Now" to confirm the publication
     whenclickPostPublishRightNow(screenshotName){
+       cy.screenshot(`screenshots/posts/${screenshotName}`,{capture: 'viewport', overwrite: true });
        postPage.clickPostPublishRightNow()
     }
 
     whenUpdatePost(){
         postPage.updatePost()
-    }
-
-    whenupdatePostDrop(){
-        postPage.updatePostDrop()
     }
 
 
