@@ -492,3 +492,7 @@ kraken/reports/*
 
 kraken-ghost-base/screenshots/*
 kraken-ghost-base/reports/*
+
+resemble-kraken/diff-images/*/*.png
+
+resemble-kraken/reports/*.html
