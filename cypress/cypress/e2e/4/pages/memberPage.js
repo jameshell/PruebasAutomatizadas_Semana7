@@ -20,11 +20,11 @@ class MemberPage {
     }
 
     get memberNameInput() {
-        return cy.get('input[name="name"]');
+        return cy.get('input#member-name');
     }
 
     get memberEmailInput() {
-        return cy.get('input[name="email"]');
+        return cy.get('input#member-email');
     }
 
     get saveButton() {
@@ -32,7 +32,7 @@ class MemberPage {
     }
     
     get memberNoteTextArea(){
-        return cy.get('textarea[name="note"]');
+        return cy.get('textarea#member-note');
     }
     
     get memberName(){
@@ -40,32 +40,31 @@ class MemberPage {
     }
 
     clickNewMember() {
-        cy.wait(1000);
         this.newMemberButton.click();
     }
     
     fillNameInput() {
-        this.memberNameInput.clear().type(this.displayNameValid);
+        this.memberNameInput.clear().type(this.displayNameValid,{ force: true });
     }
     
     fillEmailInput() {
-        this.memberEmailInput.clear().type(this.emailValid);
+        this.memberEmailInput.clear().type(this.emailValid,{ force: true });
     }
     
     fillNoteTextArea() {
-        this.memberNoteTextArea.clear().type(this.noteValid);
+        this.memberNoteTextArea.clear().type(this.noteValid,{ force: true });
     }
 
     fillNameInputInvalid() {
-        this.memberNameInput.clear().type(this.displayNameInvalid);
+        this.memberNameInput.clear().type(this.displayNameInvalid,{ force: true });
     }
 
     fillEmailInputInvalid() {
-        this.memberEmailInput.clear().type(this.emailInvalid);
+        this.memberEmailInput.clear().type(this.emailInvalid,{ force: true });
     }
 
     fillNoteTextAreaInvalid() {
-        this.memberNoteTextArea.clear().type(this.noteInvalid);
+        this.memberNoteTextArea.clear().type(this.noteInvalid,{ force: true });
     }
     
     seeEmailRequired(){
@@ -94,21 +93,25 @@ class MemberPage {
     }
     
     updateEmail(){
-        this.memberNameInput.clear().type(this.displayNameValid2);
+        this.memberNameInput.clear().type(this.displayNameValid2,{ force: true });
     }
     
     updateName(){
-        this.memberEmailInput.clear().type(this.emailValid2);
+        this.memberEmailInput.clear().type(this.emailValid2,{ force: true });
     }
     
     updateNote(){
-        this.memberNoteTextArea.clear().type(this.noteValid2);
+        this.memberNoteTextArea.clear().type(this.noteValid2,{ force: true });
     }
 
     seeUpdatedMember() {
         cy.get('h3').contains(this.displayNameValid2).should('exist')
         cy.get('a').contains(this.emailValid2).should('exist')
         cy.get('textarea[name="note"]').should('exist').should('have.value', this.noteValid2);
+    }
+    screenShot(folderName, screenshotName) {
+        const screenshotPath = `${folderName}/${screenshotName}`;
+        cy.screenshot(screenshotPath, { overwrite: true });
     }
 }
 

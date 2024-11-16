@@ -116,7 +116,7 @@ class TagPage{
     }
     
     screenShot(folderName, screenshotName) {
-        const screenshotPath = `screenshots/${folderName}/${screenshotName}`;
+        const screenshotPath = `${folderName}/${screenshotName}`;
         cy.screenshot(screenshotPath, { overwrite: true });
     }
 
