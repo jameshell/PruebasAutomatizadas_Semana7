@@ -78,10 +78,9 @@ class postPage {
     }
 
     clickContinuePublish(screenshotName) {
-        //cy.wait(1000);
-        cy.screenshot(`${screenshotName}_step04`);
+        cy.wait(1000);
         this.postContinuePublish.click();
-        cy.screenshot(`${screenshotName}_step04`);
+
     }
 
     clickPostPublishRightNow() {
@@ -146,8 +145,11 @@ class postPage {
         cy.wait(1000);
     }
     
-    AndScreenshot(screenshotName){
-        cy.screenshot(`screenshots/posts/${screenshotName}`,{ overwrite: true });
+    AndScreenshot(folderName, screenshotName) {
+        cy.wait(1000);
+        const screenshotPath = `screenshots/${folderName}/${screenshotName}`;
+        cy.screenshot(screenshotPath, { overwrite: true });
     }
+
 }
 export default new postPage();
