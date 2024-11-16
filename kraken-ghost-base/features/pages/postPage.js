@@ -33,7 +33,7 @@ function generateRandomParagraph(sentenceCount) {
 class postPage{
 
     async navigateNewPosts(ctx){
-        const newPostButton = await ctx.driver.$('a[href="#/editor/post/"]');
+        const newPostButton = await ctx.driver.$('[class="ember-view gh-btn gh-btn-primary view-actions-top-row"]');
         await newPostButton.waitForExist({ timeout: 1000 });
         await newPostButton.click();
 
@@ -50,52 +50,54 @@ class postPage{
     }
 
     async ClickPostsTitle(ctx){
-        const newPostButton = await ctx.driver.$('textarea[placeholder="Post title"]');
-        await newPostButton.waitForExist({ timeout: 500 });
-        await newPostButton.click()
+        const title = await ctx.driver.$('.gh-editor-title');
+        await title.waitForExist({ timeout: 500 });
+        await title.click()
     }
 
     async fillPostTitle(ctx){
-        await ctx.driver.$('textarea[placeholder="Post title"]').setValue(generateRandomTitle(5));
+        await ctx.driver.$('.gh-editor-title').setValue(generateRandomTitle(5));
     }
 
     async ClickPostsContent(ctx){
-        const newPostButton = await ctx.driver.$('div[class="kg-prose"]');
-        await newPostButton.waitForExist({ timeout: 1000 });
-        await newPostButton.click()
+        const content= await ctx.driver.$('.koenig-editor__editor');
+        await content.waitForExist({ timeout: 1000 });
+        await content.click()
     }
 
     async fillPostContent(ctx){
-        await ctx.driver.$('div[class="kg-prose"]').setValue(generateRandomParagraph(3));
+        await ctx.driver.$('.koenig-editor__editor').setValue(generateRandomParagraph(3));
     }
 
     async ClickPostsBtnPublish(ctx){
-        const newPostButton = await ctx.driver.$('[data-test-button="publish-flow"]');
+        const newPostButton = await ctx.driver.$('.ember-basic-dropdown-trigger');
         await newPostButton.waitForExist({ timeout: 500 });
         await newPostButton.click()
     }
 
-    async ClickPostsBtnContinuePublish(ctx){
-        const newPostButton = await ctx.driver.$('[data-test-button="continue"]');
-        await newPostButton.waitForExist({ timeout: 500 });
-        await newPostButton.click()
-    }
 
     async ClickPostPublishRightNow(ctx){
-        const newPostButton = await ctx.driver.$('[data-test-button="confirm-publish"]');
+        const newPostButton = await ctx.driver.$('.gh-btn.gh-btn-black.gh-publishmenu-button.gh-btn-icon');
+        await newPostButton.waitForExist({ timeout: 500 });
+        await newPostButton.click()
+    }
+
+
+    async ClickPostsBtnUpdate(ctx){
+        const newPostButton = await ctx.driver.$('.ember-basic-dropdown-trigger');
         await newPostButton.waitForExist({ timeout: 500 });
         await newPostButton.click()
     }
 
     async isConfirmationModalVisible(ctx) {
-        const modal = await ctx.driver.$('div.modal-content[data-test-publish-flow="complete"]');
+        const modal = await ctx.driver.$('span.gh-notification-actions');
         return await modal.isDisplayed();
     }
 
     async isConfirmationMessageVisible(ctx) {
-        const confirmationText = await ctx.driver.$('h1[data-test-complete-title] span');
+        const confirmationText = await ctx.driver.$('span.gh-notification-actions');
         const text = await confirmationText.getText();
-        return text.includes("Boom! It's out there.");
+        return text.includes('View Post');
     }
 
     async ClickSelectPost(ctx){
@@ -105,14 +107,14 @@ class postPage{
     }
 
 
-    async ClickUpdatePost(ctx){
-        const newPostButton = await ctx.driver.$('[data-test-task-button-state="idle"]');
+    async ClickUpdatePostMenu(ctx){
+        const newPostButton = await ctx.driver.$('.gh-btn.gh-btn-black.gh-publishmenu-button.gh-btn-icon');
         await newPostButton.waitForExist({ timeout: 1000 });
         await newPostButton.click()
     }
 
     async isNotificationVisible(ctx) {
-        const notification = await ctx.driver.$('aside.gh-notifications article.gh-notification');
+        const notification = await ctx.driver.$('div.gh-notification-content');
         return await notification.isDisplayed();
     }
 
@@ -136,7 +138,7 @@ class postPage{
 
     async isButtonNotVisible(ctx) {
         try {
-            const button = await ctx.driver.$('[data-test-button="publish-flow"]');
+            const button = await ctx.driver.$('.gh-btn.gh-btn-black.gh-publishmenu-button.gh-btn-icon');
             const isVisible = await button.isDisplayed();
             return !isVisible; 
 
