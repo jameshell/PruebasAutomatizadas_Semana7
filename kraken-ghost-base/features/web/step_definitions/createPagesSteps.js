@@ -2,6 +2,7 @@ const { Given, When, Then } = require('@cucumber/cucumber');
 const DashboardPage = require('../../pages/dashboardPage');
 const PagesPage = require('../../pages/pagesPage');
 const assert = require('assert');
+const postPage = require("../../pages/postPage");
 
 
 
@@ -25,4 +26,9 @@ When("The user clicks on the button continue publishing Page", async function ()
 Then('the user should see the created page title {kraken-string}', async function (title) {
     const renderedTitle = await this.driver.$(`h2=${title}`).getText();
     return assert.equal(renderedTitle, title);
+});
+
+Then('the confirmation message should appear', async function () {
+    const isMessageVisible = await PagesPage.isConfirmationMessageVisible(this);
+    assert.equal(isMessageVisible, true, "The confirmation message did not appear.")
 });

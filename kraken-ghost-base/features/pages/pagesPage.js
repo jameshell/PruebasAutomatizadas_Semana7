@@ -42,6 +42,12 @@ class PagesPage {
         await context.driver.$('div[class="kg-prose"]').setValue(newContent);
     }
 
+    async isConfirmationMessageVisible(ctx) {
+        const confirmationText = await ctx.driver.$('span.gh-notification-actions');
+        const text = await confirmationText.getText();
+        return text.includes('View Page');
+    }
+
 }
 
 module.exports = new PagesPage();

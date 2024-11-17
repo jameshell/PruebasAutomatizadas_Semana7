@@ -1,10 +1,14 @@
 class PagesPage {
     get newPageBtn() {
-        return cy.get('[data-test-new-page-button]');
+        return cy.get('[class="ember-view gh-btn gh-btn-primary view-actions-top-row"]');
     }
 
     get publishBtn() {
-        return cy.contains('button', 'Publish')
+        return cy.get('.ember-basic-dropdown-trigger').first();
+    }
+
+    get notificationShould() {
+        return cy.get('span.gh-notification-actions').first();
     }
 
     get addImageBtn() {
@@ -16,27 +20,31 @@ class PagesPage {
     }
 
     get confirmPublishBtn() {
-        return cy.get('[data-test-button="confirm-publish"]');
+        return cy.get('span:contains("Publish")').first();
     }
 
-    get finalReviewBtn() {
-        return cy.get('[data-test-button="continue"]');
-    }
+    // get finalReviewBtn() {
+    //     return cy.get('span:contains("Delete tag")');
+    // }
 
     get updateBtn() {
         return cy.get('div.gh-posts-list-item-group').first();
     }
 
     get pageDescription() {
-        return cy.get('div.kg-prose').first();
+        return cy.get('.koenig-editor__editor').first();
     }
 
     get pageHeader() {
-        return cy.get('textarea[placeholder="Page title"]');
+        return cy.get('.gh-editor-title');
     }
 
     get updateButton() {
         return cy.get('button[data-test-button="publish-save"]').first();
+    }
+
+    verifyNotificationExists() {
+        this.notificationShould.should('be.visible');
     }
 
     fillPageDescription(description) {
@@ -80,9 +88,9 @@ class PagesPage {
         this.updateButton.click();
     }
 
-    finalReviewButton_Click() {
-        this.finalReviewBtn.click();
-    }
+    // finalReviewButton_Click() {
+    //     this.finalReviewBtn.click();
+    // }
 
     confirmPublishButton_Click() {
         this.confirmPublishBtn.click();
@@ -121,6 +129,12 @@ class PagesPage {
         this.finalReviewButton_Click();
         this.confirmPublishButton_Click();
         cy.wait(1000);
+    }
+
+    AndScreenshot(folderName, screenshotName) {
+        cy.wait(1000);
+        const screenshotPath = `screenshots/${folderName}/${screenshotName}`;
+        cy.screenshot(screenshotPath, { overwrite: true });
     }
 }
 

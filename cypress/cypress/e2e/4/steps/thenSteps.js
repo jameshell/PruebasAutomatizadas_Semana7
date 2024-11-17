@@ -60,6 +60,10 @@ class ThenSteps {
     thenIsModalHeaderCorrect_Untitled(){
         pagesPage.isModalHeaderCorrect_Untitled();
     }
+
+    thenVerifyNotificationExists(){
+        pagesPage.verifyNotificationExists();
+    }
 }
 
 export default new ThenSteps();

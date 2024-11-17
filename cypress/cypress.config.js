@@ -7,9 +7,9 @@ module.exports = {
       const version = config.env.VERSION || 4;
       const params = {
         4:{
-          'username': 'camis.069@gmail.com',
-          'password': 'OSO12345678',
-          'url': 'http://localhost:3002/', 
+          'username': 'jaimea111@gmail.com',
+          'password': 'Warframe1993.',
+          'url': 'http://localhost:3003/',
         },
         5:{
           'username': 'test@test.com', 
