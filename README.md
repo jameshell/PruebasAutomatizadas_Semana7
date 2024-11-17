@@ -193,7 +193,6 @@ const params = {
 Para poder ejecutar las pruebas VRT en Resemble debe seguir los siguientes pasos
 
 - Instalar node.
-- Ir al directorio/carpeta ```./resemble-kraken```
 - Instalar las siguientes librerias dependeiendo del OS
   
   MacOS
