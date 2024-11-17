@@ -45,7 +45,7 @@ En este caso debemos hacer uso del directorio/carpeta del repositorio ```./krake
 ```
 - Dado que el proyecto esta listo de forma local, ir en la terminal a la carpeta kraken del repositorio y poner el siguiente comando: ```npm install```
 - Modifica archivo **properties.json** que se encuentra en la carpeta Kraken del repo, los datos a cambiar son los siguientes:
-  
+  ```
     "GHOST": "http://localhost:3001/ghost/#/signin" - DEPENDE DONDE SE ESTE CORRIENDO GHOST EN SU MAQUINA LOCAL
   
     "USERNAME": "USUARIO@USUARIO.com" -EL USUARIO QUE SE HAYA CONFIGURADO PREVIAMENTE EN GHOST
@@ -78,13 +78,13 @@ En este caso debemos hacer uso del directorio/carpeta del repositorio ```./cypre
 const params = {
 
         4:{
-          'username': 'USUARIO@USUARIO.com',          
-          'password': 'XXXXXXXXXX',          
-          'url': 'http://localhost:3002/',  /// Depende del puerto configurado para la version que necesite        
+          'username': 'USUARIO@USUARIO.com', /// EL USUARIO QUE SE HAYA CONFIGURADO PREVIAMENTE EN GHOST        
+          'password': 'XXXXXXXXXX',         /// EL USUARIO QUE SE HAYA CONFIGURADO PREVIAMENTE EN GHOST
+          'url': 'http://localhost:3002/', /// Depende del puerto configurado para la version que necesite        
         },
         5:{
-          'username': 'test@test.com',  
-          'password': 'XXXXXXXXXX',
+          'username': 'test@test.com',       /// EL USUARIO QUE SE HAYA CONFIGURADO PREVIAMENTE EN GHOST
+          'password': 'XXXXXXXXXX',         /// EL USUARIO QUE SE HAYA CONFIGURADO PREVIAMENTE EN GHOST
           'url': 'http://localhost:3001/', /// Depende del puerto configurado para la version que necesite 
         },
 
@@ -133,7 +133,7 @@ En este caso debemos hacer uso del directorio/carpeta del repositorio ```./krake
 
 - Dado que el proyecto esta listo de forma local, ir en la terminal a la carpeta kraken del repositorio y poner el siguiente comando: **npm install**
 - Modifica archivo **properties.json** que se encuentra en la carpeta Kraken del repo, los datos a cambiar son los siguientes:
-  
+  ```
     "GHOST": "http://localhost:3002/ghost/#/signin" - DEPENDE DONDE SE ESTE CORRIENDO GHOST EN SU MAQUINA LOCAL
   
     "USERNAME": "USUARIO@USUARIO.com" -EL USUARIO QUE SE HAYA CONFIGURADO PREVIAMENTE EN GHOST
@@ -165,13 +165,13 @@ En este caso debemos hacer uso del directorio/carpeta del repositorio ```./krake
 const params = {
 
         4:{
-          'username': 'USUARIO@USUARIO.com',          
-          'password': 'XXXXXXXXXX',          
+          'username': 'USUARIO@USUARIO.com',  /// EL USUARIO QUE SE HAYA CONFIGURADO PREVIAMENTE EN GHOST         
+          'password': 'XXXXXXXXXX',          /// EL USUARIO QUE SE HAYA CONFIGURADO PREVIAMENTE EN GHOST 
           'url': 'http://localhost:3002/',  /// Depende del puerto configurado para la version que necesite       
         },
         5:{
-          'username': 'test@test.com',  
-          'password': 'XXXXXXXXXX',
+          'username': 'test@test.com',       /// EL USUARIO QUE SE HAYA CONFIGURADO PREVIAMENTE EN GHOST 
+          'password': 'XXXXXXXXXX',         /// EL USUARIO QUE SE HAYA CONFIGURADO PREVIAMENTE EN GHOST   
           'url': 'http://localhost:3001/', /// Depende del puerto configurado para la version que necesite 
         },
 
@@ -186,4 +186,31 @@ const params = {
 - Ir a pruebubas E2E
 - Correr las pruebas que se encuentran en la interfaz
 - Opcion se pudede correr desde la terminal con ```npx cypress run --env VERSION=4```
+
+
+## Paso a paso para instalacion de Resemble js
+
+Para poder ejecutar las pruebas VRT en Resemble debe seguir los siguientes pasos
+
+- Instalar node.
+- Ir al directorio/carpeta ```./resemble-kraken```
+- Instalar las siguientes librerias dependeiendo del OS
+  
+  MacOS
+
+  ```brew install pkg-config cairo pango libpng jpeg giflib librsvg```
+
+  Linux
+
+  ```sudo apt-get install libcairo2-dev libjpeg-dev libpango1.0-dev libgif-dev build-essential g++```
+
+  Windows
+
+  ```npm install -g windows-build-tools```
+  
+
+- Ir al directorio/carpeta ```./resemble-kraken```
+- Usar el comando ```npm install```
+- Ejecutar node ```index.js```  del directorio ```./resemble-kraken```
+
 
