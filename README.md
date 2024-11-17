@@ -207,9 +207,26 @@ Para poder ejecutar las pruebas VRT en Resemble debe seguir los siguientes pasos
 
   ```npm install -g windows-build-tools```
   
+### Ejecutar test VRT con Resemble
 
 - Ir al directorio/carpeta ```./resemble-kraken```
 - Usar el comando ```npm install```
-- Ejecutar node ```index.js```  del directorio ```./resemble-kraken```
+- Ejecutar ```node index.js```  del directorio ```./resemble-kraken```
+- Para ver el reporte de cada un de los test ir a ```./resemble-kraken/reports```
+- Los reportes tienen el nombre ```comparision-report-E*.html```
+
+## Paso a paso para instalacion de Pixelmatch
+
+Para poder ejecutar las pruebas VRT en Pixelmatch debe seguir los siguientes pasos
+
+- Instalar node.
+  
+### Ejecutar test VRT con Resemble
+
+- Ir al directorio/carpeta ```./cypress-pixelmatch```
+- Usar el comando ```npm install```
+- Ejecutar ```node index.js```  del directorio ```./resemble-kraken```
+- Para ver el reporte de cada un de los test ir a ```./cypress-pixelmatch/reports```
+- Los reportes tienen el nombre ```comparision-report-E*.html```
 
 
