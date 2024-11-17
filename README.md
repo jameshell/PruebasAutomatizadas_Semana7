@@ -221,7 +221,7 @@ Para poder ejecutar las pruebas VRT en Pixelmatch debe seguir los siguientes pas
 
 - Instalar node.
   
-### Ejecutar test VRT con Resemble
+### Ejecutar test VRT con Pixelmatch
 
 - Ir al directorio/carpeta ```./cypress-pixelmatch```
 - Usar el comando ```npm install```
