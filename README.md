@@ -215,6 +215,8 @@ Para poder ejecutar las pruebas VRT en Resemble debe seguir los siguientes pasos
 - Para ver el reporte de cada un de los test ir a ```./resemble-kraken/reports```
 - Los reportes tienen el nombre ```comparision-report-E*.html```
 
+El ```*```hace referencia al numero del escenario de prueba
+   
 ## Paso a paso para instalacion de Pixelmatch
 
 Para poder ejecutar las pruebas VRT en Pixelmatch debe seguir los siguientes pasos
@@ -229,4 +231,5 @@ Para poder ejecutar las pruebas VRT en Pixelmatch debe seguir los siguientes pas
 - Para ver el reporte de cada un de los test ir a ```./cypress-pixelmatch/reports```
 - Los reportes tienen el nombre ```comparision-report-E*.html```
 
+El ```*```hace referencia al numero del escenario de prueba
 
