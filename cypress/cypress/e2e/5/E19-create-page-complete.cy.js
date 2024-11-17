@@ -13,6 +13,12 @@ describe("Pages - Create a complete valid Page", () => {
         GivenSteps.givenLogin();
         // and navigates to the Pages
         GivenSteps.giveNavigateToPagesPage();
+
+        Cypress.Screenshot.defaults({
+            disableTimersAndAnimations: false,
+        })
+
+        pagesPage.AndScreenshot('E19-596','1');
     });
 
     it('E19 - Should create a new page successfully with a random description', () => {
@@ -23,26 +29,32 @@ describe("Pages - Create a complete valid Page", () => {
         // Clicks on new page
         // pagesPage.newPageBtn_Click();
         WhenSteps.WhenNewPageBtn_Click();
+        pagesPage.AndScreenshot('E19-596','2');
 
         // Fill in the page with a randon title
         // pagesPage.fillPageHeader(randomPageTitle);
         WhenSteps.WhenFillPageHeader(randomPageTitle);
+        pagesPage.AndScreenshot('E19-596','3');
 
         // Fill in the page with random description
         // pagesPage.fillPageDescription(randomPageDescription);
         WhenSteps.WhenFillPageDescription(randomPageDescription);
+        pagesPage.AndScreenshot('E19-596','4');
 
         // Add a random image 1st step
         // pagesPage.addImgBtn_Click();
         WhenSteps.WhenClickAddImgBtn();
+        pagesPage.AndScreenshot('E19-596','5');
 
         // A a random img 2nd step
         // pagesPage.addImageBtn_FirstPic_Click();
         WhenSteps.WhenClickAddImageBtn_FirstPic()
+        pagesPage.AndScreenshot('E19-596','6');
 
         // Publish intent page
         // pagesPage.publishButton_Click();
         WhenSteps.WhenClickPublishButton();
+        pagesPage.AndScreenshot('E19-596','7');
 
         // Continue Final Review
         // pagesPage.finalReviewButton_Click();
@@ -65,5 +77,6 @@ describe("Pages - Create a complete valid Page", () => {
         // Verify the post title and excerpt
         // pagesPage.isModalDescriptionCorrect(randomPageDescription);
         ThenSteps.thenIsModalDescriptionCorrect(randomPageDescription);
+        pagesPage.AndScreenshot('E19-596','8');
     });
 });

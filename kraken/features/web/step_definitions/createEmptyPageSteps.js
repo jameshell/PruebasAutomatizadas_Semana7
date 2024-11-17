@@ -7,6 +7,4 @@ const assert = require('assert');
 
 // When
 
-
-
 // Then

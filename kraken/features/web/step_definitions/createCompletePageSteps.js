@@ -9,7 +9,6 @@ Given('the user navigates to the pages page', async function () {
 });
 
 // When
-
 When('the user fills the content {kraken-string}', async function (content) {
     await PagesPage.fillContent(this, content);
 });

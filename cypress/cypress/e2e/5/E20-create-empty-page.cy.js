@@ -14,6 +14,12 @@ describe("Pages - Create Empty Page", () => {
         GivenSteps.givenLogin();
         // and navigates to the Pages
         GivenSteps.giveNavigateToPagesPage();
+
+        Cypress.Screenshot.defaults({
+            disableTimersAndAnimations: false,
+        });
+
+        pagesPage.AndScreenshot('E20-596','1');
     });
 
     it('E20 - Should create a new page successfully with a random description', () => {
@@ -23,6 +29,7 @@ describe("Pages - Create Empty Page", () => {
         // Clicks on new page
         // pagesPage.newPageBtn_Click();
         WhenSteps.WhenNewPageBtn_Click();
+        pagesPage.AndScreenshot('E20-596','2');
 
         // Then
         // Publish intent page

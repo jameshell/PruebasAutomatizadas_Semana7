@@ -14,6 +14,12 @@ describe("Pages - Create Page With Only Description", () => {
         GivenSteps.givenLogin();
         // and navigates to the Pages
         GivenSteps.giveNavigateToPagesPage();
+
+        Cypress.Screenshot.defaults({
+            disableTimersAndAnimations: false,
+        });
+
+        pagesPage.AndScreenshot('E18-596','1');
     });
 
     it('E18 - Should create a new page successfully with a random description', () => {
@@ -23,22 +29,26 @@ describe("Pages - Create Page With Only Description", () => {
         // Clicks on new page
         // pagesPage.newPageBtn_Click();
         WhenSteps.WhenNewPageBtn_Click();
+        pagesPage.AndScreenshot('E18-596','2');
 
         // Fill in the page with random description
         // pagesPage.fillPageDescription(randomPageDescription)
         WhenSteps.WhenFillPageDescription(randomPageDescription);
+        pagesPage.AndScreenshot('E18-596','3');
 
         // Publish intent page
         // pagesPage.publishButton_Click();
         WhenSteps.WhenClickPublishButton();
+        pagesPage.AndScreenshot('E18-596','4');
 
         // Continue Final Review
         // pagesPage.finalReviewButton_Click();
-        WhenSteps.WhenClickFinalReviewButton()
+        WhenSteps.WhenClickFinalReviewButton();
 
         // Publish page now
         // pagesPage.confirmPublishButton_Click();
         WhenSteps.WhenClickConfirmPublishButton();
+        pagesPage.AndScreenshot('E18-596','5');
 
         // Then
         // Verify the modal appears
@@ -47,7 +57,8 @@ describe("Pages - Create Page With Only Description", () => {
 
         // Verify the modal header text
         // pagesPage.isModalHeaderCorrect_Untitled();
-        ThenSteps.thenIsModalHeaderCorrect_Untitled()
+        ThenSteps.thenIsModalHeaderCorrect_Untitled();
+        pagesPage.AndScreenshot('E18-596','6');
 
         // Verify the post title and excerpt
         // pagesPage.isModalDescriptionCorrect(randomPageDescription);

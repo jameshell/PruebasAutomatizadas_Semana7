@@ -6,8 +6,6 @@ const assert = require('assert');
 
 
 // When
-
-
 When('the user updates the title to {kraken-string}', async function (newTitle) {
     await PagesPage.updateTitle(this, newTitle);
 });

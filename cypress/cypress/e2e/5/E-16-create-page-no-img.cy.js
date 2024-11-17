@@ -13,6 +13,12 @@ describe("Pages - Create Page without img", () => {
         GivenSteps.givenLogin();
         // and navigates to the Pages
         GivenSteps.giveNavigateToPagesPage();
+
+        Cypress.Screenshot.defaults({
+            disableTimersAndAnimations: false,
+        });
+
+        pagesPage.AndScreenshot('E16-596','1');
     });
 
     it('E16 - Should create a new page successfully with a random title and description', () => {
@@ -23,18 +29,22 @@ describe("Pages - Create Page without img", () => {
         // Clicks on new page
         // pagesPage.newPageBtn_Click();
         WhenSteps.WhenNewPageBtn_Click();
+        pagesPage.AndScreenshot('E16-596','2');
 
         // Fill in the page with a randon title
         // pagesPage.fillPageHeader(randomPageTitle);
         WhenSteps.WhenFillPageHeader(randomPageTitle);
+        pagesPage.AndScreenshot('E16-596','3');
 
         // Fill in the page with random description
         // pagesPage.fillPageDescription(randomPageDescription);
         WhenSteps.WhenFillPageDescription(randomPageDescription);
+        pagesPage.AndScreenshot('E16-596','4');
 
         // Publish intent page
         // pagesPage.publishButton_Click();
         WhenSteps.WhenClickPublishButton();
+        pagesPage.AndScreenshot('E16-596','5');
 
         // Continue Final Review
         // pagesPage.finalReviewButton_Click();
@@ -43,6 +53,7 @@ describe("Pages - Create Page without img", () => {
         // Publish page now
         // pagesPage.confirmPublishButton_Click();
         WhenSteps.WhenClickConfirmPublishButton();
+        pagesPage.AndScreenshot('E16-596','6');
 
         // Then
         // Verify the modal appears
@@ -52,6 +63,7 @@ describe("Pages - Create Page without img", () => {
         // Verify the modal header text
         // pagesPage.isModalHeaderCorrect(randomPageTitle);
         ThenSteps.thenIsModalHeaderCorrect(randomPageTitle);
+        pagesPage.AndScreenshot('E16-596','7');
 
         // Verify the post title and excerpt
         // pagesPage.isModalDescriptionCorrect(randomPageDescription);

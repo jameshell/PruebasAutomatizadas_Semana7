@@ -13,6 +13,7 @@ describe("Pages - Edit page title and description", () => {
         GivenSteps.givenLogin();
         // and navigates to the Pages
         GivenSteps.giveNavigateToPagesPage();
+        pagesPage.AndScreenshot('E17-596','1');
         //Create a page with description
         pagesPage.mockPageWithDescription();
         cy.get('button.close').click()
@@ -24,15 +25,19 @@ describe("Pages - Edit page title and description", () => {
         // When
         // pagesPage.updateBtn_Click()
         WhenSteps.WhenClickUpdateBtn();
+        pagesPage.AndScreenshot('E17-596','2');
 
         // pagesPage.fillPageHeader(randomPageTitle);
         WhenSteps.WhenFillPageHeader(randomPageTitle);
+        pagesPage.AndScreenshot('E17-596','3');
 
         // pagesPage.fillPageDescription(randomPageDescription)
         WhenSteps.WhenFillPageDescription(randomPageDescription);
+        pagesPage.AndScreenshot('E17-596','4');
 
         // pagesPage.updateButton_Click();
         WhenSteps.WhenClickUpdateButton();
+        pagesPage.AndScreenshot('E17-596','5');
 
         //Then
         // pagesPage.verifyContentExists(randomPageTitle);

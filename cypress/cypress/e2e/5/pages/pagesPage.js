@@ -122,6 +122,12 @@ class PagesPage {
         this.confirmPublishButton_Click();
         cy.wait(1000);
     }
+
+    AndScreenshot(folderName, screenshotName) {
+        cy.wait(1000);
+        const screenshotPath = `screenshots/${folderName}/${screenshotName}`;
+        cy.screenshot(screenshotPath, { overwrite: true });
+    }
 }
 
 export default new PagesPage();
