@@ -8,10 +8,6 @@ Given('the user navigates to the post page', async function () {
     await DashboardPage.navigateToPosts(this);
 });
 
-Given('I set the browser window post to 1024x768', async function () {
-    await this.driver.setWindowSize(1024, 768);
-});
-
 Given("the user cliks on the new post", async function () {
     await postPage.navigateNewPosts(this);
 });

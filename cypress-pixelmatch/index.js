@@ -22,8 +22,8 @@ const resizeImagesToMatch = async (image1, image2) => {
     const width = Math.min(img1Metadata.width, img2Metadata.width);
     const height = Math.min(img1Metadata.height, img2Metadata.height);
 
-    const resizedImage1 = await sharp(image1).resize(width, height).toBuffer();
-    const resizedImage2 = await sharp(image2).resize(width, height).toBuffer();
+    const resizedImage1 = await sharp(image1).resize(width, height, {fit:'fill'}).toBuffer();
+    const resizedImage2 = await sharp(image2).resize(width, height, {fit: 'fill'}).toBuffer();
 
     return { resizedImage1, resizedImage2, width, height };
 };
@@ -33,7 +33,6 @@ const compareImages = async (image1, image2, outputName) => {
     return new Promise(async (resolve, reject) => {
         try {
             const { resizedImage1, resizedImage2, width, height } = await resizeImagesToMatch(image1, image2);
-
             const img1 = PNG.sync.read(resizedImage1);
             const img2 = PNG.sync.read(resizedImage2);
             const diff = new PNG({ width, height });
