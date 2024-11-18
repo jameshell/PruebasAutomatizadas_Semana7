@@ -95,7 +95,7 @@ const params = {
   ```npx cypress open --env VERSION=5``` ---> Para test de la version 5.96 de Ghost
 - Se abre la interfaz de de Cypress
 - Ir a pruebubas E2E
-- Correr las pruebas que se encuentran en la interfaz ubicadas en la carpeta 5, se deven ejecutar solo las pruebas de esta carpeta, para no reescribir los reportes respecto a la otra version, puesto que con este comando se cargara la url solamente de la version 5.96.
+-🚨 Importante: Correr las pruebas que se encuentran en la interfaz ubicadas en la carpeta 5, se deven ejecutar solo las pruebas de esta carpeta, para no reescribir los reportes respecto a la otra version, puesto que con este comando se cargara la url solamente de la version 5.96.
 
 
 ---------------------------------------------------------------------------------
@@ -183,7 +183,7 @@ const params = {
 
 - Se abre la interfaz de de Cypress
 - Ir a pruebubas E2E
-- Correr las pruebas que se encuentran en la interfaz que esten ubicadas en la carpeta 4, se deven ejecutar solo las pruebas de esta carpeta, para no reescribir los reportes respecto a la otra version, puesto que con este comando se cargara la url solamente de la version 4.5.
+-🚨 Importante: Correr las pruebas que se encuentran en la interfaz que esten ubicadas en la carpeta 4, se deven ejecutar solo las pruebas de esta carpeta, para no reescribir los reportes respecto a la otra version, puesto que con este comando se cargara la url solamente de la version 4.5.
 
 
 
