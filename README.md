@@ -93,10 +93,9 @@ const params = {
 - Correr las pruebas:
   
   ```npx cypress open --env VERSION=5``` ---> Para test de la version 5.96 de Ghost
-  ```npx cypress open --env VERSION=4``` ---> Para test de la version 4.5 de Ghost
 - Se abre la interfaz de de Cypress
 - Ir a pruebubas E2E
-- Correr las pruebas que se encuentran en la interfaz
+- Correr las pruebas que se encuentran en la interfaz que se encuentren en la carpeta 5, se deven corrrer solo las pruebas de esta carpeta, para no reescribir los reportes.
 
 
 ---------------------------------------------------------------------------------
@@ -184,8 +183,8 @@ const params = {
 
 - Se abre la interfaz de de Cypress
 - Ir a pruebubas E2E
-- Correr las pruebas que se encuentran en la interfaz
-- Opcion se pudede correr desde la terminal con ```npx cypress run --env VERSION=4```
+- Correr las pruebas que se encuentran en la interfaz que se encuentran en la carpeta 4,se deven corrrer solo las pruebas de esta carpeta, para no reescribir los reportes.
+
 
 
 ## Paso a paso para instalacion de Resemble js
