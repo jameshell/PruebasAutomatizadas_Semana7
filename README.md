@@ -93,11 +93,11 @@ const params = {
 - Correr las pruebas:
   
   ```npx cypress open --env VERSION=5``` ---> Para test de la version 5.96 de Ghost
-  
+  ```npx cypress open --env VERSION=4``` ---> Para test de la version 4.5 de Ghost
 - Se abre la interfaz de de Cypress
 - Ir a pruebubas E2E
 - Correr las pruebas que se encuentran en la interfaz
-- Opcion se pudede correr desde la terminal con ```npx cypress run --env VERSION=5```
+
 
 ---------------------------------------------------------------------------------
 # Parte 2
