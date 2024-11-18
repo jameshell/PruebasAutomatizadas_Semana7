@@ -28,7 +28,7 @@ Then('the user should see the created page title {kraken-string}', async functio
     return assert.equal(renderedTitle, title);
 });
 
-Then('the confirmation message should appear', async function () {
+Then('the confirmation pages page message should appear', async function () {
     const isMessageVisible = await PagesPage.isConfirmationMessageVisible(this);
     assert.equal(isMessageVisible, true, "The confirmation message did not appear.")
 });

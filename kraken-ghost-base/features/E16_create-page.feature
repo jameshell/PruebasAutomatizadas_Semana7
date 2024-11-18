@@ -46,7 +46,7 @@ Feature: Create page
     And I save device snapshot in sequential file 'E16' '6'
     Then Successful publication confirmation appears
     And I save device snapshot in sequential file 'E16' '7'
-    Then the confirmation message should appear
+    Then the confirmation pages page message should appear
     And I wait for 5 seconds
 
 
