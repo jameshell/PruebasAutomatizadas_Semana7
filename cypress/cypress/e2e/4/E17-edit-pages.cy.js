@@ -16,7 +16,7 @@ describe("Pages - Edit page title and description", () => {
         GivenSteps.givenLogin();
         // and navigates to the Pages
         GivenSteps.giveNavigateToPagesPage();
-        pagesPage.AndScreenshot('E17-596','1');
+        pagesPage.AndScreenshot('E17-45','1');
         //Create a page with description
         // pagesPage.mockPageWithDescription();
 
@@ -27,7 +27,7 @@ describe("Pages - Edit page title and description", () => {
         // postPage.AndScreenshot('E1-45','1');
         // Given the user clicks on "New Post" to start creating a new post
         GivenSteps.AndClicksNewPost();
-        postPage.AndScreenshot('E1-45','2');
+        postPage.AndScreenshot('E17-45','2');
 
         // Given the user clicks on the post title field to focus on it
         GivenSteps.AndClicksPostTitle();
@@ -35,25 +35,25 @@ describe("Pages - Edit page title and description", () => {
 
         // Given the user inputs a title into the post title field
         GivenSteps.AndInputPostTitle();
-        postPage.AndScreenshot('E1-45','3');
+        postPage.AndScreenshot('E17-45','3');
 
         // Given the user clicks on the post content area to focus on it
         GivenSteps.AndClicksPostContent();
 
         // Given the user inputs content into the post content field
         GivenSteps.AndInputPostContent();
-        postPage.AndScreenshot('E1-45','4');
+        postPage.AndScreenshot('E17-45','4');
 
         // Given the user clicks the "Publish" button to initiate the publishing flow
         GivenSteps.AndClickPublishPost();
-        postPage.AndScreenshot('E1-45','5');
+        postPage.AndScreenshot('E17-45','5');
 
         // Given the user clicks "Continue" in the publishing flow
         whenSteps.whenclickPostPublishRightNow();
-        postPage.AndScreenshot('E1-45','6');
+        postPage.AndScreenshot('E17-45','6');
 
         // Then, verify that the post has been published successfully
         thenSteps.thenVerifyNotificationExists();
-        postPage.AndScreenshot('E1-45','7');
+        postPage.AndScreenshot('E17-45','7');
     });
 });

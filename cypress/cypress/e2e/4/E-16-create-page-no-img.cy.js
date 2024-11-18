@@ -19,7 +19,7 @@ describe("Pages - Create Page without img", () => {
             disableTimersAndAnimations: false,
         });
 
-        pagesPage.AndScreenshot('E16-596','1');
+        pagesPage.AndScreenshot('E16-45','1');
     });
 
     it('E16 - Should create a new page successfully with a random title and description', () => {
@@ -30,22 +30,22 @@ describe("Pages - Create Page without img", () => {
         // Clicks on new page
         // pagesPage.newPageBtn_Click();
         WhenSteps.WhenNewPageBtn_Click();
-        pagesPage.AndScreenshot('E16-596','2');
+        pagesPage.AndScreenshot('E16-45','2');
 
         // Fill in the page with a randon title
         // pagesPage.fillPageHeader(randomPageTitle);
         WhenSteps.WhenFillPageHeader(randomPageTitle);
-        pagesPage.AndScreenshot('E16-596','3');
+        pagesPage.AndScreenshot('E16-45','3');
 
         // Fill in the page with random description
         // pagesPage.fillPageDescription(randomPageDescription);
         WhenSteps.WhenFillPageDescription(randomPageDescription);
-        pagesPage.AndScreenshot('E16-596','4');
+        pagesPage.AndScreenshot('E16-45','4');
 
         // Publish intent page
         // pagesPage.publishButton_Click();
         WhenSteps.WhenClickPublishButton();
-        pagesPage.AndScreenshot('E16-596','5');
+        pagesPage.AndScreenshot('E16-45','5');
 
         // Continue Final Review
         // pagesPage.finalReviewButton_Click();
@@ -66,7 +66,7 @@ describe("Pages - Create Page without img", () => {
         // ThenSteps.thenIsModalHeaderCorrect(randomPageTitle);
         cy.wait(1000);
         thenSteps.thenVerifyNotificationExists();
-        pagesPage.AndScreenshot('E16-596','6');
+        pagesPage.AndScreenshot('E16-45','6');
 
         // Verify the post title and excerpt
         // pagesPage.isModalDescriptionCorrect(randomPageDescription);

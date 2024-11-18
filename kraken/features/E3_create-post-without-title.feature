@@ -20,6 +20,7 @@ Scenario: E3_Create post without title
   When User clicks on the publish now button
   
   And I save device snapshot in sequential file 'E3' '7'
+  And I wait for 2 seconds
   Then Successful publication confirmation appears
   And I save device snapshot in sequential file 'E3' '8'
   Then the confirmation message untitled

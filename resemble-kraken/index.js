@@ -63,13 +63,13 @@ const generateReport = (results, scenario) => {
                 <div>
                     <strong>Original Images:</strong>
                     <br/>
-                    <img src="${result.image1}" alt="Image 1 - Set ${index + 1}" />
-                    <img src="${result.image2}" alt="Image 2 - Set ${index + 1}" />
+                    <img src="../${result.image1}" alt="Image 1 - Set ${index + 1}" />
+                    <img src="../${result.image2}" alt="Image 2 - Set ${index + 1}" />
                 </div>
                 <div>
                     <strong>Diff Image:</strong>
                     <br/>
-                    <img src="${result.diffImage}" alt="Diff Image - Set ${index + 1}" />
+                    <img src=".${result.diffImage}" alt="Diff Image - Set ${index + 1}" />
                 </div>
                 <div class="result">
                     <p><strong>Mismatch Percentage:</strong> ${result.misMatchPercentage}%</p>

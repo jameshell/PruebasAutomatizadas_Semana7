@@ -53,7 +53,6 @@ describe("Pages - Create Page without img", () => {
         // Publish page now
         // pagesPage.confirmPublishButton_Click();
         WhenSteps.WhenClickConfirmPublishButton();
-        pagesPage.AndScreenshot('E16-596','6');
 
         // Then
         // Verify the modal appears
@@ -63,7 +62,7 @@ describe("Pages - Create Page without img", () => {
         // Verify the modal header text
         // pagesPage.isModalHeaderCorrect(randomPageTitle);
         ThenSteps.thenIsModalHeaderCorrect(randomPageTitle);
-        pagesPage.AndScreenshot('E16-596','7');
+        pagesPage.AndScreenshot('E16-596','6');
 
         // Verify the post title and excerpt
         // pagesPage.isModalDescriptionCorrect(randomPageDescription);

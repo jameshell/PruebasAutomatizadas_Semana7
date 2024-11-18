@@ -7,13 +7,13 @@ module.exports = {
       const version = config.env.VERSION || 4;
       const params = {
         4:{
-          'username': 'jaimea111@gmail.com',
-          'password': 'Warframe1993.',
-          'url': 'http://localhost:3003/',
+          'username': 'carlosdanielbayo@gmail.com',
+          'password': 'miau1234567890',
+          'url': 'http://localhost:3002/',
         },
         5:{
-          'username': 'test@test.com', 
-          'password': 'Semeolvido123',
+          'username': 'carlosdanielbayo@gmail.com', 
+          'password': 'miau1234567890',
           'url': 'http://localhost:3001/', 
         },
       };

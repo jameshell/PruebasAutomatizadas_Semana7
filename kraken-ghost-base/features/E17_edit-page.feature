@@ -26,19 +26,17 @@ Feature: Edit page
     And the user navigates to the pages page
     And I save device snapshot in sequential file 'E17' '1'
     And the user clicks on the first post
-    And I save device snapshot in sequential file 'E17' '2'
     And The user enters a title for the post
-    And I save device snapshot in sequential file 'E17' '3'
+    And I save device snapshot in sequential file 'E17' '2'
     And the user cliks on the new post content
     And the user enters a content for the post
-    And I save device snapshot in sequential file 'E17' '4'
+    And I save device snapshot in sequential file 'E17' '3'
     And the user clicks on the updtate post button
-    And I save device snapshot in sequential file 'E17' '5'
+    And I save device snapshot in sequential file 'E17' '4'
     When the user updates the post
-    And I save device snapshot in sequential file 'E17' '6'
     And I wait for 1 seconds
     Then the confirmation update post
-    And I save device snapshot in sequential file 'E17' '7'
+    And I save device snapshot in sequential file 'E17' '5'
     And I wait for 5 seconds
 
 

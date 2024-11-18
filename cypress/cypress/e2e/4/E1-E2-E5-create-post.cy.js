@@ -54,7 +54,6 @@ describe("Create Post", () => {
 
     // Given the user clicks on the list of posts to view available posts
     GivenSteps.AndClickListPost();
-    postPage.AndScreenshot('E2-45','2');
 
     // Given the user clicks on the title of a specific post to edit it
     GivenSteps.AndClicksPostTitle();
@@ -62,7 +61,7 @@ describe("Create Post", () => {
 
     // Given the user edits the title of the selected post
     GivenSteps.AndEditPostTitle();
-    postPage.AndScreenshot('E2-45','3');
+    postPage.AndScreenshot('E2-45','2');
 
     // Given the user clicks on the content area of the post to edit it
     GivenSteps.AndClicksPostContent();
@@ -70,18 +69,17 @@ describe("Create Post", () => {
 
     // Given the user edits the content of the selected post
     GivenSteps.AndEditPostContent();
-    postPage.AndScreenshot('E2-45','4');
+    postPage.AndScreenshot('E2-45','3');
 
     // When the user updates the post by saving the changes
     GivenSteps.AndUpateBtnPost();
-    postPage.AndScreenshot('E2-45','5');
+    postPage.AndScreenshot('E2-45','4');
 
     whenSteps.whenupdatePostDrop();
-    postPage.AndScreenshot('E2-45','6');
 
     // Then the user verifies that the post has been edited successfully
     thenSteps.thenVerifyEditPost();
-    postPage.AndScreenshot('E2-45','7');
+    postPage.AndScreenshot('E2-45','5');
         
 });
 
@@ -93,6 +91,5 @@ describe("Create Post", () => {
     postPage.AndScreenshot('E5-45','2');
 
     thenSteps.thenShouldNoExitPublish();
-    postPage.AndScreenshot('E5-45','3');
   });
 });

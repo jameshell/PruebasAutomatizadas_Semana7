@@ -147,7 +147,7 @@ class postPage {
     
     AndScreenshot(folderName, screenshotName) {
         cy.wait(1000);
-        const screenshotPath = `screenshots/${folderName}/${screenshotName}`;
+        const screenshotPath = `${folderName}/${screenshotName}`;
         cy.screenshot(screenshotPath, { overwrite: true });
     }
 

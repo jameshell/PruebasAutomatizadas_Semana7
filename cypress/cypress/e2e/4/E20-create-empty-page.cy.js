@@ -19,8 +19,6 @@ describe("Pages - Create Empty Page", () => {
         Cypress.Screenshot.defaults({
             disableTimersAndAnimations: false,
         });
-
-        pagesPage.AndScreenshot('E20-596','1');
     });
 
     // it('E20 - Should create a new page successfully with a random description', () => {
@@ -39,12 +37,11 @@ describe("Pages - Create Empty Page", () => {
     // });
 
     it("E20 - Create empty page", () => {
-        postPage.AndScreenshot('E5-45','1');
+        postPage.AndScreenshot('E20-45','1');
 
         whenSteps.AndClicksNewPostEmpty();
-        postPage.AndScreenshot('E5-45','2');
+        postPage.AndScreenshot('E20-45','2');
 
         thenSteps.thenShouldNoExitPublish();
-        postPage.AndScreenshot('E5-45','3');
     });
 });

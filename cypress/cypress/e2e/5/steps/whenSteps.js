@@ -131,10 +131,12 @@ class WhenSteps {
     }
 
     WhenClickPublishButton(){
+        cy.wait(1000);
         pagesPage.publishButton_Click()
     }
 
     WhenClickFinalReviewButton(){
+        cy.wait(1000);
         pagesPage.finalReviewButton_Click()
     }
 

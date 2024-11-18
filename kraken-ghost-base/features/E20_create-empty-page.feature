@@ -19,9 +19,8 @@ Feature: Create empty page
     And the user navigates to the pages page
     And I save device snapshot in sequential file 'E20' '1'
     When the user cliks on the new post
-    And I save device snapshot in sequential file 'E20' '2'
     Then the button should not be visible
-    And I save device snapshot in sequential file 'E20' '3'
+    And I save device snapshot in sequential file 'E20' '2'
     And I wait for 5 seconds
 
 

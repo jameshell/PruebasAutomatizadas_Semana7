@@ -18,7 +18,7 @@ Scenario: E2-Edit post with valid data
   When the user updates the post
 
   And I save device snapshot in sequential file 'E2' '6'
-  And I wait for 1 seconds
+  And I wait for 2 seconds
   Then the confirmation update post
   And I save device snapshot in sequential file 'E2' '7'
   And I wait for 5 seconds

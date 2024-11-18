@@ -19,7 +19,7 @@ Scenario: E1_create publication with valid data
   And I save device snapshot in sequential file 'E1' '6'
 
   When User clicks on the publish now button
-
+  And I wait for 2 seconds
   Then Successful publication confirmation appears
   And I save device snapshot in sequential file 'E1' '7'
   Then the confirmation message should appear

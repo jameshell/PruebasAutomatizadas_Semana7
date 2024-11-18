@@ -127,37 +127,37 @@ describe("Create Post and edit post", () => {
 
     // When the user inputs a title into the post title field
     GivenSteps.AndInputPostTitle();
-    postPage.AndScreenshot('E4-596','1');
+    postPage.AndScreenshot('E4-596','2');
 
     // When the user clicks on the post content area to focus on it
     GivenSteps.AndClicksPostContent();
 
     // When the user inputs content into the post content field
     GivenSteps.AndInputPostContent();
-    postPage.AndScreenshot('E4-596','1');
+    postPage.AndScreenshot('E4-596','3');
 
     GivenSteps.AndClickImagePostButton();
-    postPage.AndScreenshot('E4-596','2');
+    postPage.AndScreenshot('E4-596','4');
 
     GivenSteps.AndClickFirstImage();
-    postPage.AndScreenshot('E4-596','3');
+    postPage.AndScreenshot('E4-596','5');
     
 
     //When the user clicks the "Publish" button to initiate the publishing flow
     GivenSteps.AndClickPublishPost();
-    postPage.AndScreenshot('E4-596','4');
+    postPage.AndScreenshot('E4-596','6');
 
     // When the user clicks "Continue" in the publishing flow
     GivenSteps.AndClickContinuePublish();
-    postPage.AndScreenshot('E4-596','5');
+    postPage.AndScreenshot('E4-596','7');
 
     // When the user clicks "Publish Right Now" to confirm the publication
     whenSteps.whenclickPostPublishRightNow();
-    postPage.AndScreenshot('E4-596','6');
+    postPage.AndScreenshot('E4-596','8');
 
     // Then, verify that the post has been published successfully
     thenSteps.thenVerifyPost();
-    postPage.AndScreenshot('E4-596','7');
+    postPage.AndScreenshot('E4-596','9');
   });
 
   it("E5_create empty post", () => {

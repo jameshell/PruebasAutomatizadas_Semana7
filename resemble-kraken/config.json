@@ -81,6 +81,26 @@
             { "image1": "../kraken-ghost-base/screenshots/E13/E13-5.png", "image2": "../kraken/screenshots/E13/E13-5.png"},
             { "image1": "../kraken-ghost-base/screenshots/E13/E13-6.png", "image2": "../kraken/screenshots/E13/E13-6.png"},
             { "image1": "../kraken-ghost-base/screenshots/E13/E13-7.png", "image2": "../kraken/screenshots/E13/E13-7.png"}
+        ],
+        "E16" : [
+            { "image1": "../kraken-ghost-base/screenshots/E16/E16-1.png", "image2": "../kraken/screenshots/E16/E16-1.png"},
+            { "image1": "../kraken-ghost-base/screenshots/E16/E16-2.png", "image2": "../kraken/screenshots/E16/E16-2.png"},
+            { "image1": "../kraken-ghost-base/screenshots/E16/E16-3.png", "image2": "../kraken/screenshots/E16/E16-3.png"},
+            { "image1": "../kraken-ghost-base/screenshots/E16/E16-4.png", "image2": "../kraken/screenshots/E16/E16-4.png"},
+            { "image1": "../kraken-ghost-base/screenshots/E16/E16-5.png", "image2": "../kraken/screenshots/E16/E16-5.png"},
+            { "image1": "../kraken-ghost-base/screenshots/E16/E16-6.png", "image2": "../kraken/screenshots/E16/E16-6.png"},
+            { "image1": "../kraken-ghost-base/screenshots/E16/E16-7.png", "image2": "../kraken/screenshots/E16/E16-7.png"}
+        ],
+        "E17" : [
+            { "image1": "../kraken-ghost-base/screenshots/E17/E17-1.png", "image2": "../kraken/screenshots/E17/E17-1.png"},
+            { "image1": "../kraken-ghost-base/screenshots/E17/E17-2.png", "image2": "../kraken/screenshots/E17/E17-2.png"},
+            { "image1": "../kraken-ghost-base/screenshots/E17/E17-3.png", "image2": "../kraken/screenshots/E17/E17-3.png"},
+            { "image1": "../kraken-ghost-base/screenshots/E17/E17-4.png", "image2": "../kraken/screenshots/E17/E17-4.png"},
+            { "image1": "../kraken-ghost-base/screenshots/E17/E17-5.png", "image2": "../kraken/screenshots/E17/E17-5.png"}
+        ],
+        "E20" : [
+            { "image1": "../kraken-ghost-base/screenshots/E20/E20-1.png", "image2": "../kraken/screenshots/E20/E20-1.png"},
+            { "image1": "../kraken-ghost-base/screenshots/E20/E20-2.png", "image2": "../kraken/screenshots/E20/E20-2.png"}
         ]
     }
 }
