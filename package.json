@@ -1,0 +1,17 @@
+{
+  "name": "pruebasautomatizadas_semana7",
+  "version": "1.0.0",
+  "description": "Proyecto para la semana 7 de la clase de pruebas automatizadas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Camila Alejandra Guayara, Juan Pablo Osorio, Jaime Alonso, Carlos Bayona",
+  "license": "ISC",
+  "private": true,
+  "workspaces": [
+    "cypress",
+    "cypress-pixelmatch"
+  ]
+}
