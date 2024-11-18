@@ -220,7 +220,7 @@ El ```*```hace referencia al numero del escenario de prueba
 
 Para poder ejecutar las pruebas VRT en Pixelmatch debe seguir los siguientes pasos
 
-- Instalar node.
+- Instalar node 20.11.1.
   
 ### Ejecutar test VRT con Pixelmatch
 
