@@ -4,7 +4,10 @@
   "description": "Proyecto para la semana 7 de la clase de pruebas automatizadas",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start-ghost": "docker run -d --name some-ghost -e NODE_ENV=development -e url=http://localhost:3001 -p 3001:2368 ghost:latest",
+    "create-admin": "node create_ghost_admin.js",
+    "setup-ghost": "npm run start-ghost && sleep 10 && npm run create-admin",
+    "stop-ghost": "docker stop some-ghost && docker rm some-ghost"
   },
   "keywords": [],
   "author": "Camila Alejandra Guayara, Juan Pablo Osorio, Jaime Alonso, Carlos Bayona",
@@ -13,5 +16,8 @@
   "workspaces": [
     "cypress",
     "cypress-pixelmatch"
-  ]
+  ],
+  "dependencies": {
+    "axios": "^1.7.7"
+  }
 }
