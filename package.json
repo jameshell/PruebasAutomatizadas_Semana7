@@ -17,7 +17,8 @@
   "private": true,
   "workspaces": [
     "cypress",
-    "cypress-pixelmatch"
+    "cypress-pixelmatch",
+    "utils"
   ],
   "dependencies": {
     "axios": "^1.7.7"
