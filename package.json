@@ -17,7 +17,6 @@
   "private": true,
   "workspaces": [
     "cypress",
-    "cypress-pixelmatch",
     "utils"
   ],
   "dependencies": {
