@@ -7,14 +7,14 @@ module.exports = {
       const version = config.env.VERSION || 4;
       const params = {
         4:{
-          'username': 'carlosdanielbayo@gmail.com',
-          'password': 'miau1234567890',
-          'url': 'http://localhost:3002/',
+          'username': 'generic_admin@gmail.com',
+          'password': 'GenericAdmin123.',
+            'url': 'http://localhost:3001/',
         },
         5:{
-          'username': 'carlosdanielbayo@gmail.com', 
-          'password': 'miau1234567890',
-          'url': 'http://localhost:3001/', 
+          'username': 'generic_admin@gmail.com',
+          'password': 'GenericAdmin123.',
+          'url': 'http://localhost:3001/',
         },
       };
 
@@ -24,5 +24,6 @@ module.exports = {
      
       return config;
     },
+    excludeSpecPattern: '**/LoginSetup.cy.js'
   },
 };

@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start-ghost": "docker run -d --name some-ghost -e NODE_ENV=development -e url=http://localhost:3001 -p 3001:2368 ghost:latest",
-    "create-admin": "node create_ghost_admin.js",
-    "setup-ghost": "npm run start-ghost && sleep 10 && npm run create-admin",
-    "stop-ghost": "docker stop some-ghost && docker rm some-ghost"
+    "create-admin-ghost": "cd utils && npx cypress run",
+    "setup-ghost": "npm run start-ghost && sleep 10 && npm run create-admin-ghost",
+    "stop-ghost": "docker stop some-ghost && docker rm some-ghost",
+    "command-tests": "cd cypress && npx cypress run",
+    "visual-tests": "cd cypress && npx cypress open"
   },
   "keywords": [],
   "author": "Camila Alejandra Guayara, Juan Pablo Osorio, Jaime Alonso, Carlos Bayona",
