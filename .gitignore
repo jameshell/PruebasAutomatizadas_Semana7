@@ -484,8 +484,6 @@ $RECYCLE.BIN/
 *.swp
 
 # Config file for Cypress
-cypress/cypress.config.js
-*/cypress.config.js
 cypress/cypress/screenshots/*
 kraken/screenshots/*
 kraken/reports/*
