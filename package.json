@@ -20,6 +20,5 @@
     "utils"
   ],
   "dependencies": {
-    "axios": "^1.7.7"
   }
 }
