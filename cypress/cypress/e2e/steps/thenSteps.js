@@ -28,7 +28,6 @@ class ThenSteps {
     }
 
     thenVerifyPost(screenshotName){
-        cy.screenshot(`screenshots/posts/${screenshotName}`,{capture: 'viewport', overwrite: true });
         postPage.verifyPost();
      }
      
