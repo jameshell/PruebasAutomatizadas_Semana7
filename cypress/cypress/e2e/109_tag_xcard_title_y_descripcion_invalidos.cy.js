@@ -25,7 +25,8 @@ function validTagName(seed=null){
   return nameTagValid = faker.commerce.productAdjective()
 }
 
-describe("Tag descripcion invalido", () => {
+
+describe("Tag Xcard titulo y descripcion invalido", () => {
     beforeEach(() => {
         // Given the User navigates to the login page
         GivenStepsTag.givenNavigateToLoginPage();
@@ -36,7 +37,7 @@ describe("Tag descripcion invalido", () => {
 
       })
 
-    it("101 - Tag descripcion invalido mayor a 500 caracteres", () => {
+    it("109 - Tag Xcard titulo y descripcion invalido ", () => {
     
       //  When the user clicks on New tag
       WhenStepsTag.whenClickTagNewTag();
@@ -46,18 +47,23 @@ describe("Tag descripcion invalido", () => {
       // and fills the name tag input
       WhenStepsTag.whenFillNameTag(nameTag);
     
+      // And click on expand in FB card
+      WhenStepsTag.whenExpandXcard();
+    
+      // Generate a xcard name using Faker with SEED
+      const xcardName = longDescrption(301,80)
+      // And fills the name Xcard > 300 
+      WhenStepsTag.whenFillNameXCard(xcardName);
+
+      // Generate a long description > 500 using Faker with SEED
+      const descripcionX = longDescrption(501,80)
+      // And fill the description X Card with valid paragraph
+      WhenStepsTag.whenFillXDescriptionCard(descripcionX);
       
-      // Generate a long description > 501 using Faker with SEED
-      const descriptionTag = longDescrption(501,44)
-      // and fill the description tag input
-      WhenStepsTag.whenFillInvalidDescription(descriptionTag);
-  
-      // then save the tag
+    // then save the tag
       ThenStepsTag.thenSaveTag();
   
         
     });
     
     })
-
-

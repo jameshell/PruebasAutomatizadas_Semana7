@@ -59,14 +59,50 @@ class TagPage{
         return cy.get("#tag-description");
     }
 
+    get tagExpandFbCard(){
+        return cy.get('.gh-btn.gh-btn-expand').eq(2);
+    }
+
+    get tagfillNameFbCard(){
+        return cy.get('#og-title');
+    }
+
+    get tagfillDescriptionFb(){
+        return cy.get('#og-description');
+    }
+    get tagExpandMetadataCard(){
+        return cy.get('.gh-btn.gh-btn-expand').eq(0);
+    }
+
+    get tagfillMetadataName(){
+        return cy.get('#meta-title');
+    }
+
+    get tagfillMetadataDescription(){
+        return cy.get('#meta-description');
+    }
+    
+    get tagfillMetadataUrl(){
+        return cy.get('#canonical-url');
+    }
+
+    get tagExpandXcard(){
+        return cy.get('.gh-btn.gh-btn-expand').eq(1);
+    }
+    get tagfillNameXCard(){
+        return cy.get('#twitter-title');
+    }
+    get tagfillXDescription(){
+        return cy.get('#twitter-description');
+    }
 
     clickNewTag(){
         cy.wait(1000);
         this.newTagButton.click();
     }
 
-    fillNameTag(){
-        this.tagNameInput.clear().type(this.nameTagValid);
+    fillNameTag(nameTag){
+        this.tagNameInput.clear().type(nameTag);
     }
 
     fillDescriptionTag(){
@@ -108,12 +144,44 @@ class TagPage{
     fillEditDescriptionTag(){
         this.tagEditDescription.clear().type("Edited Description");
     }
-    
-    screenShot(folderName, screenshotName) {
-        const screenshotPath = `${folderName}/${screenshotName}`;
-        cy.screenshot(screenshotPath, { overwrite: true });
+
+    expandFbCard(){
+        this.tagExpandFbCard.click();
     }
 
+    fillNameFbCard(nameFbCard){
+        this.tagfillNameFbCard.clear().type(nameFbCard);
+    }
+    
+    fillDescriptionFb(descripcionFb){
+        this.tagfillDescriptionFb.clear().type(descripcionFb);
+    }
+    expandMetadataCard(){
+        this.tagExpandMetadataCard.click();
+    }
+
+    fillMetadataName(descripcionmMeta){
+        this.tagfillMetadataName.clear().type(descripcionmMeta);
+    }
+
+    fillMetadataDescription(descripcionMeta){
+        this.tagfillMetadataDescription.clear().type(descripcionMeta);
+    }
+
+    fillMetadataUrl(urlMeta){
+        this.tagfillMetadataUrl.clear().type(urlMeta);
+    }
+
+    expandXcard(){
+        this.tagExpandXcard.click();
+    }
+
+    fillXcardName(xcardName){
+        this.tagfillNameXCard.clear().type(xcardName);
+    }
+    fillXDescription(descripcionX){
+        this.tagfillXDescription.clear().type(descripcionX);
+    }
 }
 
 export default new TagPage();

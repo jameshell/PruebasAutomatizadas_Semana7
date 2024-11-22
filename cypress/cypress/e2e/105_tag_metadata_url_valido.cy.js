@@ -25,7 +25,16 @@ function validTagName(seed=null){
   return nameTagValid = faker.commerce.productAdjective()
 }
 
-describe("Tag descripcion invalido", () => {
+function validUrl(seed=null){
+  if(seed !== null){
+      faker.seed(seed);
+    }
+  let metaUrl = '';
+  return metaUrl = faker.internet.url()
+    
+}
+
+describe("Tag url metadata valido", () => {
     beforeEach(() => {
         // Given the User navigates to the login page
         GivenStepsTag.givenNavigateToLoginPage();
@@ -36,7 +45,7 @@ describe("Tag descripcion invalido", () => {
 
       })
 
-    it("101 - Tag descripcion invalido mayor a 500 caracteres", () => {
+    it("105 - Tag URL metadata mayor valido ", () => {
     
       //  When the user clicks on New tag
       WhenStepsTag.whenClickTagNewTag();
@@ -46,18 +55,29 @@ describe("Tag descripcion invalido", () => {
       // and fills the name tag input
       WhenStepsTag.whenFillNameTag(nameTag);
     
+      // And click on expand in FB card
+      WhenStepsTag.whenExpandMetadatacard();
+    
+      // Generate a metadata name using Faker with SEED
+      const nameMeta = validTagName(66)
+      // And fills the name metadata 
+      WhenStepsTag.whenFillNameMetadataCard(nameMeta);
+
+      // Generate a long description > 500 using Faker with SEED
+      const descripcionMeta = longDescrption(50,66)
+      // And fill the description with valid paragraph
+      WhenStepsTag.whenFillMetadataDescriptionCard(descripcionMeta);
+
+      // Generate a valid URL using Faker with SEED
+      const urlMeta = validUrl(66)
+      // And fill the URL valid for Metadata
+      WhenStepsTag.whenFillMetadataUrl(urlMeta);
+
       
-      // Generate a long description > 501 using Faker with SEED
-      const descriptionTag = longDescrption(501,44)
-      // and fill the description tag input
-      WhenStepsTag.whenFillInvalidDescription(descriptionTag);
-  
-      // then save the tag
+    // then save the tag
       ThenStepsTag.thenSaveTag();
   
         
     });
     
     })
-
-
