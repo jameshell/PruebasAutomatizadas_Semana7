@@ -85,8 +85,8 @@ class TagPage{
         this.tagNameInvalidInput.type(this.nameTagInValid);
     }
 
-    fillInvalidDescriptionTag(){
-        this.tagInvalidDescription.type(this.invalidDescriptiionTag);
+    fillInvalidDescriptionTag(descriptionTag){
+        this.tagInvalidDescription.type(descriptionTag);
     }
     fillNameTagDelete(){
         this.tagNameDelete.type("ToDelete");
