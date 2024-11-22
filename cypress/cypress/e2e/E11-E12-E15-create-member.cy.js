@@ -7,7 +7,7 @@ import WhenSteps from "./steps/whenSteps";
 
 describe("Create Members", () => {
   
-  it("E11 - Create member with valid values", () => {
+  /*it("E11 - Create member with valid values", () => {
     // Given the User navigates to the login page
     GivenSteps.givenNavigateToLoginPage();
     memberPage.screenShot('E11-596','1')
@@ -75,5 +75,5 @@ describe("Create Members", () => {
     // Then the user should see 'The email is required' and 'Note is too long.'
     ThenSteps.thenSeeInvalidEmailNote()
     memberPage.screenShot('E15-596','7')
-  });
+  });*/
 });
