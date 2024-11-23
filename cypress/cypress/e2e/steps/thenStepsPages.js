@@ -7,7 +7,7 @@ class ThenStepsPages {
     }
 
     thenIsModalHeaderCorrect(randomPageDescription) {
-        PagesPage.isModalDescriptionCorrect(randomPageDescription);
+        PagesPage.isModalHeaderCorrect(randomPageDescription);
     }
 
     thenPublishButton_ShouldNotExist(){
