@@ -18,28 +18,28 @@ describe("Pages - Create a complete valid Page with apriori data", () => {
         pagesPage.AndScreenshot('E19-596','1');
     });
 
-    it('E26 - Should create a new page successfully with apriori data', () => {
+    it('E28 - Should create a new page successfully with apriori data', () => {
         cy.fixture('pages').then((data) => {
             const randomPageDescription = data[0].Description_255;
             const randomPageTitle = data[0].Title;
 
             WhenStepsPages.WhenNewPageBtn_Click();
-            pagesPage.AndScreenshot('E19-596','2');
+            pagesPage.AndScreenshot('E28-596','2');
 
             WhenStepsPages.WhenFillPageHeader(randomPageTitle);
-            pagesPage.AndScreenshot('E19-596','3');
+            pagesPage.AndScreenshot('E28-596','3');
 
             WhenStepsPages.WhenFillPageDescription(randomPageDescription);
-            pagesPage.AndScreenshot('E19-596','4');
+            pagesPage.AndScreenshot('E28-596','4');
 
             WhenStepsPages.WhenClickAddImgBtn();
-            pagesPage.AndScreenshot('E19-596','5');
+            pagesPage.AndScreenshot('E28-596','5');
 
             WhenStepsPages.WhenClickAddImageBtn_FirstPic()
-            pagesPage.AndScreenshot('E19-596','6');
+            pagesPage.AndScreenshot('E28-596','6');
 
             WhenStepsPages.WhenClickPublishButton();
-            pagesPage.AndScreenshot('E19-596','7');
+            pagesPage.AndScreenshot('E28-596','7');
 
             WhenStepsPages.WhenClickFinalReviewButton();
 
