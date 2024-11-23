@@ -42,6 +42,14 @@ class WhenStepsPages {
     WhenClickUpdateButton() {
         pagesPage.updateButton_Click();
     }
+
+    WhenClearPageHeader() {
+        pagesPage.ClearPageHeader();
+    }
+
+    WhenClearPageDescription() {
+        pagesPage.ClearPageDescription();
+    }
 }
 
 export default new WhenStepsPages();
