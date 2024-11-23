@@ -39,6 +39,10 @@ class PagesPage {
         return cy.get('button[data-test-button="publish-save"]').first();
     }
 
+    get pageUpdateNotification(){
+        return cy.get('.gh-notifications').first();
+    }
+
     fillPageDescription(description) {
         cy.wait(1000);
         this.pageDescription.type(description);
@@ -108,6 +112,10 @@ class PagesPage {
     navigateToPagesPage() {
         const url = Cypress.env("url");
         cy.visit(url+'/ghost/#/pages');
+    }
+
+    ShouldUpdatePage(){
+        this.pageUpdateNotification.should('be.visible')
     }
 
     verifyContentExists(content) {

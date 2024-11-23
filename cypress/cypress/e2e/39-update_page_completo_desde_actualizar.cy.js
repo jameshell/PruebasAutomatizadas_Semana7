@@ -5,32 +5,35 @@ import WhenStepsPages from "./steps/whenStepsPages";
 import ThenStepsPages from "./steps/thenStepsPages";
 
 
-describe("Pages - Edit page title and description", () => {
+describe("Pages - Edit page title and description with pseudo random data", () => {
 
     beforeEach(() => {
         GivenSteps.givenNavigateToLoginPage();
         GivenSteps.givenLogin();
         GivenSteps.giveNavigateToPagesPage();
-        pagesPage.AndScreenshot('E17-596','1');
+        pagesPage.AndScreenshot('39-596','1');
         pagesPage.mockPageWithDescription();
         cy.get('button.close').click()
     });
 
-    it('E17 - Should edit a page', () => {
+    it('39 - Should edit a page', () => {
+        faker.seed(39);
         const randomPageDescription = faker.lorem.paragraph();
         const randomPageTitle = faker.lorem.sentence({min: 3, max: 5});
 
         WhenStepsPages.WhenClickUpdateBtn();
-        pagesPage.AndScreenshot('E17-596','2');
+        pagesPage.AndScreenshot('39-596','2');
 
+        WhenStepsPages.WhenClearPageHeader();
         WhenStepsPages.WhenFillPageHeader(randomPageTitle);
-        pagesPage.AndScreenshot('E17-596','3');
+        pagesPage.AndScreenshot('39-596','3');
 
+        WhenStepsPages.WhenClearPageDescription();
         WhenStepsPages.WhenFillPageDescription(randomPageDescription);
-        pagesPage.AndScreenshot('E17-596','4');
+        pagesPage.AndScreenshot('39-596','4');
 
         WhenStepsPages.WhenClickUpdateButton();
-        pagesPage.AndScreenshot('E17-596','5');
+        pagesPage.AndScreenshot('39-596','5');
 
         //Then
         ThenStepsPages.thenShouldUpdatePage();

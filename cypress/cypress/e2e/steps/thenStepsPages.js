@@ -21,6 +21,10 @@ class ThenStepsPages {
     thenIsModalDescriptionCorrect(randomPageDescription) {
         pagesPage.isModalDescriptionCorrect(randomPageDescription);
     }
+
+    thenShouldUpdatePage(){
+        pagesPage.ShouldUpdatePage();
+    }
 }
 
 export default new ThenStepsPages();
