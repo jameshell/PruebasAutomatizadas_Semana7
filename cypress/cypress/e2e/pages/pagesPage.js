@@ -129,6 +129,14 @@ class PagesPage {
         const screenshotPath = `${folderName}/${screenshotName}`;
         cy.screenshot(screenshotPath, { overwrite: true });
     }
+
+    ClearPageDescription() {
+        this.pageDescription.clear();
+    }
+
+    ClearPageHeader() {
+        this.pageHeader.clear();
+    }
 }
 
 export default new PagesPage();
