@@ -16,7 +16,7 @@ module.exports = {
           'url': 'http://localhost:3001/',
         },
       };
-
+      config.API_KEY = ''
       config.url = params[version].url;
       config.username = params[version].username;
       config.password = params[version].password;

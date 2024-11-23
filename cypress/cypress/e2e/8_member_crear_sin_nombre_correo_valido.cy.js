@@ -1,29 +1,61 @@
-import givenStepsMembers from "./steps/givenStepsMembers";
-const Mockaroo = require('mockaroo');
-const client = new Mockaroo.Client({ apiKey: "API_KEY" });
+import givenStepsMembers from "./steps/givenStepsMembers"; // Assuming this is correct
+const https = require("https");
 
-const posts = await client.generate({
-    count: 10,
-    schema: [
-        { name: 'name', type: 'string' },
-        { name: 'name', type: 'int' },
-        { name: 'name', type: '' }
-    ],
-  });
+var jsonData = null;
 
-rand 1 a 10
+function generatePosts(recordCount = 10) {
+    const API_KEY = Cypress.config("API_KEY"); 
+    return new Promise((resolve, reject) => {
 
-posts[rand]
+        const mockarooSchema = [
+            { name: "id", type: "Row Number" },
+            { name: "first_name", type: "First Name" },
+            { name: "last_name", type: "Last Name" },
+            { name: "email", type: "Email Address" },
+            { name: "age", type: "Number", min: 18, max: 65 }
+        ];
 
-
+        const postData = JSON.stringify(mockarooSchema);
+        const options = {
+            hostname: "api.mockaroo.com",
+            path: `/api/generate.json?key=${API_KEY}&count=${recordCount}`,
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Content-Length": postData.length
+            }
+        };
+        const req = https.request(options, (res) => {
+            let data = "";
+            res.on("data", (chunk) => {
+                data += chunk;
+            });
+            res.on("end", () => {
+                if (res.statusCode === 200) {
+                    var mock = JSON.parse(data);
+                    resolve(mock);
+                } else {
+                    console.error("Error:", res.statusCode, res.statusMessage);
+                }
+            });
+        })
+        req.on("error", (error) => {
+            console.error("Failed to generate mock data:", error.message);
+            reject(error)
+        });
+        req.write(postData);
+        req.end()
+    });
+}
 
 describe("Pages - Create member", () => {
-
-    beforeEach(() => {
-
+    before(() => {
+        cy.wrap(generatePosts()).then((response) => {
+            jsonData = response;
+        })
     });
 
-    it('8 - Should create a new member wiuthout name and vailid email', () => {
-        givenStepsMembers.fillform(post[4].name, post[4].email);
+    it("8 - Should create a new member without a name and a valid email", () => {
+
     });
 });
