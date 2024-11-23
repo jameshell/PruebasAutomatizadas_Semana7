@@ -16,7 +16,7 @@ describe("Pages - Edit page title and description with empty spaces", () => {
         cy.get('button.close').click()
     });
 
-    it('E17 - Should edit a page', () => {
+    it('E30 - Should edit a page', () => {
         WhenStepsPages.WhenClickUpdateBtn();
         pagesPage.AndScreenshot('E17-596','2');
 
