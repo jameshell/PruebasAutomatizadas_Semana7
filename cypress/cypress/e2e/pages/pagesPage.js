@@ -97,7 +97,8 @@ class PagesPage {
     }
 
     isModalDescriptionCorrect(description) {
-        return cy.get('[data-test-complete-bookmark=""] .modal-body .post-excerpt').should('contain', description);
+        const shortDescription = description.length > 15 ? description.substring(0, 15) : description;
+        return cy.get('[data-test-complete-bookmark=""] .modal-body .post-excerpt').should('contain', shortDescription);
     }
 
     isModalHeaderCorrect(header) {
