@@ -11,23 +11,23 @@ describe("Pages - Edit page title and description with empty spaces", () => {
         GivenSteps.givenNavigateToLoginPage();
         GivenSteps.givenLogin();
         GivenSteps.giveNavigateToPagesPage();
-        pagesPage.AndScreenshot('E17-596','1');
+        pagesPage.AndScreenshot('35-596','1');
         pagesPage.mockPageWithDescription();
         cy.get('button.close').click()
     });
 
-    it('E30 - Should edit a page', () => {
+    it('35 - Should edit a page', () => {
         WhenStepsPages.WhenClickUpdateBtn();
-        pagesPage.AndScreenshot('E30-596','2');
+        pagesPage.AndScreenshot('35-596','2');
 
         WhenStepsPages.WhenClearPageHeader();
-        pagesPage.AndScreenshot('E30-596','3');
+        pagesPage.AndScreenshot('35-596','3');
 
         WhenStepsPages.WhenClearPageDescription();
-        pagesPage.AndScreenshot('E30-596','4');
+        pagesPage.AndScreenshot('35-596','4');
 
         WhenStepsPages.WhenClickUpdateButton();
-        pagesPage.AndScreenshot('E30-596','5');
+        pagesPage.AndScreenshot('35-596','5');
 
         //Then
         // pagesPage.verifyContentExists(randomPageTitle);

@@ -18,29 +18,29 @@ describe("Pages - Create Page With Only Description with 1000 characters", () =>
         pagesPage.AndScreenshot('E18-596','1');
     });
 
-    it('E32 - Should create a new page successfully without title', () => {
+    it('37 - Should create a new page successfully without title', () => {
 
         cy.fixture('pages').then((data) => {
             const randomPageDescription = data[0].Description;
 
             WhenStepsPages.WhenNewPageBtn_Click();
-            pagesPage.AndScreenshot('E32-596','2');
+            pagesPage.AndScreenshot('37-596','2');
 
             WhenStepsPages.WhenFillPageDescription(randomPageDescription);
-            pagesPage.AndScreenshot('E32-596','3');
+            pagesPage.AndScreenshot('37-596','3');
 
             WhenStepsPages.WhenClickPublishButton();
-            pagesPage.AndScreenshot('E32-596','4');
+            pagesPage.AndScreenshot('37-596','4');
 
             WhenStepsPages.WhenClickFinalReviewButton();
 
             WhenStepsPages.WhenClickConfirmPublishButton();
-            pagesPage.AndScreenshot('E32-596','5');
+            pagesPage.AndScreenshot('37-596','5');
 
             ThenStepsPages.thenIsPublishFlowComplete();
 
             ThenStepsPages.thenIsModalHeaderCorrect_Untitled();
-            pagesPage.AndScreenshot('E32-596','6');
+            pagesPage.AndScreenshot('37-596','6');
 
             ThenStepsPages.thenIsModalDescriptionCorrect(randomPageDescription);
         });

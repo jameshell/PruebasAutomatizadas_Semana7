@@ -14,7 +14,7 @@ describe("Pages - Create a draft with title greater than 255 characters", () => 
             disableTimersAndAnimations: false,
         })
 
-        pagesPage.AndScreenshot('E19-596','1');
+        pagesPage.AndScreenshot('36-596','1');
     });
 
     it('E31 - Should create a new page successfully with apriori data', () => {
@@ -22,19 +22,19 @@ describe("Pages - Create a draft with title greater than 255 characters", () => 
             const randomPageTitle = data[0].Title_255;
 
             WhenStepsPages.WhenNewPageBtn_Click();
-            pagesPage.AndScreenshot('E31-596','1');
+            pagesPage.AndScreenshot('36-596','1');
 
             WhenStepsPages.WhenFillPageHeader(randomPageTitle);
-            pagesPage.AndScreenshot('E31-596','2');
+            pagesPage.AndScreenshot('36-596','2');
 
             WhenStepsPages.WhenClickAddImgBtn();
-            pagesPage.AndScreenshot('E31-596','3');
+            pagesPage.AndScreenshot('36-596','3');
 
             WhenStepsPages.WhenClickAddImageBtn_FirstPic()
-            pagesPage.AndScreenshot('E31-596','4');
+            pagesPage.AndScreenshot('36-596','4');
 
             ThenStepsPages.thenPublishButton_ShouldNotExist();
-            pagesPage.AndScreenshot('E31-596','5');
+            pagesPage.AndScreenshot('36-596','5');
         });
     });
 });

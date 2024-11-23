@@ -15,31 +15,31 @@ describe("Pages - Create a complete valid Page with apriori data", () => {
             disableTimersAndAnimations: false,
         })
 
-        pagesPage.AndScreenshot('E26-596','1');
+        pagesPage.AndScreenshot('31-596','1');
     });
 
-    it('E26 - Should create a new page successfully with apriori data', () => {
+    it('31 - Should create a new page successfully with apriori data', () => {
         cy.fixture('pages').then((data) => {
             const randomPageDescription = data[0].Description;
             const randomPageTitle = data[0].Title;
 
             WhenStepsPages.WhenNewPageBtn_Click();
-            pagesPage.AndScreenshot('E26-596','2');
+            pagesPage.AndScreenshot('31-596','2');
 
             WhenStepsPages.WhenFillPageHeader(randomPageTitle);
-            pagesPage.AndScreenshot('E26-596','3');
+            pagesPage.AndScreenshot('31-596','3');
 
             WhenStepsPages.WhenFillPageDescription(randomPageDescription);
-            pagesPage.AndScreenshot('E26-596','4');
+            pagesPage.AndScreenshot('31-596','4');
 
             WhenStepsPages.WhenClickAddImgBtn();
-            pagesPage.AndScreenshot('E26-596','5');
+            pagesPage.AndScreenshot('31-596','5');
 
             WhenStepsPages.WhenClickAddImageBtn_FirstPic()
-            pagesPage.AndScreenshot('E26-596','6');
+            pagesPage.AndScreenshot('31-596','6');
 
             WhenStepsPages.WhenClickPublishButton();
-            pagesPage.AndScreenshot('E26-596','7');
+            pagesPage.AndScreenshot('31-596','7');
 
             WhenStepsPages.WhenClickFinalReviewButton();
 
@@ -50,7 +50,7 @@ describe("Pages - Create a complete valid Page with apriori data", () => {
             ThenStepsPages.thenIsModalHeaderCorrect(randomPageTitle);
 
             ThenStepsPages.thenIsModalDescriptionCorrect(randomPageDescription);
-            pagesPage.AndScreenshot('E26-596','8');
+            pagesPage.AndScreenshot('31-596','8');
         });
     });
 });
