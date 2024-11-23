@@ -4,7 +4,8 @@ import { faker } from "@faker-js/faker";
 import WhenStepsPages from "./steps/whenStepsPages";
 import ThenStepsPages from "./steps/thenStepsPages";
 
-describe("Pages - Create a complete valid Page with apriori data", () => {
+
+describe("Pages - Create Page With Only Description", () => {
 
     beforeEach(() => {
         GivenSteps.givenNavigateToLoginPage();
@@ -13,44 +14,36 @@ describe("Pages - Create a complete valid Page with apriori data", () => {
 
         Cypress.Screenshot.defaults({
             disableTimersAndAnimations: false,
-        })
+        });
 
-        pagesPage.AndScreenshot('E19-596','1');
+        pagesPage.AndScreenshot('E18-596','1');
     });
 
-    it('E26 - Should create a new page successfully with apriori data', () => {
+    it('E18 - Should create a new page successfully with a random description', () => {
+
         cy.fixture('pages').then((data) => {
             const randomPageDescription = data[0].Description;
-            const randomPageTitle = data[0].Title;
 
             WhenStepsPages.WhenNewPageBtn_Click();
-            pagesPage.AndScreenshot('E19-596','2');
-
-            WhenStepsPages.WhenFillPageHeader(randomPageTitle);
-            pagesPage.AndScreenshot('E19-596','3');
+            pagesPage.AndScreenshot('E18-596','2');
 
             WhenStepsPages.WhenFillPageDescription(randomPageDescription);
-            pagesPage.AndScreenshot('E19-596','4');
-
-            WhenStepsPages.WhenClickAddImgBtn();
-            pagesPage.AndScreenshot('E19-596','5');
-
-            WhenStepsPages.WhenClickAddImageBtn_FirstPic()
-            pagesPage.AndScreenshot('E19-596','6');
+            pagesPage.AndScreenshot('E18-596','3');
 
             WhenStepsPages.WhenClickPublishButton();
-            pagesPage.AndScreenshot('E19-596','7');
+            pagesPage.AndScreenshot('E18-596','4');
 
             WhenStepsPages.WhenClickFinalReviewButton();
 
             WhenStepsPages.WhenClickConfirmPublishButton();
+            pagesPage.AndScreenshot('E18-596','5');
 
             ThenStepsPages.thenIsPublishFlowComplete();
 
-            ThenStepsPages.thenIsModalHeaderCorrect(randomPageTitle);
+            ThenStepsPages.thenIsModalHeaderCorrect_Untitled();
+            pagesPage.AndScreenshot('E18-596','6');
 
             ThenStepsPages.thenIsModalDescriptionCorrect(randomPageDescription);
-            pagesPage.AndScreenshot('E19-596','8');
         });
     });
 });
