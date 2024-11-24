@@ -54,6 +54,14 @@ class WhenStepsPages {
     WhenClickBackButton() {
         pagesPage.clickBackButton();
     }
+
+    WhenClickPageSettings() {
+        pagesPage.clickPageSettings();
+    }
+
+    WhenTypePageURL(url) {
+        pagesPage.TypeURL(url);
+    }
 }
 
 export default new WhenStepsPages();
