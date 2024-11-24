@@ -18,7 +18,7 @@ describe("Pages - Create Page with large title draft", () => {
         pagesPage.AndScreenshot('55-596','1');
     });
 
-    it('55 - Should create nto be ableto create a page with large title', () => {
+    it('55 - Should create not be able to create a page with large title', () => {
         const randomPageDescription = faker.lorem.paragraph();
         const randomPageTitle = faker.lorem.words(255);;
 
