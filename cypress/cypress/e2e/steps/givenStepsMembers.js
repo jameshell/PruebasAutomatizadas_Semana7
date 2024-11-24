@@ -1,4 +1,6 @@
 import MemberPage from "../pages/memberPage";
+import LoginPage from "../pages/loginPage";
+import DashboardPage from "../pages/dashboardPage";
 
 class GivenStepsMembers {
 
@@ -28,8 +30,17 @@ class GivenStepsMembers {
     }
 
     givenFillMemberForm(name, email, note){
-        MemberPage.fillNameInput();
-        MemberPage.fillEmailInput();
-        MemberPage.fillNoteTextArea();
+        if (name!==''){
+            MemberPage.fillNameInput(name);
+        }
+        if (email!==''){
+            MemberPage.fillEmailInput(email);
+            
+        }
+        if (note!==''){
+            MemberPage.fillNoteTextArea(note);
+        }
     }
 }
+
+export default new GivenStepsMembers();

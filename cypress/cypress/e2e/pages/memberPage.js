@@ -46,20 +46,29 @@ class MemberPage {
         cy.get('p.response').contains('Please enter an email.').should('exist');
     }
     
-    seeCreatedMember(){
+    seeCreatedMember(name, email){
         cy.get('p').contains('Created').should('exist');
-        cy.get('h3').contains(this.displayNameValid).should('exist');
-        cy.get('a').contains(this.emailValid).should('exist');
+        if (name !== ''){
+            cy.get('h3').contains(name).should('exist');
+        }
+        if (email !== ''){
+            cy.get("a, h3").contains(email).should('exist');
+        }
     }
     
     clickSave() {
         this.saveButton.click();
     }
-
-
     
-    seeInvalidEmailNote(){
+    seeInvalidName(){
+        cy.get("p.response").contains('Name cannot be longer than 191 characters').should('exist');
+    }
+
+
+    seeInvalidEmail(){
         cy.get('p.response').contains('Invalid Email.').should('exist');
+    }
+    seeInvalidNote(){
         cy.get('p.response').contains('Note is too long.').should('exist')
     }
     
@@ -83,11 +92,6 @@ class MemberPage {
         cy.get('h3').contains(this.displayNameValid2).should('exist')
         cy.get('a').contains(this.emailValid2).should('exist')
         cy.get('textarea[name="note"]').should('exist').should('have.value', this.noteValid2);
-    }
-
-    screenShot(folderName, screenshotName) {
-        const screenshotPath = `${folderName}/${screenshotName}`;
-        cy.screenshot(screenshotPath, { overwrite: true });
     }
 }
 

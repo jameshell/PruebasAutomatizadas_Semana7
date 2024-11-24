@@ -1,4 +1,4 @@
-import givenStepsMembers from "./steps/givenStepsMembers"; // Assuming this is correct
+import givenStepsMembers from "./steps/givenStepsMembers";
 const https = require("https");
 
 var jsonData = null;
@@ -8,11 +8,9 @@ function generatePosts(recordCount = 10) {
     return new Promise((resolve, reject) => {
 
         const mockarooSchema = [
-            { name: "id", type: "Row Number" },
             { name: "first_name", type: "First Name" },
-            { name: "last_name", type: "Last Name" },
             { name: "email", type: "Email Address" },
-            { name: "age", type: "Number", min: 18, max: 65 }
+            { name: "note", type: "Sentences", min: 50, max: 100 }
         ];
 
         const postData = JSON.stringify(mockarooSchema);
@@ -50,12 +48,15 @@ function generatePosts(recordCount = 10) {
 
 describe("Pages - Create member", () => {
     before(() => {
+        // Get the mock data from the API
         cy.wrap(generatePosts()).then((response) => {
-            jsonData = response;
+            const randomNumber = Math.floor(Math.random() * 10);
+            jsonData = response[randomNumber];
         })
     });
 
-    it("8 - Should create a new member without a name and a valid email", () => {
-
+    it("8 - Create a new member with Name < 100 Characters, Valid Email, Note<100", () => {
+        givens
+        givenStepsMembers
     });
 });
