@@ -55,6 +55,14 @@ class PagesPage {
         return cy.get('input[name="post-setting-slug"][id="url"].post-setting-slug.ember-text-field.gh-input.ember-view');
     }
 
+    get tagField() {
+        return cy.get('input.ember-power-select-trigger-multiple-input[type="search"]');
+    }
+
+    TypeTagField(tag) {
+        this.tagField.first().type(tag);
+    }
+
     TypeURL(text){
         this.typeURLField.type(text);
     }

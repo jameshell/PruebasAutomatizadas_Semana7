@@ -62,6 +62,10 @@ class WhenStepsPages {
     WhenTypePageURL(url) {
         pagesPage.TypeURL(url);
     }
+
+    WhenTypeTag(tag) {
+        pagesPage.TypeTagField(tag);
+    }
 }
 
 export default new WhenStepsPages();
