@@ -26,8 +26,16 @@ class ThenStepsPages {
         pagesPage.ShouldUpdatePage();
     }
 
+    thenShouldNotUpdatePage(){
+        pagesPage.ShouldNotUpdatePage();
+    }
+
     thenIsDraftSaved() {
         pagesPage.isDraftSaved();
+    }
+
+    thenShouldNotAllowTitleLongerThan255() {
+        pagesPage.ShouldNotAllowTitleLongerThan255();
     }
 }
 

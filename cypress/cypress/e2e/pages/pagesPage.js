@@ -123,7 +123,16 @@ class PagesPage {
     }
 
     ShouldUpdatePage(){
-        this.pageUpdateNotification.should('be.visible')
+        this.pageUpdateNotification.should('be.visible');
+    }
+
+    ShouldNotUpdatePage(){
+        this.pageUpdateNotification.should('not.exist');
+    }
+
+    ShouldNotAllowTitleLongerThan255(){
+        cy.get('div.gh-alert-content')
+            .should('contain.text', 'Update failed: Title cannot be longer than 255 characters.');
     }
 
     verifyContentExists(content) {
