@@ -48,8 +48,12 @@ class MemberPage {
     
     seeCreatedMember(name, email){
         cy.get('p').contains('Created').should('exist');
-        cy.get('h3').contains(name).should('exist');
-        cy.get('a').contains(email).should('exist');
+        if (name !== ''){
+            cy.get('h3').contains(name).should('exist');
+        }
+        if (email !== ''){
+            cy.get("a, h3").contains(email).should('exist');
+        }
     }
     
     clickSave() {
