@@ -6,12 +6,24 @@ class ThenPosts {
         postPage.verifyPost();
     }
 
+    thenShouldAlertExcerpt(){
+        postPage.shouldAlertExcerpt();
+    }
+
     thenVerifyEditPost(){
         postPage.ShouldUpdatePost();
     }
 
     thenShouldNoExitPublish(){
         postPage.shouldNoExist();
+    }
+
+    thenShouldValidationError(){
+        postPage.shouldValidationError();
+    }
+
+    thenShouldNotificationAlert(){
+        postPage.shouldNotificationAlert();
     }
 }
 

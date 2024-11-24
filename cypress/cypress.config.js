@@ -3,17 +3,18 @@ const { defineConfig } = require("cypress");
 module.exports = {
   e2e: {
     setupNodeEvents(on, config) {
+
       // implement node event listeners here
       const version = config.env.VERSION || 4;
       const params = {
         4:{
-          'username': 'generic_admin@gmail.com',
-          'password': 'GenericAdmin123.',
-            'url': 'http://localhost:3001/',
+          'username': 'camis.069@gmail.com',
+          'password': 'OSO*994290',
+          'url': 'http://localhost:3001/',
         },
         5:{
-          'username': 'generic_admin@gmail.com',
-          'password': 'GenericAdmin123.',
+          'username': 'camis.069@gmail.com',
+          'password': 'OSO*994290',
           'url': 'http://localhost:3001/',
         },
       };
@@ -21,6 +22,7 @@ module.exports = {
       config.url = params[version].url;
       config.username = params[version].username;
       config.password = params[version].password;
+
      
       return config;
     },

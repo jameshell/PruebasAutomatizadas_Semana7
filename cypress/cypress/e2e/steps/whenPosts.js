@@ -6,6 +6,9 @@ class WhenPosts {
         postPage.clickPostPublishRightNow()
     }
 
+    whenPublishPost() {
+        postPage.clickPostPublish()
+    }
     whenUpdatePost() {
         postPage.updatePost()
     }
@@ -13,6 +16,7 @@ class WhenPosts {
     WhenClicksNewPost() {
         postPage.clickNewPost()
     }
+
 }
 
 export default new WhenPosts();
