@@ -33,14 +33,14 @@ describe("Create Post and edit post", () => {
         // Given the user clicks on the post title field to focus on it
         GivenPosts.AndClicksPostTitle();
 
-        let Title1=longDescription(150,44);
+        let Title1=longDescription(150);
         // Given the user inputs a title into the post title field
         GivenPosts.AndInputPostTitle(Title1);
 
         GivenPosts.AndClickSettingsPost();
 
         GivenPosts.AndClickExcerptPost();
-        const Excerpt=longDescription(300,44);
+        const Excerpt=longDescription(300);
         GivenPosts.AndFillExcerptPost(Excerpt);
 
         GivenPosts.AndClickSettingsPost();

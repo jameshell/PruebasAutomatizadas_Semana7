@@ -47,7 +47,7 @@ function generarPalabras(cantidad = 100, semilla = null) {
     return palabras.join(' ');
 }
 
-describe("65_post_description_400_words_no_title", () => {
+describe("65_post_description_250_words_no_title", () => {
     beforeEach(() => {
         GivenPosts.givenNavigateToLoginPage();
         GivenPosts.givenLogin();
@@ -58,14 +58,14 @@ describe("65_post_description_400_words_no_title", () => {
         })
     })
 
-    it("65_post_description_400_words_no_title", () => {
+    it("65_post_description_250_words_no_title", () => {
         // Given the user clicks on "New Post" to start creating a new post
         GivenPosts.AndClicksNewPost();
         // Given the user clicks on the post title field to focus on it
 
         GivenPosts.AndClicksPostContent();
 
-        const Description = generarPalabras( 400, 44);
+        const Description = generarPalabras( 250);
         GivenPosts.AndInputPostContent(Description);
 
         GivenPosts.AndClickPublishPost();

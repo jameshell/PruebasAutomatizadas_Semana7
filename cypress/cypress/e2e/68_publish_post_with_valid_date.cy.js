@@ -35,7 +35,6 @@ describe("68_publish_post_with_valid_date", () => {
         GivenPosts.givenNavigateToLoginPage();
         GivenPosts.givenLogin();
         GivenPosts.givenNavigateToPostsPage();
-        faker.seed(44);
     })
 
     it("68_publish_post_with_valid_date", () => {
@@ -44,7 +43,7 @@ describe("68_publish_post_with_valid_date", () => {
         // Given the user clicks on the post title field to focus on it
         GivenPosts.AndClicksPostTitle();
 
-        const Title1 = generarTexto("title", 27, 44);
+        const Title1 = generarTexto("title", 27);
         // Given the user inputs a title into the post title field
         GivenPosts.AndInputPostTitle(Title1);
         const randomDate = faker.date.past();

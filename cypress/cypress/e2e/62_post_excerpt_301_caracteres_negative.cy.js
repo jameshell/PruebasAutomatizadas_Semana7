@@ -46,7 +46,7 @@ describe("62_post_excerpt_300_caracteres", () => {
         // Given the user clicks on the post title field to focus on it
         GivenPosts.AndClicksPostTitle();
 
-        const Title=generarTexto("title",150,44);
+        const Title=generarTexto("title",150);
         // Given the user inputs a title into the post title field
         GivenPosts.AndInputPostTitle(Title);
 
@@ -54,7 +54,7 @@ describe("62_post_excerpt_300_caracteres", () => {
 
         GivenPosts.AndClickExcerptPost();
 
-        const Excerpt=generarTexto("description",301,44);
+        const Excerpt=generarTexto("description",301);
         GivenPosts.AndFillExcerptPost(Excerpt);
 
         GivenPosts.AndClickSettingsPost();

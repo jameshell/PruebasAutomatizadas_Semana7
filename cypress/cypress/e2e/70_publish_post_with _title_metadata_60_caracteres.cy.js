@@ -35,7 +35,6 @@ describe("70_publish_post_with _title_metadata_61_caracteres", () => {
         GivenPosts.givenNavigateToLoginPage();
         GivenPosts.givenLogin();
         GivenPosts.givenNavigateToPostsPage();
-        faker.seed(44);
     })
 
     it("70_publish_post_with _title_metadata_61_caracteres", () => {
@@ -44,14 +43,14 @@ describe("70_publish_post_with _title_metadata_61_caracteres", () => {
         // Given the user clicks on the post title field to focus on it
         GivenPosts.AndClicksPostTitle();
 
-        const Title1 = generarTexto("title", 27, 44);
+        const Title1 = generarTexto("title", 27);
         // Given the user inputs a title into the post title field
         GivenPosts.AndInputPostTitle(Title1);
 
         GivenPosts.AndClickSettingsPost();
 
         GivenPosts.AndClickMetaDataBtn();
-        const TitleMetaData = generarTexto("title", 60, 44);
+        const TitleMetaData = generarTexto("title", 60);
         GivenPosts.AndInputMetaDataTitle(TitleMetaData,600);
 
         GivenPosts.AndClickSettingsPost();

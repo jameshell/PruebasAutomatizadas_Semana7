@@ -35,7 +35,6 @@ describe("69_publish_post_with_invalid_date", () => {
         GivenPosts.givenNavigateToLoginPage();
         GivenPosts.givenLogin();
         GivenPosts.givenNavigateToPostsPage();
-        faker.seed(44);
     })
 
     it("69_publish_post_with_invalid_date", () => {

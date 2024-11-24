@@ -52,7 +52,6 @@ describe("67_post_insert_other_URL_in_content", () => {
         GivenPosts.givenNavigateToLoginPage();
         GivenPosts.givenLogin();
         GivenPosts.givenNavigateToPostsPage();
-        faker.seed(44);
     })
 
     it("67_post_insert_other_URL_in_content", () => {
@@ -61,7 +60,7 @@ describe("67_post_insert_other_URL_in_content", () => {
         // Given the user clicks on the post title field to focus on it
         GivenPosts.AndClicksPostTitle();
 
-        const Title1 = generarTexto("title", 60, 44);
+        const Title1 = generarTexto("title", 60);
         // Given the user inputs a title into the post title field
         GivenPosts.AndInputPostTitle(Title1);
         GivenPosts.AndClicksPostContent();

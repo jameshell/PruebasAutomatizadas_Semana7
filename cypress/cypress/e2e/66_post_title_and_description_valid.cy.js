@@ -62,12 +62,12 @@ describe("67_publish_post_insert_other_URL_in_content", () => {
         // Given the user clicks on "New Post" to start creating a new post
         GivenPosts.AndClicksNewPost();
         // Given the user clicks on the post title field to focus on it
-        const Title1 = generarTexto("title", 256, 44);
+        const Title1 = generarTexto("title", 256);
         // Given the user inputs a title into the post title field
         GivenPosts.AndInputPostTitle(Title1);
         GivenPosts.AndClicksPostContent();
 
-        const Description = generarPalabras( 40, 44);
+        const Description = generarPalabras( 40);
         GivenPosts.AndInputPostContent(Description);
 
         GivenPosts.AndClickPublishPost();
