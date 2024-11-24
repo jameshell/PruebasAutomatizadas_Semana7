@@ -8,12 +8,6 @@ class ThenSteps {
     thenSeeCreatedMember(){
         MemberPage.seeCreatedMember();
     }
-    thenSeeEmailRequiredMemberForm(){
-        MemberPage.seeEmailRequired();
-    }
-    thenSeeInvalidEmailNote(){
-        MemberPage.seeInvalidEmailNote();
-    }
     thenSeeUpdatedMember(){
         MemberPage.seeUpdatedMember();
     }
@@ -38,28 +32,6 @@ class ThenSteps {
      thenShouldNoExitPublish(){
         postPage.shouldNoExist();
      }
-
-     // ------------------- Pages -------------------
-
-    thenIsPublishFlowComplete() {
-        pagesPage.isPublishFlowComplete();
-    }
-
-    thenIsModalHeaderCorrect(randomPageTitle) {
-        pagesPage.isModalHeaderCorrect(randomPageTitle);
-    }
-
-    thenIsModalDescriptionCorrect(randomPageDescription) {
-        pagesPage.isModalDescriptionCorrect(randomPageDescription);
-    }
-
-    thenPublishButton_ShouldNotExist(){
-        pagesPage.publishButton_ShouldNotExist();
-    }
-
-    thenIsModalHeaderCorrect_Untitled(){
-        pagesPage.isModalHeaderCorrect_Untitled();
-    }
 }
 
 export default new ThenSteps();

@@ -1,18 +1,4 @@
-import {fa, faker, th} from "@faker-js/faker";
-
 class MemberPage {
-    
-    displayNameValid = faker.internet.displayName()
-    emailValid = faker.internet.email();
-    noteValid = faker.string.alpha(100)
-
-    displayNameValid2 = faker.internet.displayName()
-    emailValid2 = faker.internet.email();
-    noteValid2 = faker.string.alpha(100)
-    
-    emailInvalid = faker.string.alpha(10)
-    displayNameInvalid = faker.string.symbol(2)
-    noteInvalid = faker.string.alpha(600)
     
     
     get newMemberButton() {
@@ -44,76 +30,80 @@ class MemberPage {
         this.newMemberButton.click();
     }
     
-    fillNameInput() {
-        this.memberNameInput.clear().type(this.displayNameValid);
+    fillNameInput(displayName) {
+        this.memberNameInput.clear().type(displayName);
     }
     
-    fillEmailInput() {
-        this.memberEmailInput.clear().type(this.emailValid);
+    fillEmailInput(email) {
+        this.memberEmailInput.clear().type(email);
     }
     
-    fillNoteTextArea() {
-        this.memberNoteTextArea.clear().type(this.noteValid);
-    }
-
-    fillNameInputInvalid() {
-        this.memberNameInput.clear().type(this.displayNameInvalid);
-    }
-
-    fillEmailInputInvalid() {
-        this.memberEmailInput.clear().type(this.emailInvalid);
-    }
-
-    fillNoteTextAreaInvalid() {
-        this.memberNoteTextArea.clear().type(this.noteInvalid);
+    fillNoteTextArea(note) {
+        this.memberNoteTextArea.clear().type(note);
     }
     
     seeEmailRequired(){
         cy.get('p.response').contains('Please enter an email.').should('exist');
     }
     
-    seeCreatedMember(){
+    seeCreatedMember(name, email){
         cy.get('p').contains('Created').should('exist');
-        cy.get('h3').contains(this.displayNameValid).should('exist');
-        cy.get('a').contains(this.emailValid).should('exist');
+        if (name !== ''){
+            cy.get('h3').contains(name).should('exist');
+        }
+        if (email !== ''){
+            cy.get("a, h3").contains(email).should('exist');
+        }
     }
     
     clickSave() {
         this.saveButton.click();
     }
-
-
     
-    seeInvalidEmailNote(){
+    seeInvalidName(){
+        cy.get("p.response").contains('Name cannot be longer than 191 characters').should('exist');
+    }
+
+
+    seeInvalidEmail(){
         cy.get('p.response').contains('Invalid Email.').should('exist');
+    }
+    seeInvalidNote(){
         cy.get('p.response').contains('Note is too long.').should('exist')
     }
     
-    clickNameMember(){
-        this.memberName.click();
+    clickNameMember(name){
+        cy.get('h3').contains(name).click();
+    }
+
+    updateName(name){
+        if (name === ''){
+            this.memberNameInput.clear();
+        } else{
+            this.memberNameInput.clear().type(name);
+        }
     }
     
-    updateEmail(){
-        this.memberNameInput.clear().type(this.displayNameValid2);
+    updateEmail(email){
+        if (email === ''){
+            this.memberEmailInput.clear()
+        }else{
+            this.memberEmailInput.clear().type(email);
+        }
     }
     
-    updateName(){
-        this.memberEmailInput.clear().type(this.emailValid2);
-    }
-    
-    updateNote(){
-        this.memberNoteTextArea.clear().type(this.noteValid2);
+    updateNote(note){
+        if (note === ''){
+            this.memberNoteTextArea.clear()
+        }else{
+            this.memberNoteTextArea.clear().type(note);
+        }
     }
 
     seeUpdatedMember() {
         cy.get('h3').contains(this.displayNameValid2).should('exist')
         cy.get('a').contains(this.emailValid2).should('exist')
         cy.get('textarea[name="note"]').should('exist').should('have.value', this.noteValid2);
-    }
-
-    screenShot(folderName, screenshotName) {
-        const screenshotPath = `${folderName}/${screenshotName}`;
-        cy.screenshot(screenshotPath, { overwrite: true });
     }
 }
 

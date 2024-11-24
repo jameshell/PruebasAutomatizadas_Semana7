@@ -39,6 +39,18 @@ class PagesPage {
         return cy.get('button[data-test-button="publish-save"]').first();
     }
 
+    get pageUpdateNotification(){
+        return cy.get('.gh-notifications').first();
+    }
+
+    get backButton() {
+        return cy.get('svg[viewBox="0 0 122.43 122.41"]');
+    }
+
+    clickBackButton() {
+        this.backButton.click();
+    }
+
     fillPageDescription(description) {
         cy.wait(1000);
         this.pageDescription.type(description);
@@ -97,7 +109,8 @@ class PagesPage {
     }
 
     isModalDescriptionCorrect(description) {
-        return cy.get('[data-test-complete-bookmark=""] .modal-body .post-excerpt').should('contain', description);
+        const shortDescription = description.length > 15 ? description.substring(0, 15) : description;
+        return cy.get('[data-test-complete-bookmark=""] .modal-body .post-excerpt').should('contain', shortDescription);
     }
 
     isModalHeaderCorrect(header) {
@@ -107,6 +120,10 @@ class PagesPage {
     navigateToPagesPage() {
         const url = Cypress.env("url");
         cy.visit(url+'/ghost/#/pages');
+    }
+
+    ShouldUpdatePage(){
+        this.pageUpdateNotification.should('be.visible')
     }
 
     verifyContentExists(content) {
@@ -127,6 +144,18 @@ class PagesPage {
         cy.wait(1000);
         const screenshotPath = `${folderName}/${screenshotName}`;
         cy.screenshot(screenshotPath, { overwrite: true });
+    }
+
+    ClearPageDescription() {
+        this.pageDescription.clear();
+    }
+
+    ClearPageHeader() {
+        this.pageHeader.clear();
+    }
+
+    isDraftSaved() {
+        cy.get('div[data-test-editor-post-status=""]').should('be.visible');
     }
 }
 

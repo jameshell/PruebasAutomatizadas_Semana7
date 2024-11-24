@@ -59,14 +59,79 @@ class TagPage{
         return cy.get("#tag-description");
     }
 
+    get tagExpandFbCard(){
+        return cy.get('.gh-btn.gh-btn-expand').eq(2);
+    }
+
+    get tagfillNameFbCard(){
+        return cy.get('#og-title');
+    }
+
+    get tagfillDescriptionFb(){
+        return cy.get('#og-description');
+    }
+    get tagExpandMetadataCard(){
+        return cy.get('.gh-btn.gh-btn-expand').eq(0);
+    }
+
+    get tagfillMetadataName(){
+        return cy.get('#meta-title');
+    }
+
+    get tagfillMetadataDescription(){
+        return cy.get('#meta-description');
+    }
+    
+    get tagfillMetadataUrl(){
+        return cy.get('#canonical-url');
+    }
+
+    get tagExpandXcard(){
+        return cy.get('.gh-btn.gh-btn-expand').eq(1);
+    }
+    get tagfillNameXCard(){
+        return cy.get('#twitter-title');
+    }
+    get tagfillXDescription(){
+        return cy.get('#twitter-description');
+    }
+
+    get errorDescription(){
+        return cy.contains('Description cannot be longer than 500 characters');
+    }
+
+    get errorDescriptionFB(){
+        return cy.get('article.gh-alert.gh-alert-red');
+    }
+
+    get errorDescriptionX(){
+        return cy.get('article.gh-alert.gh-alert-red');
+    }
+
+    get ErrorTagName(){
+        return cy.get('span.error p.response');
+    }
+
+
+    get slugNameInput(){
+        return cy.get("#tag-slug");
+    }
+
+    get ErrorSlugName(){
+        return cy.get('p.response');
+    }
+
+    get colorTag(){
+        return cy.get('input[name="accent-color"]');
+    }
 
     clickNewTag(){
         cy.wait(1000);
         this.newTagButton.click();
     }
 
-    fillNameTag(){
-        this.tagNameInput.clear().type(this.nameTagValid);
+    fillNameTag(nameTag){
+        this.tagNameInput.clear().type(nameTag);
     }
 
     fillDescriptionTag(){
@@ -108,12 +173,85 @@ class TagPage{
     fillEditDescriptionTag(){
         this.tagEditDescription.clear().type("Edited Description");
     }
-    
-    screenShot(folderName, screenshotName) {
-        const screenshotPath = `${folderName}/${screenshotName}`;
-        cy.screenshot(screenshotPath, { overwrite: true });
+
+    expandFbCard(){
+        this.tagExpandFbCard.click();
     }
 
+    fillNameFbCard(nameFbCard){
+        this.tagfillNameFbCard.clear().type(nameFbCard);
+    }
+    
+    fillDescriptionFb(descripcionFb){
+        this.tagfillDescriptionFb.clear().type(descripcionFb);
+    }
+    expandMetadataCard(){
+        this.tagExpandMetadataCard.click();
+    }
+
+    fillMetadataName(descripcionmMeta){
+        this.tagfillMetadataName.clear().type(descripcionmMeta);
+    }
+
+    fillMetadataDescription(descripcionMeta){
+        this.tagfillMetadataDescription.clear().type(descripcionMeta);
+    }
+
+    fillMetadataUrl(urlMeta){
+        this.tagfillMetadataUrl.clear().type(urlMeta);
+    }
+
+    expandXcard(){
+        this.tagExpandXcard.click();
+    }
+
+    fillXcardName(xcardName){
+        this.tagfillNameXCard.clear().type(xcardName);
+    }
+    fillXDescription(descripcionX){
+        this.tagfillXDescription.clear().type(descripcionX);
+    }
+
+    assertErrorDescription(){
+        this.errorDescription.should('be.visible');
+    }
+
+    assertErrorDescriptionFB(){
+        this.errorDescriptionFB.should('be.visible')
+        .and('contain', 'Validation error, cannot save tag.');
+    }
+
+    assertErrorDescriptionX(){
+        this.errorDescriptionX.should('be.visible')
+        .and('contain', 'Validation error, cannot save tag.')
+    }
+    
+    assertTagVisible(nameTag){
+        cy.contains(nameTag).should('be.visible');
+    }
+
+    assertErrorTagName(){
+        this.ErrorTagName.should('be.visible')
+        .and('contain', 'Tag names cannot be longer than 191 characters');
+    }
+
+    fillSlugTag(nameSlug){
+        this.slugNameInput.clear().type(nameSlug);
+    }
+
+    assertErrorSlugName(){
+        this.ErrorSlugName.should('be.visible')
+        .and('contain', 'URL cannot be longer than 191 characters.');
+    }
+
+    fillColorTag(nameSlug){
+        this.colorTag.first().type(nameSlug);
+    }
+
+    assertErrorTagColor(){
+        this.ErrorSlugName.should('be.visible')
+        .and('contain', 'The colour should be in valid hex format');
+    }
 }
 
 export default new TagPage();

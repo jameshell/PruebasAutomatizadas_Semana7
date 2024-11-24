@@ -4,7 +4,7 @@
   "description": "Proyecto para la semana 7 de la clase de pruebas automatizadas",
   "main": "index.js",
   "scripts": {
-    "start-ghost": "docker run -d --name some-ghost -e NODE_ENV=development -e url=http://localhost:3001 -p 3001:2368 ghost:latest",
+    "start-ghost": "docker run -d --name some-ghost -e NODE_ENV=development -e url=http://localhost:3001 -p 3001:2368 ghost:5.96",
     "create-admin-ghost": "cd utils && npx cypress run",
     "setup-ghost": "npm run start-ghost && node sleep.js 10 && npm run create-admin-ghost",
     "stop-ghost": "docker stop some-ghost && docker rm some-ghost",

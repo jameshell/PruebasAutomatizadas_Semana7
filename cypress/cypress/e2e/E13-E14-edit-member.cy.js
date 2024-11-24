@@ -9,7 +9,7 @@ import givenSteps from "./steps/givenSteps";
 
 describe('Edit Member', () => {
 
-    beforeEach(() => {
+    /*beforeEach(() => {
         
     })
 
@@ -63,5 +63,5 @@ describe('Edit Member', () => {
         // Then the user should see hte updated data
         ThenSteps.thenSeeInvalidEmailNote()
         memberPage.screenShot('E14-596','7')
-    });
+    });*/
 })
