@@ -5,7 +5,7 @@ import ThenStepsPages from "./steps/thenStepsPages";
 const https = require("https");
 
 function fetchMockarooData() {
-    const API_KEY = "91dbcda0"; // Ensure this is your valid API key
+    const API_KEY = ""; //
     const mockarooSchema = [
         { name: "title", type: "Sentence" },
         { name: "description", type: "Paragraph" }
