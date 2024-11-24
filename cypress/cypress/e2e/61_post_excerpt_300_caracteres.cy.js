@@ -16,7 +16,7 @@ function longDescription(longDesc = 500, seed=null){
     return description.substring(0, longDesc);;
 }
 
-describe("Create Post and edit post", () => {
+describe("61_post_excerpt_300_caracteres", () => {
     beforeEach(() => {
         GivenPosts.givenNavigateToLoginPage();
         GivenPosts.givenLogin();

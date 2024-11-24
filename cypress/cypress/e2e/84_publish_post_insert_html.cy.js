@@ -54,7 +54,7 @@ function generatePosts(recordCount = 10) {
 
 
 
-describe("Create Post and edit post", () => {
+describe("84_publish_post_insert_html", () => {
     let data = [];
     before(() => {
         cy.wrap(generatePosts(), { timeout: 10000 }).then((response) => {
@@ -74,7 +74,7 @@ describe("Create Post and edit post", () => {
         })
     })
 
-    it("61_post_excerpt_300_caracteres", () => {
+    it("84_publish_post_insert_html", () => {
         // Given the user clicks on "New Post" to start creating a new post
         GivenPosts.AndClicksNewPost();
         // Given the user clicks on the post title field to focus on it

@@ -47,7 +47,7 @@ function generarPalabras(cantidad = 100, semilla = null) {
     return palabras.join(' ');
 }
 
-describe("67_publish_post_insert_other_URL_in_content", () => {
+describe("66_publish_post_title_and_description_valid", () => {
     beforeEach(() => {
         GivenPosts.givenNavigateToLoginPage();
         GivenPosts.givenLogin();
@@ -58,7 +58,7 @@ describe("67_publish_post_insert_other_URL_in_content", () => {
         })
     })
 
-    it("67_publish_post_insert_other_URL_in_content", () => {
+    it("66_publish_post_title_and_description_valid", () => {
         // Given the user clicks on "New Post" to start creating a new post
         GivenPosts.AndClicksNewPost();
         // Given the user clicks on the post title field to focus on it

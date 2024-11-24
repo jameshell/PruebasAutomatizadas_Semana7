@@ -29,7 +29,7 @@ function generarTexto(tipo = "title", longitud = 255, semilla = null) {
     }
 }
 
-describe("62_post_excerpt_300_caracteres", () => {
+describe("62_post_excerpt_301_caracteres", () => {
     beforeEach(() => {
         GivenPosts.givenNavigateToLoginPage();
         GivenPosts.givenLogin();
@@ -40,7 +40,7 @@ describe("62_post_excerpt_300_caracteres", () => {
         })
     })
 
-    it("61_post_excerpt_300_caracteres", () => {
+    it("62_post_excerpt_301_caracteres", () => {
         // Given the user clicks on "New Post" to start creating a new post
         GivenPosts.AndClicksNewPost();
         // Given the user clicks on the post title field to focus on it
