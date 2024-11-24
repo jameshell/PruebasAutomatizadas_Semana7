@@ -11,7 +11,10 @@ const mockarooSchema = [
   { name: "first_name", type: "First Name" },
   { name: "last_name", type: "Last Name" },
   { name: "email", type: "Email Address" },
-  { name: "age", type: "Number", min: 18, max: 65 }
+  { name: "age", type: "Number", min: 18, max: 65 },
+  { name: "tag_name", type: "Fake Company Name" },
+  { name: "paragraphs_501", type: "Paragraphs", min:"5", max: "5"},
+  { name: "paragraphs", type: "Paragraphs"}
 ];
 
 // Function to generate mock data
@@ -60,4 +63,4 @@ function generateMockData(recordCount = 10) {
 }
 
 // Generate 20 mock records
-generateMockData(1);
+generateMockData(10);
