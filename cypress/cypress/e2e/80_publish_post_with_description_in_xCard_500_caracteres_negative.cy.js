@@ -1,10 +1,9 @@
 import GivenPosts from "./steps/givenPosts";
 import whenPosts from "./steps/whenPosts";
 import thenPosts from "./steps/thenPosts";
-import {faker} from "@faker-js/faker";
 
 
-describe("75_publish_post_with_description_in_facebookCard_500_caracteres_positive", () => {
+describe("80_publish_post_with_description_in_xCard_500_caracteres_negative", () => {
     let postData = [];
     before(() => {
         cy.fixture('mockData.json').then((data) => {
@@ -17,7 +16,7 @@ describe("75_publish_post_with_description_in_facebookCard_500_caracteres_positi
         GivenPosts.givenNavigateToPostsPage();
     })
 
-    it("75_publish_post_with_description_in_facebookCard_500_caracteres_positive", () => {
+    it("80_publish_post_with_description_in_xCard_500_caracteres_negative", () => {
         // Given the user clicks on "New Post" to start creating a new post
         GivenPosts.AndClicksNewPost();
         // Given the user clicks on the post title field to focus on it
@@ -29,24 +28,19 @@ describe("75_publish_post_with_description_in_facebookCard_500_caracteres_positi
 
         GivenPosts.AndClickSettingsPost();
 
-        GivenPosts.AndClickFacebookCardBtn();
+        GivenPosts.AndClickXCardBtn();
 
-        let descriptionFBcard =postData[0].title;
-        if (descriptionFBcard.length > 502) {
-            descriptionFBcard = descriptionFBcard.substring(0, 500);}
-        GivenPosts.AndInputFacebookCardDescription(descriptionFBcard);
+        let descriptionXCard =postData[0].title;
+        if (descriptionXCard.length > 502) {
+            descriptionXCard = descriptionXCard.substring(0, 501);}
+        GivenPosts.AndInputDescriptionXCard(descriptionXCard);
+        GivenPosts.AndInputTitleXCard(" ")
 
         GivenPosts.AndClickSettingsPost();
 
         // Given the user clicks the "Publish" button to initiate the publishing flow
-        GivenPosts.AndClickPublishPost();
+        whenPosts.whenPublishPost();
 
-        // Given the user clicks "Continue" in the publishing flow
-        GivenPosts.AndClickContinuePublish();
-
-        // Given the user clicks "Publish Right Now" to confirm the publication
-        whenPosts.whenclickPostPublishRightNow();
-        // Then, verify that the post has been published successfully
-        thenPosts.thenVerifyPost();
+        thenPosts.thenShouldNotificationAlert();
     });
 })

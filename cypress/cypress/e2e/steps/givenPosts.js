@@ -156,6 +156,37 @@ class GivenPosts {
         postPage.clickDescriptionXCard();
     }
 
+    AndClickAddMarkdown(){
+        postPage.clickAddMarkdown();
+    }
+
+    AndInputMarkdownContent(Content){
+        postPage.inputMarkdown(Content);
+    }
+    AndClickSecondDescription(){
+        postPage.ClickSecondDescription();
+    }
+
+    AndClickAddHtml(){
+        postPage.clickAddHtmlPost();
+    }
+    AndInputHtml(Content){
+        postPage.inputHtml(Content);
+    }
+
+    AndInputTag(Tag){
+        postPage.inputTagPost(Tag);
+    }
+    AndInputUrlSettingsPost(Url){
+        postPage.inputUrlSettingsPost(Url);
+    }
+
+    AndInputEmailContent(Email){
+        postPage.inputEmailContent(Email);
+    }
+    AndInputUrlMetaData(Url){
+        postPage.inputUrlMetaData(Url);
+    }
 }
 
 export default new GivenPosts()

@@ -110,6 +110,7 @@ class postPage {
     get xcardBtn(){
         return cy.get(':nth-child(5) > button > span');
     }
+
     get xCardTitle(){
         return cy.get('#twitter-title');
     }
@@ -126,6 +127,51 @@ class postPage {
         return cy.get('.gh-alert-content')
     }
 
+    get markdownBtn(){
+        return cy.contains('button', 'Markdown')
+    }
+
+    get htmlPostBtn(){
+        return cy.contains('button', 'HTML')
+    }
+
+    get emailContentBtn(){
+        return cy.contains('button', 'Email content')
+
+    }
+
+    get emailContentAdd(){
+        return cy.get('div[data-kg="editor"] div[contenteditable="true"]')
+    }
+
+    get secondDescription(){
+        return cy.get('[data-secondary-instance="false"] > .koenig-lexical > [data-kg="editor"] > .kg-prose > p')
+    }
+
+
+    get markdown(){
+        return cy.get('[data-lexical-decorator="true"] > .relative').first()
+    }
+
+    get htmlPost(){
+        return cy.get('.cm-content')
+    }
+
+    get tagPost(){
+        return cy.get('input.ember-power-select-trigger-multiple-input[type="search"]').first();
+    }
+
+    get addTagPost(){
+        return cy.get("li.ember-power-select-option")
+    }
+
+    get inputUrlSettings(){
+        return cy.get('input[name="post-setting-slug"][id="url"].post-setting-slug.ember-text-field.gh-input.ember-view').first();
+    }
+
+    get urlMetaData(){
+        return cy.get('input.post-setting-canonicalUrl.ember-text-field.gh-input.ember-view').first();
+    }
     clickNewPost() {
         cy.wait(1000);
         this.newPostButton.click();
@@ -223,6 +269,7 @@ class postPage {
     ClickSettingsPost(){
         cy.wait(1000);
         this.settingsPost.click();
+        cy.wait(1000);
     }
 
     clickExcerpPost(){
@@ -338,6 +385,50 @@ class postPage {
         this.xCardDescription.click();
     }
 
+    clickAddMarkdown(){
+        cy.wait(1000);
+        this.markdownBtn.click();
+    }
+    inputMarkdown(Markdown){
+        this.markdown.click({ multiple: true }).type(Markdown);
+    }
+   clickAddHtmlPost(){
+        cy.wait(1000);
+        this.htmlPostBtn.click();
+    }
+    inputHtml(Html){
+        this.htmlPost.click();
+        this.htmlPost.type(Html,{ force: true });
+    }
+
+   ClickSecondDescription(){
+        cy.wait(1000);
+        this.secondDescription.click();
+    }
+
+   inputTagPost(Tag){
+        this.tagPost.click();
+        cy.wait(1000);
+        this.tagPost.type(Tag,{ force: true });
+        cy.wait(1000);
+        this.addTagPost.click();
+    }
+
+    inputUrlSettingsPost(Url){
+        this.inputUrlSettings.click();
+        cy.wait(1000);
+        this.inputUrlSettings.type(Url, { force: true });
+    }
+
+    inputEmailContent(Email){
+        this.emailContentBtn.click();
+        cy.wait(1000);
+        this.emailContentAdd.invoke('text', Email,{ multiple: true, force: true });;
+    }
+
+    inputUrlMetaData(Url){
+        this.urlMetaData.clear({ force: true }).type(Url, { force: true });
+    }
 
 
 }

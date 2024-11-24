@@ -13,9 +13,10 @@ function generatePosts(recordCount = 10) {
     return new Promise((resolve, reject) => {
 
         const mockarooSchema = [
-            { name: "tag_name", type: "Fake Company Name" },
             { name: "paragraphs_150", type: "Paragraphs", min:"3", max: "3"},
             { name: "url", type: "URL" },
+            { name: "title1", type: "Sentences", min:"1", max: "1"},
+            { name: "description", type: "Sentences", min:"1", max: "1"}
         ];
 
         const postData = JSON.stringify(mockarooSchema);
@@ -53,7 +54,7 @@ function generatePosts(recordCount = 10) {
 
 
 
-describe("Create Post and edit post", () => {
+describe("87_create_post_empty_with_tag", () => {
     let data = [];
     before(() => {
         cy.wrap(generatePosts(), { timeout: 10000 }).then((response) => {
@@ -73,38 +74,12 @@ describe("Create Post and edit post", () => {
         })
     })
 
-    it("61_post_excerpt_300_caracteres", () => {
+    it("87_create_post_empty_with_tag", () => {
         // Given the user clicks on "New Post" to start creating a new post
         GivenPosts.AndClicksNewPost();
-        // Given the user clicks on the post title field to focus on it
-        GivenPosts.AndClicksPostTitle();
-
-        let Title1=data["url"];
-        // Given the user inputs a title into the post title field
-        GivenPosts.AndInputPostTitle(Title1);
-
         GivenPosts.AndClickSettingsPost();
-
-        GivenPosts.AndClickExcerptPost();
-        let Excerpt=data["paragraphs_150"];
-
-        if (Excerpt.length > 300) {
-            Excerpt = Excerpt.substring(0, 299);
-        }
-
-        GivenPosts.AndFillExcerptPost(Excerpt);
-
+        GivenPosts.AndInputTag(data["description"]);
         GivenPosts.AndClickSettingsPost();
-
-        // Given the user clicks the "Publish" button to initiate the publishing flow
-        GivenPosts.AndClickPublishPost();
-
-        // Given the user clicks "Continue" in the publishing flow
-        GivenPosts.AndClickContinuePublish();
-
-        // Given the user clicks "Publish Right Now" to confirm the publication
-        whenPosts.whenclickPostPublishRightNow();
-        // Then, verify that the post has been published successfully
-        thenPosts.thenVerifyPost();
+        thenPosts.thenShouldNoExitPublish();
     });
 })

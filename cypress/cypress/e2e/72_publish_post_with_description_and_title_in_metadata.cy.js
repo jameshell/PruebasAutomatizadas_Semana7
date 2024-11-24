@@ -3,39 +3,18 @@ import whenPosts from "./steps/whenPosts";
 import thenPosts from "./steps/thenPosts";
 import {faker} from "@faker-js/faker";
 
-function generarTexto(tipo = "title", longitud = 255, semilla = null) {
-    // Aplicar semilla si se proporciona
-    if (semilla !== null) {
-        faker.seed(semilla);
-    }
-
-    let texto = "";
-
-    if (tipo === "title") {
-        texto = faker.lorem.sentence(50); // Generar un título base
-    } else if (tipo === "description") {
-        texto = faker.lorem.paragraphs(5); // Generar un párrafo base
-    } else {
-        throw new Error("El tipo debe ser 'title' o 'description'.");
-    }
-
-    // Ajustar la longitud del texto al valor especificado
-    if (texto.length > longitud) {
-        return texto.substring(0, longitud).trim();
-    } else {
-        while (texto.length < longitud) {
-            texto += " " + faker.lorem.word();
-        }
-        return texto.substring(0, longitud).trim();
-    }
-}
-
 describe("72_publish_post_with_description_and_title_in_metadata", () => {
+    let postData = [];
+    before(() => {
+        cy.fixture('mockData.json').then((data) => {
+            postData = data;
+        });
+    });
+
     beforeEach(() => {
         GivenPosts.givenNavigateToLoginPage();
         GivenPosts.givenLogin();
         GivenPosts.givenNavigateToPostsPage();
-        faker.seed(44);
     })
 
     it("72_publish_post_with_description_and_title_in_metadata", () => {
@@ -44,7 +23,7 @@ describe("72_publish_post_with_description_and_title_in_metadata", () => {
         // Given the user clicks on the post title field to focus on it
         GivenPosts.AndClicksPostTitle();
 
-        const Title1 = generarTexto("title", 27, 44);
+        let Title1 = postData[0].paragraphs;
         // Given the user inputs a title into the post title field
         GivenPosts.AndInputPostTitle(Title1);
 
@@ -52,10 +31,15 @@ describe("72_publish_post_with_description_and_title_in_metadata", () => {
 
         GivenPosts.AndClickMetaDataBtn();
 
-        const TitleMetaData = generarTexto("title", 60, 44);
+        let TitleMetaData =postData[0].paragraphs
+        if (TitleMetaData.length > 62) {
+            TitleMetaData = TitleMetaData.substring(0, 60);}
         GivenPosts.AndInputMetaDataTitle(TitleMetaData,600);
 
-        const descriptionMetaData = generarTexto("title", 145, 44);
+
+        let descriptionMetaData =postData[0].paragraphs
+        if (descriptionMetaData.length > 146) {
+            descriptionMetaData = descriptionMetaData.substring(0, 145);}
         GivenPosts.AndInputMetaDataDescription(descriptionMetaData,60145);
         GivenPosts.AndClickSettingsPost();
 
