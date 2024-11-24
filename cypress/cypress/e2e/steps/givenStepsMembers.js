@@ -8,38 +8,48 @@ class GivenStepsMembers {
         LoginPage.login();
     }
 
-    givenNavigateToLoginPage(){
+    givenNavigateToLoginPage() {
         LoginPage.navigateToLogin();
     }
-    
-    givenClicksNewMember(){
+
+    givenClicksNewMember() {
         MemberPage.clickNewMember();
     }
 
-    givenCreateNewMember() {
+    givenCreateNewMember(name, email, note) {
         MemberPage.clickNewMember()
-        MemberPage.fillNameInput()
-        MemberPage.fillEmailInput()
-        MemberPage.fillNoteTextArea()
+        MemberPage.fillNameInput(name);
+        MemberPage.fillEmailInput(email);
+        MemberPage.fillNoteTextArea(note);
         MemberPage.clickSave();
         DashboardPage.clickMembersLink();
     }
 
-    givenNavigateToMembersPage(){
+    givenNavigateToMembersPage() {
         DashboardPage.clickMembersLink();
     }
 
-    givenFillMemberForm(name, email, note){
-        if (name!==''){
+    givenClickMemberName(name) {
+        MemberPage.clickNameMember(name);
+    }
+
+    givenFillMemberForm(name, email, note) {
+        if (name !== '') {
             MemberPage.fillNameInput(name);
         }
-        if (email!==''){
+        if (email !== '') {
             MemberPage.fillEmailInput(email);
-            
+
         }
-        if (note!==''){
+        if (note !== '') {
             MemberPage.fillNoteTextArea(note);
         }
+    }
+
+    givenUpdateMemberForm(name, email, note) {
+        MemberPage.updateName(name);
+        MemberPage.updateEmail(email);
+        MemberPage.updateNote(note);
     }
 }
 

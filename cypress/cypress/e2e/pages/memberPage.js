@@ -72,20 +72,32 @@ class MemberPage {
         cy.get('p.response').contains('Note is too long.').should('exist')
     }
     
-    clickNameMember(){
-        this.memberName.click();
+    clickNameMember(name){
+        cy.get('h3').contains(name).click();
+    }
+
+    updateName(name){
+        if (name === ''){
+            this.memberNameInput.clear();
+        } else{
+            this.memberNameInput.clear().type(name);
+        }
     }
     
-    updateEmail(){
-        this.memberNameInput.clear().type(this.displayNameValid2);
+    updateEmail(email){
+        if (email === ''){
+            this.memberEmailInput.clear()
+        }else{
+            this.memberEmailInput.clear().type(email);
+        }
     }
     
-    updateName(){
-        this.memberEmailInput.clear().type(this.emailValid2);
-    }
-    
-    updateNote(){
-        this.memberNoteTextArea.clear().type(this.noteValid2);
+    updateNote(note){
+        if (note === ''){
+            this.memberNoteTextArea.clear()
+        }else{
+            this.memberNoteTextArea.clear().type(note);
+        }
     }
 
     seeUpdatedMember() {

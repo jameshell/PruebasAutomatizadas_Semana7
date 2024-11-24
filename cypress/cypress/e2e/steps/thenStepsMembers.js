@@ -4,6 +4,10 @@ class ThenStepsMembers {
     thenSeeCreatedMember(name, email){
         MemberPage.seeCreatedMember(name, email);
     }
+
+    thenSeeUpdatedMember(name, email){
+        MemberPage.seeCreatedMember(name, email);
+    }
     thenSeeEmailRequiredMemberForm(){
         MemberPage.seeEmailRequired();
     }
