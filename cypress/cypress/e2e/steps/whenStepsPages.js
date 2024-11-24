@@ -50,6 +50,10 @@ class WhenStepsPages {
     WhenClearPageDescription() {
         pagesPage.ClearPageDescription();
     }
+
+    WhenClickBackButton() {
+        pagesPage.clickBackButton();
+    }
 }
 
 export default new WhenStepsPages();

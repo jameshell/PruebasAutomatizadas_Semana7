@@ -25,6 +25,10 @@ class ThenStepsPages {
     thenShouldUpdatePage(){
         pagesPage.ShouldUpdatePage();
     }
+
+    thenIsDraftSaved() {
+        pagesPage.isDraftSaved();
+    }
 }
 
 export default new ThenStepsPages();

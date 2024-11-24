@@ -43,6 +43,14 @@ class PagesPage {
         return cy.get('.gh-notifications').first();
     }
 
+    get backButton() {
+        return cy.get('svg[viewBox="0 0 122.43 122.41"]');
+    }
+
+    clickBackButton() {
+        this.backButton.click();
+    }
+
     fillPageDescription(description) {
         cy.wait(1000);
         this.pageDescription.type(description);
@@ -144,6 +152,10 @@ class PagesPage {
 
     ClearPageHeader() {
         this.pageHeader.clear();
+    }
+
+    isDraftSaved() {
+        cy.get('div[data-test-editor-post-status=""]').should('be.visible');
     }
 }
 
