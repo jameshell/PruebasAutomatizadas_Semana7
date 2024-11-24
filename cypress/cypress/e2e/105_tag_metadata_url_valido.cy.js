@@ -1,40 +1,68 @@
 import GivenStepsTag from "./steps/givenStepsTag"
 import ThenStepsTag from "./steps/thenStepsTag"
 import WhenStepsTag from "./steps/whenStepsTag"
-import {faker} from "@faker-js/faker";
 
+const https = require("https");
 
-function longDescrption(longDesc = 500, seed=null){
-  
-  if(seed !== null){
-    faker.seed(seed);
-  }
-  let description = '';
-  while(description.length < longDesc){
-    description += '' + faker.lorem.paragraph();
-  } 
-  description = description.trim();
-  return description;
+var jsonData = null;
+
+function generatePosts(recordCount = 10) {
+    const API_KEY = Cypress.config("API_KEY"); 
+    return new Promise((resolve, reject) => {
+
+        const mockarooSchema = [
+            { name: "tag_name", type: "Fake Company Name" },
+            { name: "paragraphs_501", type: "Paragraphs", min:"5", max: "5"},
+            { name: "paragraphs", type: "Paragraphs"},
+            { name: "url", type: "URL"}
+            
+        ];
+
+        const postData = JSON.stringify(mockarooSchema);
+        const options = {
+            hostname: "api.mockaroo.com",
+            path: `/api/generate.json?key=${API_KEY}&count=${recordCount}`,
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Content-Length": postData.length
+            }
+        };
+        const req = https.request(options, (res) => {
+            let data = "";
+            res.on("data", (chunk) => {
+                data += chunk;
+            });
+            res.on("end", () => {
+                if (res.statusCode === 200) {
+                    var mock = JSON.parse(data);
+                    resolve(mock);
+                } else {
+                    console.error("Error:", res.statusCode, res.statusMessage);
+                }
+            });
+        })
+        req.on("error", (error) => {
+            console.error("Failed to generate mock data:", error.message);
+            reject(error)
+        });
+        req.write(postData);
+        req.end()
+    });
 }
 
-function validTagName(seed=null){
-  if(seed !== null){
-    faker.seed(seed);
-  }
-  let nameTagValid = '';
-  return nameTagValid = faker.commerce.productAdjective()
-}
-
-function validUrl(seed=null){
-  if(seed !== null){
-      faker.seed(seed);
-    }
-  let metaUrl = '';
-  return metaUrl = faker.internet.url()
-    
-}
 
 describe("Tag url metadata valido", () => {
+
+    let data = [];
+    before(() => {
+      cy.wrap(generatePosts(), { timeout: 10000 }).then((response) => {
+          jsonData = response;
+          const value = Math.floor(Math.random() * 10);
+          data = jsonData[value];
+      })
+    });
+
     beforeEach(() => {
         // Given the User navigates to the login page
         GivenStepsTag.givenNavigateToLoginPage();
@@ -50,26 +78,26 @@ describe("Tag url metadata valido", () => {
       //  When the user clicks on New tag
       WhenStepsTag.whenClickTagNewTag();
       
-      // Generate a tag name using Faker with SEED
-      const nameTag = validTagName(44)
+      // Generate a tag name using mockaroo
+      const nameTag = data['tag_name'];
       // and fills the name tag input
       WhenStepsTag.whenFillNameTag(nameTag);
     
       // And click on expand in FB card
       WhenStepsTag.whenExpandMetadatacard();
     
-      // Generate a metadata name using Faker with SEED
-      const nameMeta = validTagName(66)
+      // Generate a metadata name using mockaroo
+      const nameMeta = data['tag_name'];
       // And fills the name metadata 
       WhenStepsTag.whenFillNameMetadataCard(nameMeta);
 
-      // Generate a long description > 500 using Faker with SEED
-      const descripcionMeta = longDescrption(50,66)
+      // Generate a long description > 500 using mockaroo
+      const descripcionMeta = data['paragraphs'];
       // And fill the description with valid paragraph
       WhenStepsTag.whenFillMetadataDescriptionCard(descripcionMeta);
 
-      // Generate a valid URL using Faker with SEED
-      const urlMeta = validUrl(66)
+      // Generate a valid URL using mockaroo
+      const urlMeta = data['url'];
       // And fill the URL valid for Metadata
       WhenStepsTag.whenFillMetadataUrl(urlMeta);
 
