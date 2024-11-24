@@ -47,6 +47,38 @@ class PagesPage {
         return cy.get('svg[viewBox="0 0 122.43 122.41"]');
     }
 
+    get pageSettings() {
+        return cy.get('button.settings-menu-toggle.gh-btn.gh-btn-editor.gh-btn-icon.icon-only.gh-btn-action-icon[title="Settings"][data-test-psm-trigger]')
+    }
+
+    get typeURLField(){
+        return cy.get('input[name="post-setting-slug"][id="url"].post-setting-slug.ember-text-field.gh-input.ember-view');
+    }
+
+    get tagField() {
+        return cy.get('input.ember-power-select-trigger-multiple-input[type="search"]');
+    }
+
+    get excerptField() {
+        return cy.get('textarea[name="post-setting-custom-excerpt"][id="custom-excerpt"].post-setting-custom-excerpt.ember-text-area.gh-input.ember-view[data-test-field="custom-excerpt"]');
+    }
+
+    TypeExcerpt(text){
+        this.excerptField.type(text);
+    }
+
+    TypeTagField(tag) {
+        this.tagField.first().type(tag);
+    }
+
+    TypeURL(text){
+        this.typeURLField.type(text);
+    }
+
+    clickPageSettings() {
+        this.pageSettings.click();
+    }
+
     clickBackButton() {
         this.backButton.click();
     }

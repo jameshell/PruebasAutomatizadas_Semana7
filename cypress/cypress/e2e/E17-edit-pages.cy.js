@@ -20,6 +20,7 @@ describe("Pages - Edit page title and description", () => {
         const randomPageDescription = faker.lorem.paragraph();
         const randomPageTitle = faker.lorem.sentence({min: 3, max: 5});
 
+        cy.wait(1000);
         WhenStepsPages.WhenClickUpdateBtn();
         pagesPage.AndScreenshot('E17-596','2');
 
