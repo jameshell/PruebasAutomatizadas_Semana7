@@ -108,6 +108,22 @@ class TagPage{
         return cy.get('article.gh-alert.gh-alert-red');
     }
 
+    get ErrorTagName(){
+        return cy.get('span.error p.response');
+    }
+
+
+    get slugNameInput(){
+        return cy.get("#tag-slug");
+    }
+
+    get ErrorSlugName(){
+        return cy.get('p.response');
+    }
+
+    get colorTag(){
+        return cy.get('input[name="accent-color"]');
+    }
 
     clickNewTag(){
         cy.wait(1000);
@@ -208,8 +224,34 @@ class TagPage{
     assertErrorDescriptionX(){
         this.errorDescriptionX.should('be.visible')
         .and('contain', 'Validation error, cannot save tag.')
-    }   
+    }
+    
+    assertTagVisible(nameTag){
+        cy.contains(nameTag).should('be.visible');
+    }
 
+    assertErrorTagName(){
+        this.ErrorTagName.should('be.visible')
+        .and('contain', 'Tag names cannot be longer than 191 characters');
+    }
+
+    fillSlugTag(nameSlug){
+        this.slugNameInput.clear().type(nameSlug);
+    }
+
+    assertErrorSlugName(){
+        this.ErrorSlugName.should('be.visible')
+        .and('contain', 'URL cannot be longer than 191 characters.');
+    }
+
+    fillColorTag(nameSlug){
+        this.colorTag.first().type(nameSlug);
+    }
+
+    assertErrorTagColor(){
+        this.ErrorSlugName.should('be.visible')
+        .and('contain', 'The colour should be in valid hex format');
+    }
 }
 
 export default new TagPage();
