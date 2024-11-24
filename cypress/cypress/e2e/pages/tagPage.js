@@ -96,6 +96,19 @@ class TagPage{
         return cy.get('#twitter-description');
     }
 
+    get errorDescription(){
+        return cy.contains('Description cannot be longer than 500 characters');
+    }
+
+    get errorDescriptionFB(){
+        return cy.get('article.gh-alert.gh-alert-red');
+    }
+
+    get errorDescriptionX(){
+        return cy.get('article.gh-alert.gh-alert-red');
+    }
+
+
     clickNewTag(){
         cy.wait(1000);
         this.newTagButton.click();
@@ -182,6 +195,21 @@ class TagPage{
     fillXDescription(descripcionX){
         this.tagfillXDescription.clear().type(descripcionX);
     }
+
+    assertErrorDescription(){
+        this.errorDescription.should('be.visible');
+    }
+
+    assertErrorDescriptionFB(){
+        this.errorDescriptionFB.should('be.visible')
+        .and('contain', 'Validation error, cannot save tag.');
+    }
+
+    assertErrorDescriptionX(){
+        this.errorDescriptionX.should('be.visible')
+        .and('contain', 'Validation error, cannot save tag.')
+    }   
+
 }
 
 export default new TagPage();
