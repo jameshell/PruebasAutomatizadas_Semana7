@@ -61,6 +61,14 @@ class WhenStepsTag {
     whenFillXDescriptionCard(descripcionX){
         TagPage.fillXDescription(descripcionX)
     }
+
+    whenFillSlugTag(nameSlug){
+        TagPage.fillSlugTag(nameSlug)
+    }
+
+    whenFillColorTag(colorTag){
+        TagPage.fillColorTag(colorTag)
+    }
 }
 
 export default new WhenStepsTag();
