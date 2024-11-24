@@ -59,6 +59,14 @@ class PagesPage {
         return cy.get('input.ember-power-select-trigger-multiple-input[type="search"]');
     }
 
+    get excerptField() {
+        return cy.get('textarea[name="post-setting-custom-excerpt"][id="custom-excerpt"].post-setting-custom-excerpt.ember-text-area.gh-input.ember-view[data-test-field="custom-excerpt"]');
+    }
+
+    TypeExcerpt(text){
+        this.excerptField.type(text);
+    }
+
     TypeTagField(tag) {
         this.tagField.first().type(tag);
     }

@@ -66,6 +66,10 @@ class WhenStepsPages {
     WhenTypeTag(tag) {
         pagesPage.TypeTagField(tag);
     }
+
+    WhenTypeExcerpt(excerpt) {
+        pagesPage.TypeExcerpt(excerpt);
+    }
 }
 
 export default new WhenStepsPages();
