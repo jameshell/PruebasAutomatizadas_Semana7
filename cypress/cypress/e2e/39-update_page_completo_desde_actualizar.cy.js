@@ -8,8 +8,8 @@ function fetchMockarooData(recordCount = 1) {
     const API_KEY = Cypress.config("API_KEY");
     return new Promise((resolve, reject) => {
         const mockarooSchema = [
-            { name: "title", type: "Sentences" },
-            { name: "description", type: "Paragraphs" }
+            { name: "title", type: "Sentences", min: 1, max: 2 },
+            { name: "description", type: "Paragraphs", min: 1, max: 2}
         ];
 
         const postData = JSON.stringify(mockarooSchema);
