@@ -26,8 +26,8 @@ En este caso debemos hacer uso del directorio/carpeta del repositorio ```./cypre
   
 ### Instalacion Cypress
 - Instalar node
-- Instala Cypres en nuestro computador de forma global: npm install cypress
-- Dado que el proyecto esta listo de forma local, ir en la terminal a la carpeta kraken del repositorio y poner el siguiente comando: npm install
+- Instala Cypres en nuestro computador de forma global: ```npm install cypress```
+- Dado que el proyecto esta listo de forma local, ir en la terminal a la carpeta kraken del repositorio y poner el siguiente comando: ```npm install```
 - Modifica archivo **cypress.config.js** que se encuentra en la carpeta **cypress** del repo, los datos a cambiar son los siguientes:
 ```
 const params = {
@@ -40,6 +40,11 @@ const params = {
 
   }
 ```
+
+**NOTA:** Se requiere APIKEY de la app **mockaroo**
+
+
+
 - En la terminal ir a la carpeta de ./cypress
 - Instalar las dependencias
   ```npm install```
