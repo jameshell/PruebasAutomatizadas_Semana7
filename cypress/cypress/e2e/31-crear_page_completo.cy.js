@@ -13,7 +13,7 @@ describe("Pages - Create a complete valid Page with apriori data", () => {
 
         Cypress.Screenshot.defaults({
             disableTimersAndAnimations: false,
-        })
+        });
 
         pagesPage.AndScreenshot('31-596','1');
     });

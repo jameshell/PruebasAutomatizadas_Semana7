@@ -2,6 +2,7 @@ import GivenSteps from "./steps/givenSteps";
 import pagesPage from "./pages/pagesPage";
 import WhenStepsPages from "./steps/whenStepsPages";
 import ThenStepsPages from "./steps/thenStepsPages";
+const { getPageCreationCount, incrementPageCreationCount } = require("../../support/globalVariables");
 const https = require("https");
 
 function fetchMockarooData(recordCount = 1) {
@@ -54,8 +55,13 @@ describe("Pages - Edit page title and description with pseudo random data", () =
         GivenSteps.givenLogin();
         GivenSteps.giveNavigateToPagesPage();
         pagesPage.AndScreenshot('39-596', '1');
-        pagesPage.mockPageWithDescription();
-        cy.get('button.close').click();
+
+
+        if (getPageCreationCount() === 0) {
+            pagesPage.mockPageWithDescription();
+            cy.get('button.close').click();
+            incrementPageCreationCount();
+        }
     });
 
     it('39 - Should edit a page', () => {

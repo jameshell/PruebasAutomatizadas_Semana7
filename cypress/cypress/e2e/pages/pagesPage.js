@@ -25,6 +25,9 @@ class PagesPage {
 
     get updateBtn() {
         return cy.get('div.gh-posts-list-item-group').first();
+        // return cy.get('li.gh-list-row.gh-posts-list-item.gh-post-list-plain-status').first();
+        // return cy.get('.gh-posts-list-item-group')
+        //     .find('.gh-list-row.gh-posts-list-item.gh-post-list-plain-status').first();
     }
 
     get pageDescription() {
@@ -100,8 +103,8 @@ class PagesPage {
     }
 
     updateBtn_Click() {
-        cy.wait(1000);
-        this.updateBtn.click();
+        cy.wait(3000);
+        this.updateBtn.scrollIntoView().click();
     }
 
     addImgBtn_Click() {
