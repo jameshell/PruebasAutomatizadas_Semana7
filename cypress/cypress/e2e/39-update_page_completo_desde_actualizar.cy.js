@@ -65,20 +65,15 @@ describe("Pages - Edit page title and description with pseudo random data", () =
             const randomPageDescription = mockData.description;
 
             WhenStepsPages.WhenClickUpdateBtn();
-            pagesPage.AndScreenshot('39-596', '2');
 
             WhenStepsPages.WhenClearPageHeader();
             WhenStepsPages.WhenFillPageHeader(randomPageTitle);
-            pagesPage.AndScreenshot('39-596', '3');
 
             WhenStepsPages.WhenClearPageDescription();
             WhenStepsPages.WhenFillPageDescription(randomPageDescription);
-            pagesPage.AndScreenshot('39-596', '4');
 
             WhenStepsPages.WhenClickUpdateButton();
-            pagesPage.AndScreenshot('39-596', '5');
 
-            // Then
             ThenStepsPages.thenShouldUpdatePage();
         });
     });

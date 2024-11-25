@@ -14,8 +14,6 @@ describe("Pages - Create Page with large title draft", () => {
         Cypress.Screenshot.defaults({
             disableTimersAndAnimations: false,
         });
-
-        pagesPage.AndScreenshot('55-596','1');
     });
 
     it('55 - Should create not be able to create a page with large title', () => {
@@ -23,13 +21,10 @@ describe("Pages - Create Page with large title draft", () => {
         const randomPageTitle = faker.lorem.words(255);;
 
         WhenStepsPages.WhenNewPageBtn_Click();
-        pagesPage.AndScreenshot('55-596','2');
 
         WhenStepsPages.WhenFillPageHeader(randomPageTitle);
-        pagesPage.AndScreenshot('55-596','3');
 
         WhenStepsPages.WhenFillPageDescription(randomPageDescription);
-        pagesPage.AndScreenshot('55-596','4');
 
         ThenStepsPages.thenPublishButton_ShouldNotExist();
     });

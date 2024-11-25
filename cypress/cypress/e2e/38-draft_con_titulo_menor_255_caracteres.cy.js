@@ -12,9 +12,7 @@ describe("Pages - Create a complete valid Page with apriori data", () => {
 
         Cypress.Screenshot.defaults({
             disableTimersAndAnimations: false,
-        })
-
-        pagesPage.AndScreenshot('38-596','1');
+        });
     });
 
     it('38 - Should create a new page successfully with apriori data', () => {
@@ -23,22 +21,16 @@ describe("Pages - Create a complete valid Page with apriori data", () => {
             const randomPageTitle = data[0].Title;
 
             WhenStepsPages.WhenNewPageBtn_Click();
-            pagesPage.AndScreenshot('38-596','2');
 
             WhenStepsPages.WhenFillPageHeader(randomPageTitle);
-            pagesPage.AndScreenshot('38-596','3');
 
             WhenStepsPages.WhenFillPageDescription(randomPageDescription);
-            pagesPage.AndScreenshot('38-596','4');
 
             WhenStepsPages.WhenClickAddImgBtn();
-            pagesPage.AndScreenshot('38-596','5');
 
-            WhenStepsPages.WhenClickAddImageBtn_FirstPic()
-            pagesPage.AndScreenshot('38-596','6');
+            WhenStepsPages.WhenClickAddImageBtn_FirstPic();
 
             WhenStepsPages.WhenClickPublishButton();
-            pagesPage.AndScreenshot('38-596','7');
 
             WhenStepsPages.WhenClickFinalReviewButton();
 
@@ -49,7 +41,6 @@ describe("Pages - Create a complete valid Page with apriori data", () => {
             ThenStepsPages.thenIsModalHeaderCorrect(randomPageTitle);
 
             ThenStepsPages.thenIsModalDescriptionCorrect(randomPageDescription);
-            pagesPage.AndScreenshot('38-596','8');
         });
     });
 });

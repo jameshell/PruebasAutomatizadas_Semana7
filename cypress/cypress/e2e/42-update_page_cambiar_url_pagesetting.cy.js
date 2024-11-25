@@ -55,7 +55,6 @@ describe("Pages - Edit page URL", () => {
         GivenSteps.givenNavigateToLoginPage();
         GivenSteps.givenLogin();
         GivenSteps.giveNavigateToPagesPage();
-        pagesPage.AndScreenshot('42-596','1');
         pagesPage.mockPageWithDescription();
         cy.get('button.close').click()
     });

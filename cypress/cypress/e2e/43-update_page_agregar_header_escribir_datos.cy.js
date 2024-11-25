@@ -53,7 +53,6 @@ describe("Pages - Edit page title and description with pseudo random data", () =
         GivenSteps.givenNavigateToLoginPage();
         GivenSteps.givenLogin();
         GivenSteps.giveNavigateToPagesPage();
-        pagesPage.AndScreenshot('40-596', '1');
         pagesPage.mockPageWithDescription();
         cy.get('button.close').click();
     });
@@ -64,16 +63,12 @@ describe("Pages - Edit page title and description with pseudo random data", () =
             const randomPageTitle = mockData.title.substring(0, 30);
 
             WhenStepsPages.WhenClickUpdateBtn();
-            pagesPage.AndScreenshot('40-596', '2');
 
             WhenStepsPages.WhenClearPageHeader();
             WhenStepsPages.WhenFillPageHeader(randomPageTitle);
-            pagesPage.AndScreenshot('40-596', '3');
 
             WhenStepsPages.WhenClickUpdateButton();
-            pagesPage.AndScreenshot('40-596', '4');
 
-            // Then
             ThenStepsPages.thenShouldUpdatePage();
         });
     });

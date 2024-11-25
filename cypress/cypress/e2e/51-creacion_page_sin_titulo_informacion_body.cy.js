@@ -14,13 +14,10 @@ describe("Pages - Create Empty Page", () => {
         Cypress.Screenshot.defaults({
             disableTimersAndAnimations: false,
         });
-
-        pagesPage.AndScreenshot('51-596','1');
     });
 
     it('51 - Should create an empty page', () => {
         WhenStepsPages.WhenNewPageBtn_Click();
-        pagesPage.AndScreenshot('51-596','2');
 
         ThenStepsPages.thenPublishButton_ShouldNotExist();
     });

@@ -54,7 +54,6 @@ describe("Pages - Edit page modify TAG", () => {
         GivenSteps.givenNavigateToLoginPage();
         GivenSteps.givenLogin();
         GivenSteps.giveNavigateToPagesPage();
-        pagesPage.AndScreenshot('46-596','1');
         pagesPage.mockPageWithDescription();
         cy.get('button.close').click()
     });
@@ -70,8 +69,8 @@ describe("Pages - Edit page modify TAG", () => {
 
             WhenStepsPages.WhenClickPageSettings();
 
-            //Then
             cy.wait(1000);
+
             ThenStepsPages.thenIsDraftSaved();
         });
     });

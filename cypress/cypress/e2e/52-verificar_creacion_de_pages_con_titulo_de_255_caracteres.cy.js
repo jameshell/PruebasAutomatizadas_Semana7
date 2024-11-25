@@ -14,8 +14,6 @@ describe("Pages - Create Page without img", () => {
         Cypress.Screenshot.defaults({
             disableTimersAndAnimations: false,
         });
-
-        pagesPage.AndScreenshot('52-596','1');
     });
 
     it('52 - Should create a new page successfully with a random title and description', () => {
@@ -23,13 +21,10 @@ describe("Pages - Create Page without img", () => {
         const randomPageTitle = faker.lorem.words(255);;
 
         WhenStepsPages.WhenNewPageBtn_Click();
-        pagesPage.AndScreenshot('52-596','2');
 
         WhenStepsPages.WhenFillPageHeader(randomPageTitle);
-        pagesPage.AndScreenshot('52-596','3');
 
         WhenStepsPages.WhenFillPageDescription(randomPageDescription);
-        pagesPage.AndScreenshot('52-596','4');
 
         ThenStepsPages.thenPublishButton_ShouldNotExist()
     });

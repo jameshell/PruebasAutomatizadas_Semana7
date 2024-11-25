@@ -11,7 +11,6 @@ describe("Pages - Edit page title and description", () => {
         GivenSteps.givenNavigateToLoginPage();
         GivenSteps.givenLogin();
         GivenSteps.giveNavigateToPagesPage();
-        pagesPage.AndScreenshot('59-596','1');
         pagesPage.mockPageWithDescription();
         cy.get('button.close').click()
     });
@@ -25,19 +24,15 @@ describe("Pages - Edit page title and description", () => {
         const randomPageTitle = faker.lorem.sentence({min: 3, max: 5});
 
         WhenStepsPages.WhenClickUpdateBtn();
-        pagesPage.AndScreenshot('59-596','2');
 
         WhenStepsPages.WhenFillPageHeader(randomPageTitle);
-        pagesPage.AndScreenshot('59-596','3');
 
         WhenStepsPages.WhenFillPageDescription(randomPageDescription);
-        pagesPage.AndScreenshot('59-596','4');
 
         WhenStepsPages.WhenClickUpdateButton();
-        pagesPage.AndScreenshot('59-596','5');
 
-        //Then
         cy.wait(1000);
+
         ThenStepsPages.thenShouldUpdatePage();
     });
 });

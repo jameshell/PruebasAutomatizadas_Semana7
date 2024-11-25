@@ -14,8 +14,6 @@ describe("Pages - Create Page With Only Description with 1000 characters", () =>
         Cypress.Screenshot.defaults({
             disableTimersAndAnimations: false,
         });
-
-        pagesPage.AndScreenshot('E18-596','1');
     });
 
     it('37 - Should create a new page successfully without title', () => {
@@ -24,23 +22,18 @@ describe("Pages - Create Page With Only Description with 1000 characters", () =>
             const randomPageDescription = data[0].Description;
 
             WhenStepsPages.WhenNewPageBtn_Click();
-            pagesPage.AndScreenshot('37-596','2');
 
             WhenStepsPages.WhenFillPageDescription(randomPageDescription);
-            pagesPage.AndScreenshot('37-596','3');
 
             WhenStepsPages.WhenClickPublishButton();
-            pagesPage.AndScreenshot('37-596','4');
 
             WhenStepsPages.WhenClickFinalReviewButton();
 
             WhenStepsPages.WhenClickConfirmPublishButton();
-            pagesPage.AndScreenshot('37-596','5');
 
             ThenStepsPages.thenIsPublishFlowComplete();
 
             ThenStepsPages.thenIsModalHeaderCorrect_Untitled();
-            pagesPage.AndScreenshot('37-596','6');
 
             ThenStepsPages.thenIsModalDescriptionCorrect(randomPageDescription);
         });

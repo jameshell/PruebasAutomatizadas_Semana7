@@ -54,7 +54,6 @@ describe("Pages - Edit page excerpt less than 255", () => {
         GivenSteps.givenNavigateToLoginPage();
         GivenSteps.givenLogin();
         GivenSteps.giveNavigateToPagesPage();
-        pagesPage.AndScreenshot('47-596','1');
         pagesPage.mockPageWithDescription();
         cy.get('button.close').click()
     });

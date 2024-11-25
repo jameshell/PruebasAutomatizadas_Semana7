@@ -24,23 +24,18 @@ describe("Pages - Create Page With Only Description", () => {
             const randomPageDescription = data[0].Description;
 
             WhenStepsPages.WhenNewPageBtn_Click();
-            pagesPage.AndScreenshot('32-596','2');
 
             WhenStepsPages.WhenFillPageDescription(randomPageDescription);
-            pagesPage.AndScreenshot('32-596','3');
 
             WhenStepsPages.WhenClickPublishButton();
-            pagesPage.AndScreenshot('32-596','4');
 
             WhenStepsPages.WhenClickFinalReviewButton();
 
             WhenStepsPages.WhenClickConfirmPublishButton();
-            pagesPage.AndScreenshot('32-596','5');
 
             ThenStepsPages.thenIsPublishFlowComplete();
 
             ThenStepsPages.thenIsModalHeaderCorrect_Untitled();
-            pagesPage.AndScreenshot('32-596','6');
 
             ThenStepsPages.thenIsModalDescriptionCorrect(randomPageDescription);
         });
