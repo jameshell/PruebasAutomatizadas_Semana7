@@ -9,7 +9,7 @@ function fetchMockarooData(recordCount = 1) {
     return new Promise((resolve, reject) => {
         const mockarooSchema = [
             { name: "title", type: "Custom List", values: ["A".repeat(255)] },
-            { name: "description", type: "Paragraphs" }
+            { name: "description", type: "Paragraphs", min: 1, max: 2 }
         ];
 
         const postData = JSON.stringify(mockarooSchema);
