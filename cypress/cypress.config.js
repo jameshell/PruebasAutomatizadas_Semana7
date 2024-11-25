@@ -3,18 +3,13 @@ const { defineConfig } = require("cypress");
 module.exports = {
   e2e: {
     setupNodeEvents(on, config) {
-      const version = config.env.VERSION || 4;
+      const version = 5;
       const params = {
-        4:{
-          'username': 'generic_admin@gmail.com',
-          'password': 'GenericAdmin123.',
-          'url': 'http://localhost:3001/',
-        },
         5:{
           'username': 'generic_admin@gmail.com',
           'password': 'GenericAdmin123.',
           'url': 'http://localhost:3001/',
-        },
+        }
       };
       config.API_KEY = '';
       config.url = params[version].url;
