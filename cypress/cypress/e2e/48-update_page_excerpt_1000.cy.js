@@ -65,17 +65,17 @@ describe("Pages - Edit page excerpt 255", () => {
     it('47 - Should edit a page', () => {
         cy.wrap(fetchMockarooData()).then((response) => {
             cy.wait(1000);
-            // WhenStepsPages.WhenClickUpdateBtn();
-            //
-            // WhenStepsPages.WhenClickPageSettings();
-            // cy.wait(1000);
-            // WhenStepsPages.WhenTypeExcerpt(response.excerpt);
-            //
-            // WhenStepsPages.WhenClickPageSettings();
-            //
-            // //Then
-            // cy.wait(1000);
-            // ThenStepsPages.thenIsDraftSaved();
+            WhenStepsPages.WhenClickUpdateBtn();
+
+            WhenStepsPages.WhenClickPageSettings();
+            cy.wait(1000);
+            WhenStepsPages.WhenTypeExcerpt(response.excerpt);
+
+            WhenStepsPages.WhenClickPageSettings();
+
+            //Then
+            cy.wait(1000);
+            ThenStepsPages.thenIsDraftSaved();
         });
     });
 });

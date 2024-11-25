@@ -65,15 +65,15 @@ describe("Pages - Edit page TAG", () => {
     it('45 - Should edit a page', () => {
         cy.wrap(fetchMockarooData()).then((response) => {
             cy.wait(1000);
-            // WhenStepsPages.WhenClickUpdateBtn();
-            //
-            // WhenStepsPages.WhenClickPageSettings();
-            //
-            // WhenStepsPages.WhenTypeTag(response.url);
-            //
-            // WhenStepsPages.WhenClickPageSettings();
-            // cy.wait(1000);
-            // ThenStepsPages.thenIsDraftSaved();
+            WhenStepsPages.WhenClickUpdateBtn();
+
+            WhenStepsPages.WhenClickPageSettings();
+
+            WhenStepsPages.WhenTypeTag(response.url);
+
+            WhenStepsPages.WhenClickPageSettings();
+            cy.wait(1000);
+            ThenStepsPages.thenIsDraftSaved();
         });
     });
 });

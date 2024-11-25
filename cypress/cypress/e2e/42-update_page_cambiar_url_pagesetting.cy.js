@@ -66,15 +66,14 @@ describe("Pages - Edit page URL", () => {
     it('42 - Should edit a page', () => {
         cy.wrap(fetchMockarooData()).then((response) => {
             cy.wait(1000);
-            // WhenStepsPages.WhenClickUpdateBtn();
-            //
-            // WhenStepsPages.WhenClickPageSettings();
-            //
-            // WhenStepsPages.WhenTypePageURL(response.url);
-            //
-            // WhenStepsPages.WhenClickPageSettings();
+            WhenStepsPages.WhenClickUpdateBtn();
 
-            //Then
+            WhenStepsPages.WhenClickPageSettings();
+
+            WhenStepsPages.WhenTypePageURL(response.url);
+
+            WhenStepsPages.WhenClickPageSettings();
+
             cy.wait(1000);
             ThenStepsPages.thenIsDraftSaved();
         });

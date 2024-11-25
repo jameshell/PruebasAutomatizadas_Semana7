@@ -66,14 +66,14 @@ describe("Pages - Edit page title and description with pseudo random data", () =
             const mockData = response;
             const randomPageTitle = mockData.title.substring(0, 30);
 
-            // WhenStepsPages.WhenClickUpdateBtn();
-            //
-            // WhenStepsPages.WhenClearPageHeader();
-            // WhenStepsPages.WhenFillPageHeader(randomPageTitle);
-            //
-            // WhenStepsPages.WhenClickUpdateButton();
-            //
-            // ThenStepsPages.thenShouldUpdatePage();
+            WhenStepsPages.WhenClickUpdateBtn();
+
+            WhenStepsPages.WhenClearPageHeader();
+            WhenStepsPages.WhenFillPageHeader(randomPageTitle);
+
+            WhenStepsPages.WhenClickUpdateButton();
+
+            ThenStepsPages.thenShouldUpdatePage();
         });
     });
 });

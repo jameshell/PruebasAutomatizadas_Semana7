@@ -68,16 +68,16 @@ describe("Pages - Edit page title and description with pseudo random data", () =
         cy.wrap(fetchMockarooData()).then((response) => {
             const randomPageDescription = response.description;
 
-            // WhenStepsPages.WhenClickUpdateBtn();
-            //
-            // WhenStepsPages.WhenClearPageHeader();
-            //
-            // WhenStepsPages.WhenClearPageDescription();
-            // WhenStepsPages.WhenFillPageDescription(randomPageDescription);
-            //
-            // WhenStepsPages.WhenClickUpdateButton();
-            //
-            // ThenStepsPages.thenShouldUpdatePage();
+            WhenStepsPages.WhenClickUpdateBtn();
+
+            WhenStepsPages.WhenClearPageHeader();
+
+            WhenStepsPages.WhenClearPageDescription();
+            WhenStepsPages.WhenFillPageDescription(randomPageDescription);
+
+            WhenStepsPages.WhenClickUpdateButton();
+
+            ThenStepsPages.thenShouldUpdatePage();
         });
     });
 });

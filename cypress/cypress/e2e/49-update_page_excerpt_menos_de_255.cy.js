@@ -65,17 +65,17 @@ describe("Pages - Edit page excerpt less than 255", () => {
     it('49 - Should edit excerpt with less than 255 words', () => {
         cy.wrap(fetchMockarooData()).then((response) => {
             cy.wait(1000);
-            // WhenStepsPages.WhenClickUpdateBtn();
-            //
-            // WhenStepsPages.WhenClickPageSettings();
-            // cy.wait(1000);
-            // WhenStepsPages.WhenTypeExcerpt(response.excerpt);
-            //
-            // WhenStepsPages.WhenClickPageSettings();
-            //
-            // //Then
-            // cy.wait(1000);
-            // ThenStepsPages.thenIsDraftSaved();
+            WhenStepsPages.WhenClickUpdateBtn();
+
+            WhenStepsPages.WhenClickPageSettings();
+            cy.wait(1000);
+            WhenStepsPages.WhenTypeExcerpt(response.excerpt);
+
+            WhenStepsPages.WhenClickPageSettings();
+
+            //Then
+            cy.wait(1000);
+            ThenStepsPages.thenIsDraftSaved();
         });
     });
 });
