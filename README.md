@@ -26,7 +26,7 @@ En este caso debemos hacer uso del directorio/carpeta del repositorio ```./cypre
 - Modifica archivo **cypress.config.js** que se encuentra en la carpeta **cypress** del repo, los datos a cambiar son los siguientes:
 
   NOTA: La cofiguracion de las 2 versiones de las ABP en *cyprees* se genera aca en el literal #4 para la version v4.5 de Ghost y liteteral #5 para la version 5.96 de Ghost
-
+```
 const params = {
         5:{
           'username': 'test@test.com',       /// EL USUARIO QUE SE HAYA CONFIGURADO PREVIAMENTE EN GHOST
@@ -35,6 +35,7 @@ const params = {
         },
 
   }
+```
 - En la terminal ir a la carpeta de ./cypress
 - Correr las pruebas:
   
