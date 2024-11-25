@@ -12,7 +12,7 @@ function generatePosts(recordCount = 10) {
 
         const mockarooSchema = [
             { name: "tag_name", type: "Fake Company Name" },
-            { name: "paragraphs_501", type: "Paragraphs", min:"5", max: "5"}
+            { name: "paragraphs_501", type: "Sentences", min:"23", max: "23"}
         ];
 
         const postData = JSON.stringify(mockarooSchema);
