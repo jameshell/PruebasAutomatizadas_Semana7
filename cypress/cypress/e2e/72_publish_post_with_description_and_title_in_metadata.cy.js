@@ -31,13 +31,13 @@ describe("72_publish_post_with_description_and_title_in_metadata", () => {
 
         GivenPosts.AndClickMetaDataBtn();
 
-        let TitleMetaData =postData[0].paragraphs
+        let TitleMetaData =postData[0].title
         if (TitleMetaData.length > 62) {
             TitleMetaData = TitleMetaData.substring(0, 60);}
         GivenPosts.AndInputMetaDataTitle(TitleMetaData,600);
 
 
-        let descriptionMetaData =postData[0].paragraphs
+        let descriptionMetaData =postData[0].title
         if (descriptionMetaData.length > 146) {
             descriptionMetaData = descriptionMetaData.substring(0, 145);}
         GivenPosts.AndInputMetaDataDescription(descriptionMetaData,60145);

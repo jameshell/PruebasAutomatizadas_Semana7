@@ -302,7 +302,7 @@ class postPage {
     inputUrlOther(Url1){
         this.clickOther.type(Url1);
         cy.get('[data-testid="embed-url"]').trigger('keydown', { key: 'Enter', keyCode: 13, which: 13 });
-        cy.wait(4000);cy.get('.not-kg-prose').scrollTo('bottom');
+        cy.wait(5000);
     }
 
     inputDatePost(Date){

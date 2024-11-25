@@ -62,7 +62,7 @@ describe("66_publish_post_title_and_description_valid", () => {
         // Given the user clicks on "New Post" to start creating a new post
         GivenPosts.AndClicksNewPost();
         // Given the user clicks on the post title field to focus on it
-        const Title1 = generarTexto("title", 256);
+        const Title1 = generarTexto("title", 150);
         // Given the user inputs a title into the post title field
         GivenPosts.AndInputPostTitle(Title1);
         GivenPosts.AndClicksPostContent();

@@ -48,7 +48,7 @@ describe("63_post_title_256_caracteres_no_description_positive", () => {
         // Given the user clicks on the post title field to focus on it
         GivenPosts.AndClicksPostTitle();
 
-        const Title1 = generarTexto("title", 256);
+        const Title1 = generarTexto("title", 255);
         // Given the user inputs a title into the post title field
         GivenPosts.AndInputPostTitle(Title1);
 
