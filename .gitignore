@@ -497,4 +497,3 @@ cypress-pixelmatch/diff-images/*/*.png
 cypress-pixelmatch/reports/*.html
 
 mockaroo-config.json
-mockData.json
